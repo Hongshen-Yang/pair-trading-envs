@@ -1,0 +1,3 @@
+[submodule "binance-public-data"]
+	path = binance-public-data
+	url = https://github.com/binance/binance-public-data.git
