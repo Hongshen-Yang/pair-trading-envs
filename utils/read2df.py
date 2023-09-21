@@ -28,7 +28,6 @@ def read2df(symbols, freqs):
                                 'close_time', 'quote_asset_volume', 'number_of_trades', 
                                 'taker_buy_base_asset_volume', 'taker_buy_quote_asset_volume', 'ignore'
                             ]
-                            # temp_df['date'] = pd.to_datetime(temp_df['close_time'], unit='ms').dt.strftime('%Y-%m-%d')
                             temp_df = temp_df.rename(columns={"close_time": "time"})
                             temp_df['tic'] = symbol
                             temp_df['itvl'] = freq
