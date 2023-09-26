@@ -6,6 +6,10 @@ def read2df(symbols, freqs):
     # List to store individual DataFrames
     dfs = []
 
+    if symbols is None:
+        klines_path = f'./binance-public-data/python/data/spot/monthly/klines/'
+        symbols = [folder for folder in os.listdir(klines_path)]
+
     # Loop through each freq
     for freq in freqs.keys():
         # Loop through each symbol
@@ -50,3 +54,6 @@ def read2df(symbols, freqs):
         dfs.append(df)
     
     return dfs
+
+if __name__ == '__main__':
+    print(len(read2df(None, {'1d': 1440})))
