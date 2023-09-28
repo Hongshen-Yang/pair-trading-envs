@@ -1,3 +1,5 @@
 backtrader
 jupyterlab
 pandas
+gym
+stable-baselines3
