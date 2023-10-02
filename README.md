@@ -9,4 +9,7 @@ Firstly clone the project with submodules onto your local drive.
 
 `pip install -r requirements.txt` or `pip3 install -r requirements.txt`
 
-# STEP3: Start using main.ipynb
+# STEP3: Start using jupyter notebook
+We have `trade_gridsearch.ipynb` and `trade_RL.ipynb`
+
+Still under development...

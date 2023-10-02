@@ -41,3 +41,49 @@ def cointncorr(dfs, freqs):
         # print(f"{df_pivot.columns[0]} & {df_pivot.columns[1]} freqs: {freq}, the coint% is {coint_avg}, the avg corr is {corr_avg}")
 
     return dfs_res
+
+class CointnCorr():
+    def __init__(self, dfs, freqs):
+        self.dfs = dfs
+        self.freqs = freqs
+        self.daily_minutes = 1440
+
+    def cointncorr(self):
+        pairs = list(combinations(self.dfs[0]['tic'].unique(), 2))
+        dfs_res_det = {"_".join(pair):{key: {'coint':[], 'corr':[]} for key in self.freqs} for pair in pairs}
+        dfs_res = {"_".join(pair):{key: {} for key in self.freqs} for pair in pairs}
+
+        for i, (freq, f) in enumerate(self.freqs.items()):
+            batch_size = int(self.daily_minutes / f)
+            df_pivot = self.dfs[i].pivot(index='time', columns='tic', values='close').dropna()
+
+            for j in range(0, len(df_pivot), batch_size):
+                batch_df = df_pivot.iloc[j:j+batch_size]
+
+                for pair in pairs:
+                    
+                    first_ele = batch_df[pair[0]]
+                    second_ele = batch_df[pair[1]]
+
+                    _, pvalue, _ = coint(first_ele, second_ele)
+                    corr = np.corrcoef(first_ele, second_ele)[0][1]
+
+                    pair_ = "_".join(pair)
+                    dfs_res_det[pair_][freq]['coint'].append(pvalue < 0.05)
+                    dfs_res_det[pair_][freq]['corr'].append(corr)
+
+            for pair in pairs:
+                pair_ = "_".join(pair)
+                dfs_res[pair_][freq] = {
+                    'coint': np.average(dfs_res_det[pair_][freq]['coint']),
+                    'corr': np.average(dfs_res_det[pair_][freq]['corr'])
+                }
+
+            # print(f"{df_pivot.columns[0]} & {df_pivot.columns[1]} freqs: {freq}, the coint% is {coint_avg}, the avg corr is {corr_avg}")
+
+        return dfs_res
+
+    def tabulate(self):
+        dfs_res = self.cointncorr()
+        tables = {pair: pd.DataFrame(dfs_res[pair]) for pair in dfs_res}
+        return tables
