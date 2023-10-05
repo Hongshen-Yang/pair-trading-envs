@@ -69,7 +69,7 @@ class CointnCorr():
                     corr = np.corrcoef(first_ele, second_ele)[0][1]
 
                     pair_ = "_".join(pair)
-                    dfs_res_det[pair_][freq]['coint'].append(pvalue < 0.05)
+                    dfs_res_det[pair_][freq]['coint'].append(pvalue < 0.1)
                     dfs_res_det[pair_][freq]['corr'].append(corr)
 
             for pair in pairs:
