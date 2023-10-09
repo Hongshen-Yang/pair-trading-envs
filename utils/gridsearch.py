@@ -36,9 +36,8 @@ def gridsearch(estimator, param_grid, scoring, datafeeds):
         if best_score is None or score > best_score:
             best_score = score
             best_params = param_dict
-            best_result = result
 
-    return best_score, best_params, best_result
+    return best_score, best_params
 
 if __name__ == '__main__':
     # res = gridsearch(est, param_grid, scoring, datafeeds)
