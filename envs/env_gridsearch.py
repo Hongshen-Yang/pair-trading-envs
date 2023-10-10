@@ -1,4 +1,5 @@
 import os
+import datetime
 import backtrader as bt
 
 # Define Trading Strategy
@@ -103,22 +104,23 @@ class PairTrading(bt.Strategy):
     params = dict(
         OPEN_THRE=2,
         CLOS_THRE=0.1,
-        period=30
+        period=30,
+        verbose = 0 # 1 for write in the txt file, 0 for not
     )
 
+    # Actually it is better to use `notify_trade`, but I can't really find much doc on it
     def notify_order(self, order):
-        if order.status in [order.Submitted, order.Accepted]:
-            return
-        elif order.status == order.Completed:
+        if self.p.verbose:
             with open(strategy_txt, "a") as f:
-                if order.isbuy():
-                    f.write(f"Buy {order.data._name} @ price: {order.executed.price} for Qty: {order.executed.size}" + "\n")
-                else:
-                    f.write(f"Sell {order.data._name} @ price: {order.executed.price} for Qty: {order.executed.size}" + "\n")
-            f.close()
-        elif order.status in [order.Expired, order.Canceled, order.Margin]:
-            with open(strategy_txt, "a") as f:
-                f.write(f"{order.Status[order.status]}" + "\n")
+                if order.status in [order.Submitted, order.Accepted]:
+                    return
+                elif order.status == order.Completed:
+                    if order.isbuy():
+                        f.write(f"Buy {order.data._name} @ price: {order.executed.price} for Qty: {order.executed.size}" + "\n")
+                    else:
+                        f.write(f"Sell {order.data._name} @ price: {order.executed.price} for Qty: {order.executed.size}" + "\n")
+                elif order.status in [order.Expired, order.Canceled, order.Margin]:
+                    f.write(f"{order.Status[order.status]}" + "\n")
             f.close()
 
     def __init__(self):
@@ -142,49 +144,42 @@ class PairTrading(bt.Strategy):
         ratio = self.data1.close[0] / self.data0.close[0]
         cash = self.broker.get_cash()
         position = self.broker.getposition(self.data0).size + self.broker.getposition(self.data1).size
+        with open(strategy_txt, "a") as f:
+            if abs(self.zscore[0]) <= self.p.CLOS_THRE and position != 0:
+                if self.p.verbose:
+                    f.write(f"---- Close Position ----" + "\n")
+                    # f.write(f"close position @ {datetime.datetime.fromtimestamp(self.data1.datetime[0])}\n")
+                self.close(data=self.data0)
+                self.close(data=self.data1)
         
-        if abs(self.zscore[0]) < self.p.CLOS_THRE and position != 0:
-            with open(strategy_txt, "a") as f:
-                f.write(f"------" + "\n")
-                f.write(f"close position @ {self.data1.datetime[0]}\n")
-            f.close()
-            self.close(data=self.data0)
-            self.close(data=self.data1)
-    
-        elif self.zscore[0] < -self.p.OPEN_THRE and position == 0 and self.kc_f_neg[0]!=0:
-            with open(strategy_txt, "a") as f:
-                f.write(f"------" + "\n")
-                f.write(f"open position @ {self.data1.datetime[0]}\n")
-            f.close()
+            elif self.zscore[0] <= -self.p.OPEN_THRE and position == 0 and self.kc_f_neg[0]!=0:
+                if self.p.verbose:
+                    f.write(f"---- Open Position ----" + "\n")
+                    # f.write(f"open position @ {datetime.datetime.fromtimestamp(self.data1.datetime[0])}\n")
 
-            # purchase with Kelly Criterion
-            purchase_amount = self.broker.get_cash()/self.data0.close[0]*self.kc_f_neg[0]
+                # purchase with Kelly Criterion
+                purchase_amount = self.broker.get_cash()/self.data0.close[0]*self.kc_f_neg[0]
 
-            self.sell(data=self.data1, size=purchase_amount/ratio)
-            self.buy(data=self.data0, size=purchase_amount)
+                self.sell(data=self.data1, size=purchase_amount/ratio)
+                self.buy(data=self.data0, size=purchase_amount)
 
-        elif self.zscore[0] > self.p.OPEN_THRE and position == 0 and self.kc_f_pos[0]!=0:
-            with open(strategy_txt, "a") as f:
-                f.write(f"------\n")
-                f.write(f"open position @ {self.data1.datetime[0]}\n")
-            f.close()
-            
-            # purchase with Kelly Criterion
-            purchase_amount = self.broker.get_cash()/self.data1.close[0]*self.kc_f_pos[0]
+            elif self.zscore[0] >= self.p.OPEN_THRE and position == 0 and self.kc_f_pos[0]!=0:
+                if self.p.verbose:
+                    f.write(f"---- Open Position ----\n")
+                    # f.write(f"open position @ {datetime.datetime.fromtimestamp(self.data1.datetime[0])}\n")
+                
+                # purchase with Kelly Criterion
+                purchase_amount = self.broker.get_cash()/self.data1.close[0]*self.kc_f_pos[0]
 
-            self.sell(data=self.data0, size=purchase_amount*ratio)
-            self.buy(data=self.data1, size=purchase_amount)
+                self.sell(data=self.data0, size=purchase_amount*ratio)
+                self.buy(data=self.data1, size=purchase_amount)
+
+        f.close()
 
     def stop(self):
         self.close(data=self.data0)
         self.close(data=self.data1)
         
-        print('==================================================')
-        print(f'Open Threshold:{self.params.OPEN_THRE}, Close Threshold:{self.params.CLOS_THRE}, period: {self.params.period}')
-        print('Starting Value - %.2f' % self.broker.startingcash)
-        print('Ending   Value - %.2f' % self.broker.getvalue())
-        print('==================================================')
-
         with open(strategy_txt, "a") as f:
             f.write(f"==================================================\n")
             f.write(f'Open Threshold:{self.params.OPEN_THRE}, Close Threshold:{self.params.CLOS_THRE}, period: {self.params.period}\n')

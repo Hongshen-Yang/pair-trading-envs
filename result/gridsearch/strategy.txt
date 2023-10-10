@@ -1,0 +1,1574 @@
+==== Experimental Run ====
+---- Open Position ----
+Sell BTCUSDT @ price: 19439.29 for Qty: -1.5013135208088741
+Buy ETHUSDT @ price: 1083.75 for Qty: 26.928917772440347
+---- Close Position ----
+Buy BTCUSDT @ price: 19300.92 for Qty: 1.5013135208088741
+Sell ETHUSDT @ price: 1076.22 for Qty: -26.928917772440347
+---- Open Position ----
+Sell BTCUSDT @ price: 19720.0 for Qty: -1.175319711865679
+Buy ETHUSDT @ price: 1104.64 for Qty: 20.981951390777066
+---- Close Position ----
+Buy BTCUSDT @ price: 19530.54 for Qty: 1.175319711865679
+Sell ETHUSDT @ price: 1090.32 for Qty: -20.981951390777066
+---- Open Position ----
+Sell ETHUSDT @ price: 1082.02 for Qty: -5.859406451540536
+Buy BTCUSDT @ price: 19370.94 for Qty: 0.3272973245352911
+---- Close Position ----
+Sell BTCUSDT @ price: 19566.82 for Qty: -0.3272973245352911
+Buy ETHUSDT @ price: 1095.74 for Qty: 5.859406451540536
+---- Open Position ----
+Sell BTCUSDT @ price: 20499.03 for Qty: -0.45845945133133836
+Buy ETHUSDT @ price: 1196.83 for Qty: 7.852454042065344
+---- Close Position ----
+Buy BTCUSDT @ price: 20722.52 for Qty: 0.45845945133133836
+Sell ETHUSDT @ price: 1213.56 for Qty: -7.852454042065344
+---- Open Position ----
+Sell BTCUSDT @ price: 20329.98 for Qty: -0.7333349012149855
+Buy ETHUSDT @ price: 1138.99 for Qty: 13.087779996092673
+---- Close Position ----
+Buy BTCUSDT @ price: 20596.23 for Qty: 0.7333349012149855
+Sell ETHUSDT @ price: 1176.15 for Qty: -13.087779996092673
+---- Open Position ----
+Sell BTCUSDT @ price: 20752.64 for Qty: -1.2384809366686886
+Buy ETHUSDT @ price: 1233.71 for Qty: 20.830743401624698
+---- Close Position ----
+Buy BTCUSDT @ price: 21246.65 for Qty: 1.2384809366686886
+Sell ETHUSDT @ price: 1328.14 for Qty: -20.830743401624698
+---- Open Position ----
+Sell ETHUSDT @ price: 1495.0 for Qty: -5.915539863401199
+Buy BTCUSDT @ price: 21892.66 for Qty: 0.4040047243024972
+---- Close Position ----
+Sell BTCUSDT @ price: 22245.320000000003 for Qty: -0.4040047243024972
+Buy ETHUSDT @ price: 1530.95 for Qty: 5.915539863401199
+---- Open Position ----
+Sell BTCUSDT @ price: 23695.41 for Qty: -1.3653234996586028
+Buy ETHUSDT @ price: 1698.81 for Qty: 19.04374807633855
+---- Close Position ----
+Buy BTCUSDT @ price: 24022.500000000004 for Qty: 1.3653234996586028
+Sell ETHUSDT @ price: 1732.4299999999998 for Qty: -19.04374807633855
+---- Open Position ----
+Sell BTCUSDT @ price: 23671.95 for Qty: -0.4468681683259821
+Buy ETHUSDT @ price: 1716.1199999999997 for Qty: 6.1638509691170285
+---- Close Position ----
+Buy BTCUSDT @ price: 23856.6 for Qty: 0.4468681683259821
+Sell ETHUSDT @ price: 1717.49 for Qty: -6.1638509691170285
+---- Open Position ----
+Sell BTCUSDT @ price: 23025.61 for Qty: -0.5301556767222297
+Buy ETHUSDT @ price: 1623.71 for Qty: 7.518111628682725
+---- Close Position ----
+Buy BTCUSDT @ price: 23343.1 for Qty: 0.5301556767222297
+Sell ETHUSDT @ price: 1670.85 for Qty: -7.518111628682725
+---- Open Position ----
+Sell BTCUSDT @ price: 23227.19 for Qty: -0.5193897280317703
+Buy ETHUSDT @ price: 1717.51 for Qty: 7.023721517389526
+---- Close Position ----
+Buy BTCUSDT @ price: 23311.34 for Qty: 0.5193897280317703
+Sell ETHUSDT @ price: 1717.42 for Qty: -7.023721517389526
+---- Open Position ----
+Sell ETHUSDT @ price: 1709.7 for Qty: -10.959511294771566
+Buy BTCUSDT @ price: 23261.960000000003 for Qty: 0.8054986106360318
+---- Close Position ----
+Sell BTCUSDT @ price: 23115.01 for Qty: -0.8054986106360318
+Buy ETHUSDT @ price: 1691.88 for Qty: 10.959511294771566
+---- Open Position ----
+Sell BTCUSDT @ price: 24873.320000000003 for Qty: -0.16467777969637873
+Buy ETHUSDT @ price: 2016.7499999999998 for Qty: 2.0310316654406995
+---- Close Position ----
+Buy BTCUSDT @ price: 24744.17 for Qty: 0.16467777969637873
+Sell ETHUSDT @ price: 2002.06 for Qty: -2.0310316654406995
+---- Open Position ----
+Sell ETHUSDT @ price: 1665.1499999999999 for Qty: -25.10311455624814
+Buy BTCUSDT @ price: 21283.63 for Qty: 1.9639718978076857
+---- Close Position ----
+Sell BTCUSDT @ price: 21011.01 for Qty: -1.9639718978076857
+Buy ETHUSDT @ price: 1629.5000000000002 for Qty: 25.10311455624814
+---- Open Position ----
+Sell BTCUSDT @ price: 21395.09 for Qty: -0.0949280059910869
+Buy ETHUSDT @ price: 1621.34 for Qty: 1.2526633720871894
+---- Close Position ----
+Buy BTCUSDT @ price: 21387.65 for Qty: 0.0949280059910869
+Sell ETHUSDT @ price: 1618.31 for Qty: -1.2526633720871894
+---- Open Position ----
+Sell BTCUSDT @ price: 19733.52 for Qty: -0.5242941084718563
+Buy ETHUSDT @ price: 1547.18 for Qty: 6.687570982340763
+---- Close Position ----
+Buy BTCUSDT @ price: 19873.92 for Qty: 0.5242941084718563
+Sell ETHUSDT @ price: 1565.5 for Qty: -6.687570982340763
+---- Open Position ----
+Sell BTCUSDT @ price: 19906.45 for Qty: -0.6309817821449717
+Buy ETHUSDT @ price: 1576.45 for Qty: 7.9679641694819745
+---- Close Position ----
+Buy BTCUSDT @ price: 19868.04 for Qty: 0.6309817821449717
+Sell ETHUSDT @ price: 1571.33 for Qty: -7.9679641694819745
+---- Open Position ----
+Sell BTCUSDT @ price: 19738.31 for Qty: -0.4118212246072302
+Buy ETHUSDT @ price: 1573.01 for Qty: 5.167547136004081
+---- Close Position ----
+Buy BTCUSDT @ price: 19726.45 for Qty: 0.4118212246072302
+Sell ETHUSDT @ price: 1572.59 for Qty: -5.167547136004081
+---- Open Position ----
+Sell BTCUSDT @ price: 19854.59 for Qty: -0.2582403809020878
+Buy ETHUSDT @ price: 1600.82 for Qty: 3.202894069448647
+---- Close Position ----
+Buy BTCUSDT @ price: 19841.22 for Qty: 0.2582403809020878
+Sell ETHUSDT @ price: 1597.66 for Qty: -3.202894069448647
+---- Open Position ----
+Sell ETHUSDT @ price: 1538.05 for Qty: -2.171044909648253
+Buy BTCUSDT @ price: 18833.11 for Qty: 0.17730231028414312
+---- Close Position ----
+Sell BTCUSDT @ price: 18745.94 for Qty: -0.17730231028414312
+Buy ETHUSDT @ price: 1518.65 for Qty: 2.171044909648253
+---- Open Position ----
+Sell BTCUSDT @ price: 21146.64 for Qty: -0.0026447474255150796
+Buy ETHUSDT @ price: 1736.95 for Qty: 0.03219869408923354
+---- Close Position ----
+Buy BTCUSDT @ price: 21074.83 for Qty: 0.0026447474255150796
+Sell ETHUSDT @ price: 1723.93 for Qty: -0.03219869408923354
+---- Open Position ----
+Sell ETHUSDT @ price: 1590.65 for Qty: -2.6182788441052316
+Buy BTCUSDT @ price: 20163.41 for Qty: 0.20655064016334473
+---- Close Position ----
+Sell BTCUSDT @ price: 20191.91 for Qty: -0.20655064016334473
+Buy ETHUSDT @ price: 1593.33 for Qty: 2.6182788441052316
+---- Open Position ----
+Sell ETHUSDT @ price: 1436.88 for Qty: -6.779192957492503
+Buy BTCUSDT @ price: 19988.36 for Qty: 0.4873279637129724
+---- Close Position ----
+Sell BTCUSDT @ price: 19915.39 for Qty: -0.4873279637129724
+Buy ETHUSDT @ price: 1431.88 for Qty: 6.779192957492503
+---- Open Position ----
+Sell ETHUSDT @ price: 1342.62 for Qty: -2.7431174800372204
+Buy BTCUSDT @ price: 19252.61 for Qty: 0.19129013228635586
+---- Close Position ----
+Sell BTCUSDT @ price: 19184.12 for Qty: -0.19129013228635586
+Buy ETHUSDT @ price: 1341.32 for Qty: 2.7431174800372204
+---- Open Position ----
+Sell ETHUSDT @ price: 1305.34 for Qty: -11.924749118067332
+Buy BTCUSDT @ price: 19084.57 for Qty: 0.815597466396714
+---- Close Position ----
+Sell BTCUSDT @ price: 18917.14 for Qty: -0.815597466396714
+Buy ETHUSDT @ price: 1290.42 for Qty: 11.924749118067332
+---- Open Position ----
+Sell BTCUSDT @ price: 19157.47 for Qty: -0.21530847849763227
+Buy ETHUSDT @ price: 1346.59 for Qty: 3.062978520635797
+---- Close Position ----
+Buy BTCUSDT @ price: 19088.62 for Qty: 0.21530847849763227
+Sell ETHUSDT @ price: 1343.04 for Qty: -3.062978520635797
+---- Open Position ----
+Sell BTCUSDT @ price: 19192.06 for Qty: -0.2441212170532556
+Buy ETHUSDT @ price: 1301.99 for Qty: 3.5982431276747717
+---- Close Position ----
+Buy BTCUSDT @ price: 19176.46 for Qty: 0.2441212170532556
+Sell ETHUSDT @ price: 1297.76 for Qty: -3.5982431276747717
+---- Open Position ----
+Sell ETHUSDT @ price: 1315.04 for Qty: -10.051995079580383
+Buy BTCUSDT @ price: 19512.51 for Qty: 0.6774513176137457
+---- Close Position ----
+Sell BTCUSDT @ price: 19543.31 for Qty: -0.6774513176137457
+Buy ETHUSDT @ price: 1317.89 for Qty: 10.051995079580383
+---- Open Position ----
+Sell BTCUSDT @ price: 19658.35 for Qty: -1.997749969123986
+Buy ETHUSDT @ price: 1341.99 for Qty: 29.264570340488316
+---- Close Position ----
+Buy BTCUSDT @ price: 19553.55 for Qty: 1.997749969123986
+Sell ETHUSDT @ price: 1335.09 for Qty: -29.264570340488316
+---- Open Position ----
+Sell ETHUSDT @ price: 1307.33 for Qty: -1.533464157359202
+Buy BTCUSDT @ price: 19317.84 for Qty: 0.10377759788268144
+---- Close Position ----
+Sell BTCUSDT @ price: 19292.87 for Qty: -0.10377759788268144
+Buy ETHUSDT @ price: 1307.06 for Qty: 1.533464157359202
+---- Open Position ----
+Sell ETHUSDT @ price: 1310.48 for Qty: -2.721502876371514
+Buy BTCUSDT @ price: 19356.88 for Qty: 0.18424844755081096
+---- Close Position ----
+Sell BTCUSDT @ price: 19412.02 for Qty: -0.18424844755081096
+Buy ETHUSDT @ price: 1315.7 for Qty: 2.721502876371514
+---- Open Position ----
+Sell ETHUSDT @ price: 1275.56 for Qty: -9.171561495688723
+Buy BTCUSDT @ price: 19013.38 for Qty: 0.6153018925123078
+---- Close Position ----
+Sell BTCUSDT @ price: 19039.49 for Qty: -0.6153018925123078
+Buy ETHUSDT @ price: 1280.9 for Qty: 9.171561495688723
+---- Open Position ----
+Sell BTCUSDT @ price: 19134.34 for Qty: -1.515281347044799
+Buy ETHUSDT @ price: 1293.53 for Qty: 22.414562082064723
+---- Close Position ----
+Buy BTCUSDT @ price: 19125.84 for Qty: 1.515281347044799
+Sell ETHUSDT @ price: 1289.89 for Qty: -22.414562082064723
+---- Open Position ----
+Sell BTCUSDT @ price: 19997.96 for Qty: -0.21624717485529885
+Buy ETHUSDT @ price: 1465.6599999999999 for Qty: 2.9507294832516378
+---- Close Position ----
+Buy BTCUSDT @ price: 20118.549999999996 for Qty: 0.21624717485529885
+Sell ETHUSDT @ price: 1482.06 for Qty: -2.9507294832516378
+---- Open Position ----
+Sell ETHUSDT @ price: 1566.1399999999999 for Qty: -6.786570038785466
+Buy BTCUSDT @ price: 20915.91 for Qty: 0.5082022056886047
+---- Close Position ----
+Sell BTCUSDT @ price: 20762.32 for Qty: -0.5082022056886047
+Buy ETHUSDT @ price: 1547.35 for Qty: 6.786570038785466
+---- Open Position ----
+Sell ETHUSDT @ price: 1557.71 for Qty: -4.062240493819084
+Buy BTCUSDT @ price: 20407.46 for Qty: 0.31008589580551593
+---- Close Position ----
+Sell BTCUSDT @ price: 20431.75 for Qty: -0.31008589580551593
+Buy ETHUSDT @ price: 1563.63 for Qty: 4.062240493819084
+---- Open Position ----
+Sell ETHUSDT @ price: 1561.1100000000001 for Qty: -7.18957700553564
+Buy BTCUSDT @ price: 20405.88 for Qty: 0.5500438100001518
+---- Close Position ----
+Sell BTCUSDT @ price: 20412.0 for Qty: -0.5500438100001518
+Buy ETHUSDT @ price: 1561.61 for Qty: 7.18957700553564
+---- Open Position ----
+Sell ETHUSDT @ price: 1567.89 for Qty: -8.371843520122333
+Buy BTCUSDT @ price: 20453.34 for Qty: 0.6417597192812814
+---- Close Position ----
+Sell BTCUSDT @ price: 20469.24 for Qty: -0.6417597192812814
+Buy ETHUSDT @ price: 1566.73 for Qty: 8.371843520122333
+---- Open Position ----
+Sell ETHUSDT @ price: 1562.65 for Qty: -3.0593516864161443
+Buy BTCUSDT @ price: 20567.26 for Qty: 0.23244055451534745
+---- Close Position ----
+Sell BTCUSDT @ price: 19342.67 for Qty: -0.23244055451534745
+Buy ETHUSDT @ price: 1447.1 for Qty: 3.0593516864161443
+---- Open Position ----
+Sell BTCUSDT @ price: 17719.9 for Qty: -0.6188025506243366
+Buy ETHUSDT @ price: 1281.69 for Qty: 8.553412727996134
+---- Close Position ----
+Buy BTCUSDT @ price: 18182.42 for Qty: 0.6188025506243366
+Sell ETHUSDT @ price: 1321.97 for Qty: -8.553412727996134
+---- Open Position ----
+Sell BTCUSDT @ price: 16364.04 for Qty: -0.014899186163669167
+Buy ETHUSDT @ price: 1223.6 for Qty: 0.1992586392089906
+---- Close Position ----
+Buy BTCUSDT @ price: 16299.75 for Qty: 0.014899186163669167
+Sell ETHUSDT @ price: 1218.85 for Qty: -0.1992586392089906
+---- Open Position ----
+Sell ETHUSDT @ price: 1201.54 for Qty: -8.709214452767311
+Buy BTCUSDT @ price: 16571.69 for Qty: 0.6315291464768081
+---- Close Position ----
+Sell BTCUSDT @ price: 16611.9 for Qty: -0.6315291464768081
+Buy ETHUSDT @ price: 1204.88 for Qty: 8.709214452767311
+---- Open Position ----
+Sell ETHUSDT @ price: 1200.03 for Qty: -1.2108378192691212
+Buy BTCUSDT @ price: 16670.19 for Qty: 0.08716407600978295
+---- Close Position ----
+Sell BTCUSDT @ price: 16708.54 for Qty: -0.08716407600978295
+Buy ETHUSDT @ price: 1205.71 for Qty: 1.2108378192691212
+---- Open Position ----
+Sell BTCUSDT @ price: 16710.5 for Qty: -0.36482962264880725
+Buy ETHUSDT @ price: 1220.66 for Qty: 4.994682367173129
+---- Close Position ----
+Buy BTCUSDT @ price: 16785.11 for Qty: 0.36482962264880725
+Sell ETHUSDT @ price: 1228.26 for Qty: -4.994682367173129
+---- Open Position ----
+Sell BTCUSDT @ price: 16496.99 for Qty: -0.38005276577846836
+Buy ETHUSDT @ price: 1200.24 for Qty: 5.223727484936125
+---- Close Position ----
+Buy BTCUSDT @ price: 16502.19 for Qty: 0.38005276577846836
+Sell ETHUSDT @ price: 1199.57 for Qty: -5.223727484936125
+---- Open Position ----
+Sell BTCUSDT @ price: 17163.86 for Qty: -0.19722267917752312
+Buy ETHUSDT @ price: 1270.41 for Qty: 2.664528973567209
+---- Close Position ----
+Buy BTCUSDT @ price: 17187.95 for Qty: 0.19722267917752312
+Sell ETHUSDT @ price: 1276.18 for Qty: -2.664528973567209
+---- Open Position ----
+Sell ETHUSDT @ price: 1262.45 for Qty: -3.9360914263017146
+Buy BTCUSDT @ price: 17121.66 for Qty: 0.29022411501773776
+---- Close Position ----
+Sell BTCUSDT @ price: 17109.85 for Qty: -0.29022411501773776
+Buy ETHUSDT @ price: 1263.51 for Qty: 3.9360914263017146
+---- Open Position ----
+Sell ETHUSDT @ price: 1244.78 for Qty: -3.4022445065182154
+Buy BTCUSDT @ price: 16902.51 for Qty: 0.250555207148446
+---- Close Position ----
+Sell BTCUSDT @ price: 16899.12 for Qty: -0.250555207148446
+Buy ETHUSDT @ price: 1245.86 for Qty: 3.4022445065182154
+---- Open Position ----
+Sell BTCUSDT @ price: 17820.36 for Qty: -0.619408836537115
+Buy ETHUSDT @ price: 1326.15 for Qty: 8.323632900135037
+---- Close Position ----
+Buy BTCUSDT @ price: 17828.25 for Qty: 0.619408836537115
+Sell ETHUSDT @ price: 1324.97 for Qty: -8.323632900135037
+---- Open Position ----
+Sell ETHUSDT @ price: 1333.16 for Qty: -8.910561103835173
+Buy BTCUSDT @ price: 18222.21 for Qty: 0.6520104131675211
+---- Close Position ----
+Sell BTCUSDT @ price: 17893.98 for Qty: -0.6520104131675211
+Buy ETHUSDT @ price: 1315.59 for Qty: 8.910561103835173
+---- Open Position ----
+Sell BTCUSDT @ price: 16784.96 for Qty: -0.735125947757286
+Buy ETHUSDT @ price: 1192.78 for Qty: 10.34428591191788
+---- Close Position ----
+Buy BTCUSDT @ price: 16787.42 for Qty: 0.735125947757286
+Sell ETHUSDT @ price: 1194.5 for Qty: -10.34428591191788
+---- Open Position ----
+Sell ETHUSDT @ price: 1190.2 for Qty: -6.072539183031074
+Buy BTCUSDT @ price: 16696.21 for Qty: 0.43286825116595345
+---- Close Position ----
+Sell BTCUSDT @ price: 16657.46 for Qty: -0.43286825116595345
+Buy ETHUSDT @ price: 1187.03 for Qty: 6.072539183031074
+---- Open Position ----
+Sell ETHUSDT @ price: 1216.34 for Qty: -17.516816880179015
+Buy BTCUSDT @ price: 16818.15 for Qty: 1.2669112860008669
+---- Close Position ----
+Sell BTCUSDT @ price: 16804.54 for Qty: -1.2669112860008669
+Buy ETHUSDT @ price: 1216.05 for Qty: 17.516816880179015
+---- Open Position ----
+Sell ETHUSDT @ price: 1211.07 for Qty: -0.31089306910370695
+Buy BTCUSDT @ price: 16797.06 for Qty: 0.022414826316485382
+---- Close Position ----
+Sell BTCUSDT @ price: 16801.96 for Qty: -0.022414826316485382
+Buy ETHUSDT @ price: 1211.25 for Qty: 0.31089306910370695
+==================================================
+Open Threshold:3, Close Threshold:1, period: 50
+Starting Value - 100000.00
+Ending   Value - 102303.14
+==================================================
+==== Gridsearch run started ====
+==================================================
+Open Threshold:2, Close Threshold:0.1, period: 26
+Starting Value - 100000.00
+Ending   Value - 102636.26
+==================================================
+==================================================
+Open Threshold:2, Close Threshold:0.1, period: 32
+Starting Value - 100000.00
+Ending   Value - 103314.13
+==================================================
+==== Test run start ====
+---- Open Position ----
+Sell BTCUSDT @ price: 19404.900000000005 for Qty: -0.8616466693270131
+Buy ETHUSDT @ price: 1068.28 for Qty: 15.651484118043731
+---- Close Position ----
+Buy BTCUSDT @ price: 19482.800000000003 for Qty: 0.8616466693270131
+Sell ETHUSDT @ price: 1077.45 for Qty: -15.651484118043731
+---- Open Position ----
+Sell BTCUSDT @ price: 19247.82 for Qty: -2.1507793442574306
+Buy ETHUSDT @ price: 1053.3 for Qty: 39.30335917532541
+---- Close Position ----
+Buy BTCUSDT @ price: 19283.34 for Qty: 2.1507793442574306
+Sell ETHUSDT @ price: 1055.33 for Qty: -39.30335917532541
+---- Open Position ----
+Sell BTCUSDT @ price: 19439.29 for Qty: -3.525201914290795
+Buy ETHUSDT @ price: 1083.75 for Qty: 63.2312113129042
+---- Close Position ----
+Buy BTCUSDT @ price: 19309.08 for Qty: 3.525201914290795
+Sell ETHUSDT @ price: 1077.54 for Qty: -63.2312113129042
+---- Open Position ----
+Sell ETHUSDT @ price: 1050.42 for Qty: -14.843984521359895
+Buy BTCUSDT @ price: 19072.49 for Qty: 0.8175344813879499
+---- Close Position ----
+Sell BTCUSDT @ price: 19089.04 for Qty: -0.8175344813879499
+Buy ETHUSDT @ price: 1050.86 for Qty: 14.843984521359895
+---- Open Position ----
+Sell BTCUSDT @ price: 19720.0 for Qty: -1.0273375400778082
+Buy ETHUSDT @ price: 1104.64 for Qty: 18.340155542542732
+---- Close Position ----
+Buy BTCUSDT @ price: 19980.19 for Qty: 1.0273375400778082
+Sell ETHUSDT @ price: 1126.56 for Qty: -18.340155542542732
+---- Open Position ----
+Sell BTCUSDT @ price: 20296.3 for Qty: -1.358429885273074
+Buy ETHUSDT @ price: 1158.44 for Qty: 23.799991782526558
+---- Close Position ----
+Buy BTCUSDT @ price: 19894.93 for Qty: 1.358429885273074
+Sell ETHUSDT @ price: 1137.82 for Qty: -23.799991782526558
+---- Open Position ----
+Sell ETHUSDT @ price: 1124.86 for Qty: -7.389119909925988
+Buy BTCUSDT @ price: 19740.27 for Qty: 0.4210545059629076
+---- Close Position ----
+Sell BTCUSDT @ price: 19732.0 for Qty: -0.4210545059629076
+Buy ETHUSDT @ price: 1127.58 for Qty: 7.389119909925988
+---- Open Position ----
+Sell ETHUSDT @ price: 1101.09 for Qty: -3.985794504169794
+Buy BTCUSDT @ price: 19459.16 for Qty: 0.22553278829359935
+---- Close Position ----
+Sell BTCUSDT @ price: 19566.82 for Qty: -0.22553278829359935
+Buy ETHUSDT @ price: 1095.74 for Qty: 3.985794504169794
+---- Open Position ----
+Sell BTCUSDT @ price: 20281.080000000005 for Qty: -0.0008903148205751241
+Buy ETHUSDT @ price: 1146.36 for Qty: 0.015751200409356347
+---- Close Position ----
+Buy BTCUSDT @ price: 20182.44 for Qty: 0.0008903148205751241
+Sell ETHUSDT @ price: 1134.94 for Qty: -0.015751200409356347
+---- Open Position ----
+Sell BTCUSDT @ price: 20442.37 for Qty: -0.12234260850686866
+Buy ETHUSDT @ price: 1190.14 for Qty: 2.10140962108363
+---- Close Position ----
+Buy BTCUSDT @ price: 22418.48 for Qty: 0.12234260850686866
+Sell ETHUSDT @ price: 1274.98 for Qty: -2.10140962108363
+---- Open Position ----
+Sell ETHUSDT @ price: 1217.2 for Qty: -0.4866858916343444
+Buy BTCUSDT @ price: 21545.02 for Qty: 0.027495424714976124
+---- Close Position ----
+Sell BTCUSDT @ price: 21769.089999999997 for Qty: -0.027495424714976124
+Buy ETHUSDT @ price: 1227.1 for Qty: 0.4866858916343444
+---- Open Position ----
+Sell BTCUSDT @ price: 21825.22 for Qty: -0.546546629302624
+Buy ETHUSDT @ price: 1232.52 for Qty: 9.678217965605322
+---- Close Position ----
+Buy BTCUSDT @ price: 21894.98 for Qty: 0.546546629302624
+Sell ETHUSDT @ price: 1245.22 for Qty: -9.678217965605322
+---- Open Position ----
+Sell ETHUSDT @ price: 1210.6999999999998 for Qty: -0.4257229244392931
+Buy BTCUSDT @ price: 21547.659999999996 for Qty: 0.023924192060154968
+---- Close Position ----
+Sell BTCUSDT @ price: 21709.979999999996 for Qty: -0.023924192060154968
+Buy ETHUSDT @ price: 1221.74 for Qty: 0.4257229244392931
+---- Open Position ----
+Sell BTCUSDT @ price: 19815.85 for Qty: -0.9273086246692042
+Buy ETHUSDT @ price: 1072.58 for Qty: 17.12964454861259
+---- Close Position ----
+Buy BTCUSDT @ price: 19730.73 for Qty: 0.9273086246692042
+Sell ETHUSDT @ price: 1061.56 for Qty: -17.12964454861259
+---- Open Position ----
+Sell ETHUSDT @ price: 1042.85 for Qty: -2.202466638814899
+Buy BTCUSDT @ price: 19428.23 for Qty: 0.11822190360563556
+---- Close Position ----
+Sell BTCUSDT @ price: 19501.96 for Qty: -0.11822190360563556
+Buy ETHUSDT @ price: 1055.45 for Qty: 2.202466638814899
+---- Open Position ----
+Sell BTCUSDT @ price: 19690.77 for Qty: -0.15347240826578648
+Buy ETHUSDT @ price: 1079.61 for Qty: 2.7990017517465606
+---- Close Position ----
+Buy BTCUSDT @ price: 19782.25 for Qty: 0.15347240826578648
+Sell ETHUSDT @ price: 1086.15 for Qty: -2.7990017517465606
+---- Open Position ----
+Sell BTCUSDT @ price: 20329.98 for Qty: -0.8087433646738289
+Buy ETHUSDT @ price: 1138.99 for Qty: 14.433589909077307
+---- Close Position ----
+Buy BTCUSDT @ price: 20738.17 for Qty: 0.8087433646738289
+Sell ETHUSDT @ price: 1195.7799999999997 for Qty: -14.433589909077307
+---- Open Position ----
+Sell ETHUSDT @ price: 1183.02 for Qty: -42.117773241450834
+Buy BTCUSDT @ price: 20564.48 for Qty: 2.4229238035730134
+---- Close Position ----
+Sell BTCUSDT @ price: 20505.53 for Qty: -2.4229238035730134
+Buy ETHUSDT @ price: 1187.04 for Qty: 42.117773241450834
+---- Open Position ----
+Sell BTCUSDT @ price: 20629.27 for Qty: -1.325329349098395
+Buy ETHUSDT @ price: 1209.55 for Qty: 22.602971905808808
+---- Close Position ----
+Buy BTCUSDT @ price: 20683.13 for Qty: 1.325329349098395
+Sell ETHUSDT @ price: 1210.82 for Qty: -22.602971905808808
+---- Open Position ----
+Sell BTCUSDT @ price: 20989.02 for Qty: -0.389046378125159
+Buy ETHUSDT @ price: 1226.71 for Qty: 6.656587303760893
+---- Close Position ----
+Buy BTCUSDT @ price: 20782.09 for Qty: 0.389046378125159
+Sell ETHUSDT @ price: 1215.75 for Qty: -6.656587303760893
+---- Open Position ----
+Sell ETHUSDT @ price: 1200.0 for Qty: -34.59799252265597
+Buy BTCUSDT @ price: 20612.06 for Qty: 2.014221045701494
+---- Close Position ----
+Sell BTCUSDT @ price: 20636.44 for Qty: -2.014221045701494
+Buy ETHUSDT @ price: 1198.67 for Qty: 34.59799252265597
+---- Open Position ----
+Sell BTCUSDT @ price: 20611.86 for Qty: -1.3993651937502085
+Buy ETHUSDT @ price: 1199.56 for Qty: 24.045082749051467
+---- Close Position ----
+Buy BTCUSDT @ price: 21292.24 for Qty: 1.3993651937502085
+Sell ETHUSDT @ price: 1336.61 for Qty: -24.045082749051467
+---- Open Position ----
+Sell BTCUSDT @ price: 21499.82 for Qty: -0.0395192177865279
+Buy ETHUSDT @ price: 1372.39 for Qty: 0.619107151861589
+---- Close Position ----
+Buy BTCUSDT @ price: 21351.74 for Qty: 0.0395192177865279
+Sell ETHUSDT @ price: 1354.51 for Qty: -0.619107151861589
+---- Open Position ----
+Sell BTCUSDT @ price: 21267.74 for Qty: -0.01649419363171218
+Buy ETHUSDT @ price: 1359.02 for Qty: 0.2581533914842504
+---- Close Position ----
+Buy BTCUSDT @ price: 21250.95 for Qty: 0.01649419363171218
+Sell ETHUSDT @ price: 1354.78 for Qty: -0.2581533914842504
+---- Open Position ----
+Sell BTCUSDT @ price: 20994.05 for Qty: -0.16924688392333873
+Buy ETHUSDT @ price: 1361.54 for Qty: 2.6096754729429685
+---- Close Position ----
+Buy BTCUSDT @ price: 20980.26 for Qty: 0.16924688392333873
+Sell ETHUSDT @ price: 1355.97 for Qty: -2.6096754729429685
+---- Open Position ----
+Sell ETHUSDT @ price: 1356.4 for Qty: -3.726111263549721
+Buy BTCUSDT @ price: 20959.56 for Qty: 0.24111138653928063
+---- Close Position ----
+Sell BTCUSDT @ price: 21199.68 for Qty: -0.24111138653928063
+Buy ETHUSDT @ price: 1395.95 for Qty: 3.726111263549721
+---- Open Position ----
+Sell ETHUSDT @ price: 1567.89 for Qty: -12.59452910719407
+Buy BTCUSDT @ price: 22327.44 for Qty: 0.8845233818067548
+---- Close Position ----
+Sell BTCUSDT @ price: 21787.05 for Qty: -0.8845233818067548
+Buy ETHUSDT @ price: 1504.02 for Qty: 12.59452910719407
+---- Open Position ----
+Sell BTCUSDT @ price: 23034.26 for Qty: -0.041536544573307244
+Buy ETHUSDT @ price: 1515.2 for Qty: 0.6314479155770221
+---- Close Position ----
+Buy BTCUSDT @ price: 23413.83 for Qty: 0.041536544573307244
+Sell ETHUSDT @ price: 1547.4 for Qty: -0.6314479155770221
+---- Open Position ----
+Sell BTCUSDT @ price: 23389.25 for Qty: -1.150609906729856
+Buy ETHUSDT @ price: 1546.36 for Qty: 17.402271687137013
+---- Close Position ----
+Buy BTCUSDT @ price: 23302.9 for Qty: 1.150609906729856
+Sell ETHUSDT @ price: 1535.68 for Qty: -17.402271687137013
+---- Open Position ----
+Sell BTCUSDT @ price: 22949.660000000003 for Qty: -0.21237360342067715
+Buy ETHUSDT @ price: 1503.1999999999998 for Qty: 3.242149983703563
+---- Close Position ----
+Buy BTCUSDT @ price: 22639.37 for Qty: 0.21237360342067715
+Sell ETHUSDT @ price: 1511.0100000000002 for Qty: -3.242149983703563
+---- Open Position ----
+Sell BTCUSDT @ price: 23136.31 for Qty: -0.7967528559919194
+Buy ETHUSDT @ price: 1585.15 for Qty: 11.628035779464238
+---- Close Position ----
+Buy BTCUSDT @ price: 23017.08 for Qty: 0.7967528559919194
+Sell ETHUSDT @ price: 1575.98 for Qty: -11.628035779464238
+---- Open Position ----
+Sell BTCUSDT @ price: 23175.26 for Qty: -0.8472729228601176
+Buy ETHUSDT @ price: 1578.74 for Qty: 12.436586661885324
+---- Close Position ----
+Buy BTCUSDT @ price: 23117.07 for Qty: 0.8472729228601176
+Sell ETHUSDT @ price: 1577.75 for Qty: -12.436586661885324
+---- Open Position ----
+Sell BTCUSDT @ price: 22787.77 for Qty: -0.5228767153753486
+Buy ETHUSDT @ price: 1552.05 for Qty: 7.67711806933385
+---- Close Position ----
+Buy BTCUSDT @ price: 22827.46 for Qty: 0.5228767153753486
+Sell ETHUSDT @ price: 1581.15 for Qty: -7.67711806933385
+---- Open Position ----
+Sell BTCUSDT @ price: 22739.71 for Qty: -1.091260295807984
+Buy ETHUSDT @ price: 1618.49 for Qty: 15.33206219412281
+---- Close Position ----
+Buy BTCUSDT @ price: 22638.47 for Qty: 1.091260295807984
+Sell ETHUSDT @ price: 1605.84 for Qty: -15.33206219412281
+---- Open Position ----
+Sell BTCUSDT @ price: 22739.19 for Qty: -1.0412864627051563
+Buy ETHUSDT @ price: 1618.6 for Qty: 14.630087667515077
+---- Close Position ----
+Buy BTCUSDT @ price: 22806.47 for Qty: 1.0412864627051563
+Sell ETHUSDT @ price: 1622.0 for Qty: -14.630087667515077
+---- Open Position ----
+Sell BTCUSDT @ price: 21981.46 for Qty: -0.41844796700178605
+Buy ETHUSDT @ price: 1537.85 for Qty: 5.980731769794361
+---- Close Position ----
+Buy BTCUSDT @ price: 21983.599999999995 for Qty: 0.41844796700178605
+Sell ETHUSDT @ price: 1538.77 for Qty: -5.980731769794361
+---- Open Position ----
+Sell ETHUSDT @ price: 1468.2 for Qty: -7.787587236356962
+Buy BTCUSDT @ price: 21634.04 for Qty: 0.5285683571843545
+---- Close Position ----
+Sell BTCUSDT @ price: 22167.91 for Qty: -0.5285683571843545
+Buy ETHUSDT @ price: 1523.01 for Qty: 7.787587236356962
+---- Open Position ----
+Sell ETHUSDT @ price: 1406.33 for Qty: -1.1517410953382614
+Buy BTCUSDT @ price: 21090.22 for Qty: 0.07679996010506562
+---- Close Position ----
+Sell BTCUSDT @ price: 20746.81 for Qty: -0.07679996010506562
+Buy ETHUSDT @ price: 1368.67 for Qty: 1.1517410953382614
+---- Open Position ----
+Sell BTCUSDT @ price: 22755.85 for Qty: -0.49913386992548325
+Buy ETHUSDT @ price: 1604.69 for Qty: 7.078136882478115
+---- Close Position ----
+Buy BTCUSDT @ price: 22749.97 for Qty: 0.49913386992548325
+Sell ETHUSDT @ price: 1610.28 for Qty: -7.078136882478115
+---- Open Position ----
+Sell BTCUSDT @ price: 22926.649999999998 for Qty: -1.4800004024028042
+Buy ETHUSDT @ price: 1628.11 for Qty: 20.841006581710236
+---- Close Position ----
+Buy BTCUSDT @ price: 23130.78 for Qty: 1.4800004024028042
+Sell ETHUSDT @ price: 1651.8300000000002 for Qty: -20.841006581710236
+---- Open Position ----
+Sell ETHUSDT @ price: 1732.48 for Qty: -15.324137493310536
+Buy BTCUSDT @ price: 23923.56 for Qty: 1.1098860014235064
+---- Close Position ----
+Sell BTCUSDT @ price: 23917.03 for Qty: -1.1098860014235064
+Buy ETHUSDT @ price: 1747.9 for Qty: 15.324137493310536
+---- Open Position ----
+Sell ETHUSDT @ price: 1715.75 for Qty: -21.30640520694823
+Buy BTCUSDT @ price: 23940.35 for Qty: 1.526990114926202
+---- Close Position ----
+Sell BTCUSDT @ price: 23881.82 for Qty: -1.526990114926202
+Buy ETHUSDT @ price: 1711.61 for Qty: 21.30640520694823
+---- Open Position ----
+Sell BTCUSDT @ price: 24508.49 for Qty: -0.7560762736793721
+Buy ETHUSDT @ price: 1732.77 for Qty: 10.69408792487601
+---- Close Position ----
+Buy BTCUSDT @ price: 24506.15 for Qty: 0.7560762736793721
+Sell ETHUSDT @ price: 1726.56 for Qty: -10.69408792487601
+---- Open Position ----
+Sell BTCUSDT @ price: 23671.95 for Qty: -0.4316943685568406
+Buy ETHUSDT @ price: 1716.12 for Qty: 5.954552014656745
+---- Close Position ----
+Buy BTCUSDT @ price: 23763.09 for Qty: 0.4316943685568406
+Sell ETHUSDT @ price: 1718.82 for Qty: -5.954552014656745
+---- Open Position ----
+Sell ETHUSDT @ price: 1686.5 for Qty: -1.996611846526689
+Buy BTCUSDT @ price: 23330.73 for Qty: 0.14432835488504908
+---- Close Position ----
+Sell BTCUSDT @ price: 23242.59 for Qty: -0.14432835488504908
+Buy ETHUSDT @ price: 1666.02 for Qty: 1.996611846526689
+---- Open Position ----
+Sell BTCUSDT @ price: 23381.84 for Qty: -0.5143897998338305
+Buy ETHUSDT @ price: 1650.95 for Qty: 7.285538018645284
+---- Close Position ----
+Buy BTCUSDT @ price: 22991.97 for Qty: 0.5143897998338305
+Sell ETHUSDT @ price: 1605.0 for Qty: -7.285538018645284
+---- Open Position ----
+Sell ETHUSDT @ price: 1580.95 for Qty: -7.177104668930713
+Buy BTCUSDT @ price: 22862.65 for Qty: 0.4962422530003552
+---- Close Position ----
+Sell BTCUSDT @ price: 23170.73 for Qty: -0.4962422530003552
+Buy ETHUSDT @ price: 1654.48 for Qty: 7.177104668930713
+---- Open Position ----
+Sell BTCUSDT @ price: 22591.99 for Qty: -0.016352026211686747
+Buy ETHUSDT @ price: 1602.2 for Qty: 0.2305720302920122
+---- Close Position ----
+Buy BTCUSDT @ price: 22634.46 for Qty: 0.016352026211686747
+Sell ETHUSDT @ price: 1602.44 for Qty: -0.2305720302920122
+---- Open Position ----
+Sell BTCUSDT @ price: 23171.06 for Qty: -0.47095154680435
+Buy ETHUSDT @ price: 1721.24 for Qty: 6.340111837120236
+---- Close Position ----
+Buy BTCUSDT @ price: 23199.06 for Qty: 0.47095154680435
+Sell ETHUSDT @ price: 1716.01 for Qty: -6.340111837120236
+---- Open Position ----
+Sell BTCUSDT @ price: 23187.27 for Qty: -0.8931300203219102
+Buy ETHUSDT @ price: 1713.5899999999997 for Qty: 12.084855633956982
+---- Close Position ----
+Buy BTCUSDT @ price: 23115.01 for Qty: 0.8931300203219102
+Sell ETHUSDT @ price: 1691.88 for Qty: -12.084855633956982
+---- Open Position ----
+Sell BTCUSDT @ price: 23996.88 for Qty: -0.8141138358721555
+Buy ETHUSDT @ price: 1749.6600000000003 for Qty: 11.165786738632596
+---- Close Position ----
+Buy BTCUSDT @ price: 23948.39 for Qty: 0.8141138358721555
+Sell ETHUSDT @ price: 1771.3399999999997 for Qty: -11.165786738632596
+---- Open Position ----
+Sell BTCUSDT @ price: 23871.38 for Qty: -0.2747019652859766
+Buy ETHUSDT @ price: 1785.32 for Qty: 3.6728578423054734
+---- Close Position ----
+Buy BTCUSDT @ price: 23703.77 for Qty: 0.2747019652859766
+Sell ETHUSDT @ price: 1760.87 for Qty: -3.6728578423054734
+---- Open Position ----
+Sell ETHUSDT @ price: 1847.7 for Qty: -2.2529628243853432
+Buy BTCUSDT @ price: 23908.280000000002 for Qty: 0.1741242716844647
+---- Close Position ----
+Sell BTCUSDT @ price: 24546.51 for Qty: -0.1741242716844647
+Buy ETHUSDT @ price: 1895.3 for Qty: 2.2529628243853432
+---- Open Position ----
+Sell BTCUSDT @ price: 24796.53 for Qty: -0.05503671004807686
+Buy ETHUSDT @ price: 1996.5700000000002 for Qty: 0.6835319732383233
+---- Close Position ----
+Buy BTCUSDT @ price: 24519.39 for Qty: 0.05503671004807686
+Sell ETHUSDT @ price: 1987.8299999999997 for Qty: -0.6835319732383233
+---- Open Position ----
+Sell BTCUSDT @ price: 24567.46 for Qty: -0.19828898974522513
+Buy ETHUSDT @ price: 1991.9 for Qty: 2.4456465000055854
+---- Close Position ----
+Buy BTCUSDT @ price: 24751.31 for Qty: 0.19828898974522513
+Sell ETHUSDT @ price: 2008.67 for Qty: -2.4456465000055854
+---- Open Position ----
+Sell BTCUSDT @ price: 24824.46 for Qty: -0.23976029244698235
+Buy ETHUSDT @ price: 1999.26 for Qty: 2.977097384795449
+---- Close Position ----
+Buy BTCUSDT @ price: 24918.29 for Qty: 0.23976029244698235
+Sell ETHUSDT @ price: 2000.16 for Qty: -2.977097384795449
+---- Open Position ----
+Sell BTCUSDT @ price: 24135.23 for Qty: -0.38636850554022006
+Buy ETHUSDT @ price: 1906.96 for Qty: 4.8900049533917604
+---- Close Position ----
+Buy BTCUSDT @ price: 24024.76 for Qty: 0.38636850554022006
+Sell ETHUSDT @ price: 1900.19 for Qty: -4.8900049533917604
+---- Open Position ----
+Sell ETHUSDT @ price: 1868.18 for Qty: -38.05847737386191
+Buy BTCUSDT @ price: 23725.75 for Qty: 2.9965594928150656
+---- Close Position ----
+Sell BTCUSDT @ price: 23947.920000000002 for Qty: -2.9965594928150656
+Buy ETHUSDT @ price: 1879.7500000000002 for Qty: 38.05847737386191
+---- Open Position ----
+Sell BTCUSDT @ price: 24056.119999999995 for Qty: -0.19760362503564338
+Buy ETHUSDT @ price: 1913.32 for Qty: 2.4844779551104845
+---- Close Position ----
+Buy BTCUSDT @ price: 23832.9 for Qty: 0.19760362503564338
+Sell ETHUSDT @ price: 1890.1399999999999 for Qty: -2.4844779551104845
+---- Open Position ----
+Sell ETHUSDT @ price: 1875.87 for Qty: -0.3217391260904577
+Buy BTCUSDT @ price: 23713.939999999995 for Qty: 0.02544864273064703
+---- Close Position ----
+Sell BTCUSDT @ price: 23615.45 for Qty: -0.02544864273064703
+Buy ETHUSDT @ price: 1864.89 for Qty: 0.3217391260904577
+---- Open Position ----
+Sell ETHUSDT @ price: 1840.0599999999997 for Qty: -0.14623647855593327
+Buy BTCUSDT @ price: 23330.39 for Qty: 0.0115341474361249
+---- Close Position ----
+Sell BTCUSDT @ price: 23407.47 for Qty: -0.0115341474361249
+Buy ETHUSDT @ price: 1836.76 for Qty: 0.14623647855593327
+---- Open Position ----
+Sell ETHUSDT @ price: 1648.09 for Qty: -17.872188006957845
+Buy BTCUSDT @ price: 21081.62 for Qty: 1.3973848120296972
+---- Close Position ----
+Sell BTCUSDT @ price: 20943.88 for Qty: -1.3973848120296972
+Buy ETHUSDT @ price: 1621.46 for Qty: 17.872188006957845
+---- Open Position ----
+Sell ETHUSDT @ price: 1631.7399999999998 for Qty: -46.55792297223906
+Buy BTCUSDT @ price: 21229.23 for Qty: 3.5784282251557302
+---- Close Position ----
+Sell BTCUSDT @ price: 21257.079999999998 for Qty: -3.5784282251557302
+Buy ETHUSDT @ price: 1635.4399999999998 for Qty: 46.55792297223906
+---- Open Position ----
+Sell BTCUSDT @ price: 21309.89 for Qty: -2.979961770179324
+Buy ETHUSDT @ price: 1639.56 for Qty: 38.73330520948392
+---- Close Position ----
+Buy BTCUSDT @ price: 21300.5 for Qty: 2.979961770179324
+Sell ETHUSDT @ price: 1634.7 for Qty: -38.73330520948392
+---- Open Position ----
+Sell ETHUSDT @ price: 1618.8 for Qty: -33.98932696063909
+Buy BTCUSDT @ price: 21237.66 for Qty: 2.5907714166194658
+---- Close Position ----
+Sell BTCUSDT @ price: 21227.14 for Qty: -2.5907714166194658
+Buy ETHUSDT @ price: 1588.72 for Qty: 33.98932696063909
+---- Open Position ----
+Sell BTCUSDT @ price: 21055.48 for Qty: -0.7320635236672223
+Buy ETHUSDT @ price: 1567.72 for Qty: 9.832906790588636
+---- Close Position ----
+Buy BTCUSDT @ price: 20964.1 for Qty: 0.7320635236672223
+Sell ETHUSDT @ price: 1571.1 for Qty: -9.832906790588636
+---- Open Position ----
+Sell ETHUSDT @ price: 1574.2 for Qty: -0.5284319096607514
+Buy BTCUSDT @ price: 21081.57 for Qty: 0.039456080155870175
+---- Close Position ----
+Sell BTCUSDT @ price: 21233.69 for Qty: -0.039456080155870175
+Buy ETHUSDT @ price: 1595.49 for Qty: 0.5284319096607514
+---- Open Position ----
+Sell BTCUSDT @ price: 21456.3 for Qty: -1.4890844023535752
+Buy ETHUSDT @ price: 1669.29 for Qty: 19.14001860804235
+---- Close Position ----
+Buy BTCUSDT @ price: 21692.19 for Qty: 1.4890844023535752
+Sell ETHUSDT @ price: 1702.59 for Qty: -19.14001860804235
+---- Open Position ----
+Sell BTCUSDT @ price: 21569.9 for Qty: -1.3863590403156592
+Buy ETHUSDT @ price: 1710.34 for Qty: 17.48392192457961
+---- Close Position ----
+Buy BTCUSDT @ price: 21499.17 for Qty: 1.3863590403156592
+Sell ETHUSDT @ price: 1683.25 for Qty: -17.48392192457961
+---- Open Position ----
+Sell BTCUSDT @ price: 21571.799999999996 for Qty: -0.42540902847523987
+Buy ETHUSDT @ price: 1687.75 for Qty: 5.437499938303893
+---- Close Position ----
+Buy BTCUSDT @ price: 21525.68 for Qty: 0.42540902847523987
+Sell ETHUSDT @ price: 1679.84 for Qty: -5.437499938303893
+---- Open Position ----
+Sell ETHUSDT @ price: 1651.7 for Qty: -9.202603229088298
+Buy BTCUSDT @ price: 21410.55 for Qty: 0.7099318690793761
+---- Close Position ----
+Sell BTCUSDT @ price: 21191.27 for Qty: -0.7099318690793761
+Buy ETHUSDT @ price: 1629.13 for Qty: 9.202603229088298
+---- Open Position ----
+Sell BTCUSDT @ price: 19978.89 for Qty: -0.32693029544113794
+Buy ETHUSDT @ price: 1473.64 for Qty: 4.431994907371216
+---- Close Position ----
+Buy BTCUSDT @ price: 19874.25 for Qty: 0.32693029544113794
+Sell ETHUSDT @ price: 1462.77 for Qty: -4.431994907371216
+---- Open Position ----
+Sell BTCUSDT @ price: 19715.13 for Qty: -1.2437028543920876
+Buy ETHUSDT @ price: 1450.01 for Qty: 16.908723559212834
+---- Close Position ----
+Buy BTCUSDT @ price: 19609.21 for Qty: 1.2437028543920876
+Sell ETHUSDT @ price: 1430.92 for Qty: -16.908723559212834
+---- Open Position ----
+Sell BTCUSDT @ price: 20172.95 for Qty: -1.7773466403258278
+Buy ETHUSDT @ price: 1547.59 for Qty: 23.167695081391127
+---- Close Position ----
+Buy BTCUSDT @ price: 20136.71 for Qty: 1.7773466403258278
+Sell ETHUSDT @ price: 1528.34 for Qty: -23.167695081391127
+---- Open Position ----
+Sell BTCUSDT @ price: 19976.94 for Qty: -2.625481340237682
+Buy ETHUSDT @ price: 1567.84 for Qty: 33.455679598125535
+---- Close Position ----
+Buy BTCUSDT @ price: 20079.03 for Qty: 2.625481340237682
+Sell ETHUSDT @ price: 1586.54 for Qty: -33.455679598125535
+---- Open Position ----
+Sell BTCUSDT @ price: 19785.31 for Qty: -0.04072871790175604
+Buy ETHUSDT @ price: 1544.41 for Qty: 0.5217722687555719
+---- Close Position ----
+Buy BTCUSDT @ price: 19787.81 for Qty: 0.04072871790175604
+Sell ETHUSDT @ price: 1550.35 for Qty: -0.5217722687555719
+---- Open Position ----
+Sell BTCUSDT @ price: 19739.84 for Qty: -0.07563377212950911
+Buy ETHUSDT @ price: 1554.49 for Qty: 0.9605005915906846
+---- Close Position ----
+Buy BTCUSDT @ price: 19800.62 for Qty: 0.07563377212950911
+Sell ETHUSDT @ price: 1557.0000000000002 for Qty: -0.9605005915906846
+---- Open Position ----
+Sell BTCUSDT @ price: 19838.47 for Qty: -0.6114054562828592
+Buy ETHUSDT @ price: 1569.61 for Qty: 7.727619473820769
+---- Close Position ----
+Buy BTCUSDT @ price: 19860.66 for Qty: 0.6114054562828592
+Sell ETHUSDT @ price: 1571.06 for Qty: -7.727619473820769
+---- Open Position ----
+Sell BTCUSDT @ price: 19761.46 for Qty: -0.5586712914133268
+Buy ETHUSDT @ price: 1567.45 for Qty: 7.043175332953493
+---- Close Position ----
+Buy BTCUSDT @ price: 19863.29 for Qty: 0.5586712914133268
+Sell ETHUSDT @ price: 1594.4200000000003 for Qty: -7.043175332953493
+---- Open Position ----
+Sell BTCUSDT @ price: 19848.59 for Qty: -0.7498545985490493
+Buy ETHUSDT @ price: 1597.71 for Qty: 9.315497387661589
+---- Close Position ----
+Buy BTCUSDT @ price: 19763.06 for Qty: 0.7498545985490493
+Sell ETHUSDT @ price: 1601.29 for Qty: -9.315497387661589
+---- Open Position ----
+Sell ETHUSDT @ price: 1593.9900000000002 for Qty: -12.35383484419817
+Buy BTCUSDT @ price: 19115.34 for Qty: 1.0302413595521123
+---- Close Position ----
+Sell BTCUSDT @ price: 18974.85 for Qty: -1.0302413595521123
+Buy ETHUSDT @ price: 1581.98 for Qty: 12.35383484419817
+---- Open Position ----
+Sell ETHUSDT @ price: 1538.05 for Qty: -6.045031994068131
+Buy BTCUSDT @ price: 18833.11 for Qty: 0.49367847414243043
+---- Close Position ----
+Sell BTCUSDT @ price: 18666.25 for Qty: -0.49367847414243043
+Buy ETHUSDT @ price: 1503.0199999999998 for Qty: 6.045031994068131
+---- Open Position ----
+Sell BTCUSDT @ price: 19215.54 for Qty: -0.12476330905336586
+Buy ETHUSDT @ price: 1637.91 for Qty: 1.4636643318114912
+---- Close Position ----
+Buy BTCUSDT @ price: 19303.94 for Qty: 0.12476330905336586
+Sell ETHUSDT @ price: 1636.46 for Qty: -1.4636643318114912
+---- Open Position ----
+Sell ETHUSDT @ price: 1696.0000000000002 for Qty: -0.16159896730649856
+Buy BTCUSDT @ price: 20677.510000000002 for Qty: 0.013254664828671086
+---- Close Position ----
+Sell BTCUSDT @ price: 21205.71 for Qty: -0.013254664828671086
+Buy ETHUSDT @ price: 1730.32 for Qty: 0.16159896730649856
+---- Open Position ----
+Sell BTCUSDT @ price: 21302.94 for Qty: -3.6611998299453044
+Buy ETHUSDT @ price: 1740.0199999999998 for Qty: 44.82128186201256
+---- Close Position ----
+Buy BTCUSDT @ price: 21608.290000000005 for Qty: 3.6611998299453044
+Sell ETHUSDT @ price: 1735.6799999999998 for Qty: -44.82128186201256
+---- Open Position ----
+Sell ETHUSDT @ price: 1716.9999999999998 for Qty: -4.814100732522258
+Buy BTCUSDT @ price: 21252.28 for Qty: 0.38893760847027786
+---- Close Position ----
+Sell BTCUSDT @ price: 21294.3 for Qty: -0.38893760847027786
+Buy ETHUSDT @ price: 1719.5 for Qty: 4.814100732522258
+---- Open Position ----
+Sell BTCUSDT @ price: 21342.12 for Qty: -1.5007014617154466
+Buy ETHUSDT @ price: 1729.88 for Qty: 18.51477317954902
+---- Close Position ----
+Buy BTCUSDT @ price: 21541.47 for Qty: 1.5007014617154466
+Sell ETHUSDT @ price: 1738.97 for Qty: -18.51477317954902
+---- Open Position ----
+Sell BTCUSDT @ price: 21606.07 for Qty: -1.876262778950524
+Buy ETHUSDT @ price: 1750.69 for Qty: 23.15568911886648
+---- Close Position ----
+Buy BTCUSDT @ price: 21542.26 for Qty: 1.876262778950524
+Sell ETHUSDT @ price: 1767.13 for Qty: -23.15568911886648
+---- Open Position ----
+Sell BTCUSDT @ price: 21633.74 for Qty: -0.041637291896729926
+Buy ETHUSDT @ price: 1771.77 for Qty: 0.5084013992775372
+---- Close Position ----
+Buy BTCUSDT @ price: 21500.49 for Qty: 0.041637291896729926
+Sell ETHUSDT @ price: 1761.11 for Qty: -0.5084013992775372
+---- Open Position ----
+Sell ETHUSDT @ price: 1752.37 for Qty: -15.942478441480091
+Buy BTCUSDT @ price: 21668.16 for Qty: 1.2892421266092267
+---- Close Position ----
+Sell BTCUSDT @ price: 21826.87 for Qty: -1.2892421266092267
+Buy ETHUSDT @ price: 1766.12 for Qty: 15.942478441480091
+---- Open Position ----
+Sell ETHUSDT @ price: 1748.92 for Qty: -13.033303329225378
+Buy BTCUSDT @ price: 22313.57 for Qty: 1.021577567021046
+---- Close Position ----
+Sell BTCUSDT @ price: 22273.08 for Qty: -1.021577567021046
+Buy ETHUSDT @ price: 1729.7 for Qty: 13.033303329225378
+---- Open Position ----
+Sell BTCUSDT @ price: 22175.33 for Qty: -0.17504073619954058
+Buy ETHUSDT @ price: 1697.2 for Qty: 2.287039369711325
+---- Close Position ----
+Buy BTCUSDT @ price: 22300.09 for Qty: 0.17504073619954058
+Sell ETHUSDT @ price: 1714.97 for Qty: -2.287039369711325
+---- Open Position ----
+Sell ETHUSDT @ price: 1586.72 for Qty: -21.22424870979384
+Buy BTCUSDT @ price: 20220.27 for Qty: 1.6654625736387194
+---- Close Position ----
+Sell BTCUSDT @ price: 20330.22 for Qty: -1.6654625736387194
+Buy ETHUSDT @ price: 1602.91 for Qty: 21.22424870979384
+---- Open Position ----
+Sell ETHUSDT @ price: 1596.86 for Qty: -3.268033514308672
+Buy BTCUSDT @ price: 20006.72 for Qty: 0.26082664241609554
+---- Close Position ----
+Sell BTCUSDT @ price: 20006.35 for Qty: -0.26082664241609554
+Buy ETHUSDT @ price: 1598.9699999999998 for Qty: 3.268033514308672
+---- Open Position ----
+Sell ETHUSDT @ price: 1591.32 for Qty: -8.359650702375093
+Buy BTCUSDT @ price: 20089.46 for Qty: 0.6621861887880788
+---- Close Position ----
+Sell BTCUSDT @ price: 19672.06 for Qty: -0.6621861887880788
+Buy ETHUSDT @ price: 1477.92 for Qty: 8.359650702375093
+---- Open Position ----
+Sell BTCUSDT @ price: 19661.24 for Qty: -1.2768922234125215
+Buy ETHUSDT @ price: 1452.31 for Qty: 17.286450178437942
+---- Close Position ----
+Buy BTCUSDT @ price: 19441.0 for Qty: 1.2768922234125215
+Sell ETHUSDT @ price: 1421.4 for Qty: -17.286450178437942
+---- Open Position ----
+Sell BTCUSDT @ price: 19756.5 for Qty: -0.8952843886549255
+Buy ETHUSDT @ price: 1445.2 for Qty: 12.239615061334158
+---- Close Position ----
+Buy BTCUSDT @ price: 19752.96 for Qty: 0.8952843886549255
+Sell ETHUSDT @ price: 1439.86 for Qty: -12.239615061334158
+---- Open Position ----
+Sell ETHUSDT @ price: 1442.28 for Qty: -4.081902941212139
+Buy BTCUSDT @ price: 20027.82 for Qty: 0.2939553507834276
+---- Close Position ----
+Sell BTCUSDT @ price: 19896.66 for Qty: -0.2939553507834276
+Buy ETHUSDT @ price: 1441.54 for Qty: 4.081902941212139
+---- Open Position ----
+Sell ETHUSDT @ price: 1447.11 for Qty: -8.798360954668485
+Buy BTCUSDT @ price: 19945.07 for Qty: 0.6383303563991721
+---- Close Position ----
+Sell BTCUSDT @ price: 20033.19 for Qty: -0.6383303563991721
+Buy ETHUSDT @ price: 1455.77 for Qty: 8.798360954668485
+---- Open Position ----
+Sell BTCUSDT @ price: 20065.36 for Qty: -0.5003033509055121
+Buy ETHUSDT @ price: 1457.16 for Qty: 6.88901810623354
+---- Close Position ----
+Buy BTCUSDT @ price: 19959.14 for Qty: 0.5003033509055121
+Sell ETHUSDT @ price: 1434.42 for Qty: -6.88901810623354
+---- Open Position ----
+Sell BTCUSDT @ price: 19410.220000000005 for Qty: -0.21525360091758264
+Buy ETHUSDT @ price: 1338.36 for Qty: 3.1218438746235897
+---- Close Position ----
+Buy BTCUSDT @ price: 19417.45 for Qty: 0.21525360091758264
+Sell ETHUSDT @ price: 1334.51 for Qty: -3.1218438746235897
+---- Open Position ----
+Sell BTCUSDT @ price: 18468.74 for Qty: -0.2587705376198602
+Buy ETHUSDT @ price: 1302.22 for Qty: 3.6700422965277615
+---- Close Position ----
+Buy BTCUSDT @ price: 18420.74 for Qty: 0.2587705376198602
+Sell ETHUSDT @ price: 1293.61 for Qty: -3.6700422965277615
+---- Open Position ----
+Sell BTCUSDT @ price: 19128.31 for Qty: -0.15129902709091325
+Buy ETHUSDT @ price: 1349.15 for Qty: 2.1449416858608967
+---- Close Position ----
+Buy BTCUSDT @ price: 19160.39 for Qty: 0.15129902709091325
+Sell ETHUSDT @ price: 1344.69 for Qty: -2.1449416858608967
+---- Open Position ----
+Sell ETHUSDT @ price: 1353.93 for Qty: -3.817236969860009
+Buy BTCUSDT @ price: 19287.9 for Qty: 0.26796714726439846
+---- Close Position ----
+Sell BTCUSDT @ price: 19303.77 for Qty: -0.26796714726439846
+Buy ETHUSDT @ price: 1347.6300000000003 for Qty: 3.817236969860009
+---- Open Position ----
+Sell BTCUSDT @ price: 19251.9 for Qty: -0.05369629948453174
+Buy ETHUSDT @ price: 1350.19 for Qty: 0.7655986954693462
+---- Close Position ----
+Buy BTCUSDT @ price: 19271.76 for Qty: 0.05369629948453174
+Sell ETHUSDT @ price: 1345.98 for Qty: -0.7655986954693462
+---- Open Position ----
+Sell ETHUSDT @ price: 1312.9699999999998 for Qty: -14.528324660539223
+Buy BTCUSDT @ price: 19083.78 for Qty: 0.9995608685907503
+---- Close Position ----
+Sell BTCUSDT @ price: 18770.0 for Qty: -0.9995608685907503
+Buy ETHUSDT @ price: 1295.8 for Qty: 14.528324660539223
+---- Open Position ----
+Sell BTCUSDT @ price: 19182.32 for Qty: -0.23910246904580734
+Buy ETHUSDT @ price: 1342.3 for Qty: 3.4166501267971023
+---- Close Position ----
+Buy BTCUSDT @ price: 19081.34 for Qty: 0.23910246904580734
+Sell ETHUSDT @ price: 1336.99 for Qty: -3.4166501267971023
+---- Open Position ----
+Sell ETHUSDT @ price: 1321.08 for Qty: -4.569319225987345
+Buy BTCUSDT @ price: 19360.83 for Qty: 0.3117883859452111
+---- Close Position ----
+Sell BTCUSDT @ price: 19294.89 for Qty: -0.3117883859452111
+Buy ETHUSDT @ price: 1325.75 for Qty: 4.569319225987345
+---- Open Position ----
+Sell BTCUSDT @ price: 19752.57 for Qty: -0.10299459894301022
+Buy ETHUSDT @ price: 1357.01 for Qty: 1.499106500783325
+---- Close Position ----
+Buy BTCUSDT @ price: 19666.83 for Qty: 0.10299459894301022
+Sell ETHUSDT @ price: 1347.65 for Qty: -1.499106500783325
+---- Open Position ----
+Sell ETHUSDT @ price: 1324.98 for Qty: -0.3605736587644924
+Buy BTCUSDT @ price: 19291.45 for Qty: 0.024763986842810292
+---- Close Position ----
+Sell BTCUSDT @ price: 19343.25 for Qty: -0.024763986842810292
+Buy ETHUSDT @ price: 1326.43 for Qty: 0.3605736587644924
+---- Open Position ----
+Sell ETHUSDT @ price: 1310.95 for Qty: -20.09726799910385
+Buy BTCUSDT @ price: 19291.72 for Qty: 1.3657298723055116
+---- Close Position ----
+Sell BTCUSDT @ price: 19257.1 for Qty: -1.3657298723055116
+Buy ETHUSDT @ price: 1307.58 for Qty: 20.09726799910385
+---- Open Position ----
+Sell BTCUSDT @ price: 19170.07 for Qty: -0.36906974137691617
+Buy ETHUSDT @ price: 1293.91 for Qty: 5.467943168013178
+---- Close Position ----
+Buy BTCUSDT @ price: 19207.37 for Qty: 0.36906974137691617
+Sell ETHUSDT @ price: 1295.2 for Qty: -5.467943168013178
+---- Open Position ----
+Sell BTCUSDT @ price: 19247.44 for Qty: -0.24352872107468101
+Buy ETHUSDT @ price: 1305.28 for Qty: 3.591006172698525
+---- Close Position ----
+Buy BTCUSDT @ price: 19439.45 for Qty: 0.24352872107468101
+Sell ETHUSDT @ price: 1322.78 for Qty: -3.591006172698525
+---- Open Position ----
+Sell ETHUSDT @ price: 1322.01 for Qty: -7.394767616689696
+Buy BTCUSDT @ price: 19600.44 for Qty: 0.4987583334488296
+---- Close Position ----
+Sell BTCUSDT @ price: 19572.75 for Qty: -0.4987583334488296
+Buy ETHUSDT @ price: 1319.99 for Qty: 7.394767616689696
+---- Open Position ----
+Sell ETHUSDT @ price: 1325.33 for Qty: -3.0740886625599897
+Buy BTCUSDT @ price: 19610.39 for Qty: 0.20774855934544437
+---- Close Position ----
+Sell BTCUSDT @ price: 19826.92 for Qty: -0.20774855934544437
+Buy ETHUSDT @ price: 1339.65 for Qty: 3.0740886625599897
+---- Open Position ----
+Sell ETHUSDT @ price: 1350.9300000000003 for Qty: -7.043937095694568
+Buy BTCUSDT @ price: 19944.77 for Qty: 0.4771294981940255
+---- Close Position ----
+Sell BTCUSDT @ price: 19960.67 for Qty: -0.4771294981940255
+Buy ETHUSDT @ price: 1352.07 for Qty: 7.043937095694568
+---- Open Position ----
+Sell BTCUSDT @ price: 19639.09 for Qty: -2.647002132712401
+Buy ETHUSDT @ price: 1337.56 for Qty: 38.86533173430037
+---- Close Position ----
+Buy BTCUSDT @ price: 19456.63 for Qty: 2.647002132712401
+Sell ETHUSDT @ price: 1326.67 for Qty: -38.86533173430037
+---- Open Position ----
+Sell ETHUSDT @ price: 1307.33 for Qty: -4.462071642681261
+Buy BTCUSDT @ price: 19317.84 for Qty: 0.30197189444280104
+---- Close Position ----
+Sell BTCUSDT @ price: 19416.52 for Qty: -0.30197189444280104
+Buy ETHUSDT @ price: 1315.48 for Qty: 4.462071642681261
+---- Open Position ----
+Sell BTCUSDT @ price: 19512.74 for Qty: -1.4106423635269476
+Buy ETHUSDT @ price: 1327.84 for Qty: 20.72936217649823
+---- Close Position ----
+Buy BTCUSDT @ price: 19492.4 for Qty: 1.4106423635269476
+Sell ETHUSDT @ price: 1324.24 for Qty: -20.72936217649823
+---- Open Position ----
+Sell BTCUSDT @ price: 19221.39 for Qty: -0.5136640996563926
+Buy ETHUSDT @ price: 1308.23 for Qty: 7.546855730518298
+---- Close Position ----
+Buy BTCUSDT @ price: 19042.15 for Qty: 0.5136640996563926
+Sell ETHUSDT @ price: 1277.41 for Qty: -7.546855730518298
+---- Open Position ----
+Sell ETHUSDT @ price: 1281.82 for Qty: -11.025855147816992
+Buy BTCUSDT @ price: 19044.4 for Qty: 0.7421164040649627
+---- Close Position ----
+Sell BTCUSDT @ price: 19045.61 for Qty: -0.7421164040649627
+Buy ETHUSDT @ price: 1281.32 for Qty: 11.025855147816992
+---- Open Position ----
+Sell ETHUSDT @ price: 1310.0399999999997 for Qty: -12.886317634523323
+Buy BTCUSDT @ price: 19358.59 for Qty: 0.8720465464649508
+---- Close Position ----
+Sell BTCUSDT @ price: 19207.689999999995 for Qty: -0.8720465464649508
+Buy ETHUSDT @ price: 1298.8799999999999 for Qty: 12.886317634523323
+---- Open Position ----
+Sell BTCUSDT @ price: 19185.68 for Qty: -0.03083810692504103
+Buy ETHUSDT @ price: 1300.1 for Qty: 0.4550839182438302
+---- Close Position ----
+Buy BTCUSDT @ price: 19196.46 for Qty: 0.03083810692504103
+Sell ETHUSDT @ price: 1298.63 for Qty: -0.4550839182438302
+---- Open Position ----
+Sell ETHUSDT @ price: 1280.22 for Qty: -1.7046359369700699
+Buy BTCUSDT @ price: 19108.28 for Qty: 0.11421067468581192
+---- Close Position ----
+Sell BTCUSDT @ price: 19127.95 for Qty: -0.11421067468581192
+Buy ETHUSDT @ price: 1286.09 for Qty: 1.7046359369700699
+---- Open Position ----
+Sell ETHUSDT @ price: 1276.49 for Qty: -5.833777514011346
+Buy BTCUSDT @ price: 19092.02 for Qty: 0.3900456137622076
+---- Close Position ----
+Sell BTCUSDT @ price: 19135.38 for Qty: -0.3900456137622076
+Buy ETHUSDT @ price: 1284.59 for Qty: 5.833777514011346
+---- Open Position ----
+Sell ETHUSDT @ price: 1281.68 for Qty: -2.4813734540922523
+Buy BTCUSDT @ price: 19129.37 for Qty: 0.16625360524894223
+---- Close Position ----
+Sell BTCUSDT @ price: 19127.21 for Qty: -0.16625360524894223
+Buy ETHUSDT @ price: 1282.22 for Qty: 2.4813734540922523
+---- Open Position ----
+Sell BTCUSDT @ price: 19127.57 for Qty: -0.13964672765906821
+Buy ETHUSDT @ price: 1284.65 for Qty: 2.0792453653288936
+---- Close Position ----
+Buy BTCUSDT @ price: 19130.64 for Qty: 0.13964672765906821
+Sell ETHUSDT @ price: 1283.13 for Qty: -2.0792453653288936
+---- Open Position ----
+Sell ETHUSDT @ price: 1326.24 for Qty: -23.292759143561106
+Buy BTCUSDT @ price: 19568.43 for Qty: 1.578711719431619
+---- Close Position ----
+Sell BTCUSDT @ price: 19406.67 for Qty: -1.578711719431619
+Buy ETHUSDT @ price: 1309.78 for Qty: 23.292759143561106
+---- Open Position ----
+Sell BTCUSDT @ price: 19217.79 for Qty: -0.035202258497030604
+Buy ETHUSDT @ price: 1300.84 for Qty: 0.5200092183981432
+---- Close Position ----
+Buy BTCUSDT @ price: 19284.66 for Qty: 0.035202258497030604
+Sell ETHUSDT @ price: 1309.5 for Qty: -0.5200092183981432
+---- Open Position ----
+Sell BTCUSDT @ price: 19123.35 for Qty: -1.2227912063864952
+Buy ETHUSDT @ price: 1285.09 for Qty: 18.196875197222877
+---- Close Position ----
+Buy BTCUSDT @ price: 19043.2 for Qty: 1.2227912063864952
+Sell ETHUSDT @ price: 1279.98 for Qty: -18.196875197222877
+---- Open Position ----
+Sell BTCUSDT @ price: 19174.44 for Qty: -1.1923579500334074
+Buy ETHUSDT @ price: 1293.8 for Qty: 17.67104341585915
+---- Close Position ----
+Buy BTCUSDT @ price: 19137.97 for Qty: 1.1923579500334074
+Sell ETHUSDT @ price: 1292.43 for Qty: -17.67104341585915
+---- Open Position ----
+Sell BTCUSDT @ price: 19063.93 for Qty: -0.15013273450221484
+Buy ETHUSDT @ price: 1288.9 for Qty: 2.220470015683859
+---- Close Position ----
+Buy BTCUSDT @ price: 19059.84 for Qty: 0.15013273450221484
+Sell ETHUSDT @ price: 1285.06 for Qty: -2.220470015683859
+---- Open Position ----
+Sell ETHUSDT @ price: 1285.44 for Qty: -0.18570098852402805
+Buy BTCUSDT @ price: 19036.68 for Qty: 0.012539343976382785
+---- Close Position ----
+Sell BTCUSDT @ price: 19179.5 for Qty: -0.012539343976382785
+Buy ETHUSDT @ price: 1301.42 for Qty: 0.18570098852402805
+---- Open Position ----
+Sell ETHUSDT @ price: 1312.15 for Qty: -4.613058424169372
+Buy BTCUSDT @ price: 19192.16 for Qty: 0.3153838067679636
+---- Close Position ----
+Sell BTCUSDT @ price: 19178.39 for Qty: -0.3153838067679636
+Buy ETHUSDT @ price: 1308.36 for Qty: 4.613058424169372
+---- Open Position ----
+Sell ETHUSDT @ price: 1308.16 for Qty: -7.706162843047909
+Buy BTCUSDT @ price: 19173.28 for Qty: 0.5257956407945298
+---- Close Position ----
+Sell BTCUSDT @ price: 19166.0 for Qty: -0.5257956407945298
+Buy ETHUSDT @ price: 1308.89 for Qty: 7.706162843047909
+---- Open Position ----
+Sell ETHUSDT @ price: 1330.85 for Qty: -8.405263696389415
+Buy BTCUSDT @ price: 19500.38 for Qty: 0.5736534723810336
+---- Close Position ----
+Sell BTCUSDT @ price: 19301.58 for Qty: -0.5736534723810336
+Buy ETHUSDT @ price: 1345.85 for Qty: 8.405263696389415
+---- Open Position ----
+Sell ETHUSDT @ price: 1335.05 for Qty: -3.5350914586196684
+Buy BTCUSDT @ price: 19290.06 for Qty: 0.2446609213154437
+---- Close Position ----
+Sell BTCUSDT @ price: 19370.54 for Qty: -0.2446609213154437
+Buy ETHUSDT @ price: 1345.3 for Qty: 3.5350914586196684
+---- Open Position ----
+Sell BTCUSDT @ price: 19336.79 for Qty: -0.6287774376371097
+Buy ETHUSDT @ price: 1346.87 for Qty: 9.027253757472426
+---- Close Position ----
+Buy BTCUSDT @ price: 19315.93 for Qty: 0.6287774376371097
+Sell ETHUSDT @ price: 1343.45 for Qty: -9.027253757472426
+---- Open Position ----
+Sell BTCUSDT @ price: 19280.97 for Qty: -0.09293387164268962
+Buy ETHUSDT @ price: 1349.2 for Qty: 1.3280976885874234
+---- Close Position ----
+Buy BTCUSDT @ price: 19385.6 for Qty: 0.09293387164268962
+Sell ETHUSDT @ price: 1361.35 for Qty: -1.3280976885874234
+---- Open Position ----
+Sell ETHUSDT @ price: 1380.68 for Qty: -7.961123688687888
+Buy BTCUSDT @ price: 19508.5 for Qty: 0.563459131547835
+---- Close Position ----
+Sell BTCUSDT @ price: 19490.04 for Qty: -0.563459131547835
+Buy ETHUSDT @ price: 1382.15 for Qty: 7.961123688687888
+---- Open Position ----
+Sell ETHUSDT @ price: 1390.85 for Qty: -3.0825559519884287
+Buy BTCUSDT @ price: 19575.33 for Qty: 0.21901056807755975
+---- Close Position ----
+Sell BTCUSDT @ price: 20118.55 for Qty: -0.21901056807755975
+Buy ETHUSDT @ price: 1482.0599999999997 for Qty: 3.0825559519884287
+---- Open Position ----
+Sell BTCUSDT @ price: 20198.03 for Qty: -0.01756041930335951
+Buy ETHUSDT @ price: 1486.42 for Qty: 0.23861765282089012
+---- Close Position ----
+Buy BTCUSDT @ price: 20302.82 for Qty: 0.01756041930335951
+Sell ETHUSDT @ price: 1511.05 for Qty: -0.23861765282089012
+---- Open Position ----
+Sell BTCUSDT @ price: 20759.4 for Qty: -0.4502827000852504
+Buy ETHUSDT @ price: 1562.96 for Qty: 5.980740704532932
+---- Close Position ----
+Buy BTCUSDT @ price: 20860.08 for Qty: 0.4502827000852504
+Sell ETHUSDT @ price: 1571.92 for Qty: -5.980740704532932
+---- Open Position ----
+Sell ETHUSDT @ price: 1570.53 for Qty: -4.44768654008231
+Buy BTCUSDT @ price: 20472.91 for Qty: 0.34117206129167615
+---- Close Position ----
+Sell BTCUSDT @ price: 20553.92 for Qty: -0.34117206129167615
+Buy ETHUSDT @ price: 1589.4 for Qty: 4.44768654008231
+---- Open Position ----
+Sell ETHUSDT @ price: 1557.22 for Qty: -4.2395170400410915
+Buy BTCUSDT @ price: 20336.22 for Qty: 0.3246335026825235
+---- Close Position ----
+Sell BTCUSDT @ price: 20390.38 for Qty: -0.3246335026825235
+Buy ETHUSDT @ price: 1565.18 for Qty: 4.2395170400410915
+---- Open Position ----
+Sell ETHUSDT @ price: 1559.68 for Qty: -4.792479556727923
+Buy BTCUSDT @ price: 20400.47 for Qty: 0.3664001130874635
+---- Close Position ----
+Sell BTCUSDT @ price: 20531.2 for Qty: -0.3664001130874635
+Buy ETHUSDT @ price: 1594.28 for Qty: 4.792479556727923
+---- Open Position ----
+Sell ETHUSDT @ price: 1561.11 for Qty: -9.794021839781685
+Buy BTCUSDT @ price: 20405.88 for Qty: 0.7492987534357538
+---- Close Position ----
+Sell BTCUSDT @ price: 20407.42 for Qty: -0.7492987534357538
+Buy ETHUSDT @ price: 1547.93 for Qty: 9.794021839781685
+---- Open Position ----
+Sell BTCUSDT @ price: 20647.43 for Qty: -0.05336870251069582
+Buy ETHUSDT @ price: 1597.5199999999998 for Qty: 0.689773241825089
+---- Close Position ----
+Buy BTCUSDT @ price: 20151.84 for Qty: 0.05336870251069582
+Sell ETHUSDT @ price: 1518.33 for Qty: -0.689773241825089
+---- Open Position ----
+Sell BTCUSDT @ price: 21461.8 for Qty: -0.6960691934154427
+Buy ETHUSDT @ price: 1650.29 for Qty: 9.051986987811974
+---- Close Position ----
+Buy BTCUSDT @ price: 21384.92 for Qty: 0.6960691934154427
+Sell ETHUSDT @ price: 1651.37 for Qty: -9.051986987811974
+---- Open Position ----
+Sell ETHUSDT @ price: 1632.72 for Qty: -5.7369004763015
+Buy BTCUSDT @ price: 21287.5 for Qty: 0.44001349837918285
+---- Close Position ----
+Sell BTCUSDT @ price: 21336.06 for Qty: -0.44001349837918285
+Buy ETHUSDT @ price: 1632.2100000000003 for Qty: 5.7369004763015
+---- Open Position ----
+Sell ETHUSDT @ price: 1618.93 for Qty: -8.332577120332818
+Buy BTCUSDT @ price: 21237.42 for Qty: 0.6351698672877468
+---- Close Position ----
+Sell BTCUSDT @ price: 21233.32 for Qty: -0.6351698672877468
+Buy ETHUSDT @ price: 1619.28 for Qty: 8.332577120332818
+---- Open Position ----
+Sell ETHUSDT @ price: 1538.85 for Qty: -2.6004715043776985
+Buy BTCUSDT @ price: 20443.44 for Qty: 0.19573634277114946
+---- Close Position ----
+Sell BTCUSDT @ price: 19636.07 for Qty: -0.19573634277114946
+Buy ETHUSDT @ price: 1465.01 for Qty: 2.6004715043776985
+---- Open Position ----
+Sell ETHUSDT @ price: 1562.65 for Qty: -6.044051116462548
+Buy BTCUSDT @ price: 20567.26 for Qty: 0.45920924987718525
+---- Close Position ----
+Sell BTCUSDT @ price: 18289.18 for Qty: -0.45920924987718525
+Buy ETHUSDT @ price: 1320.6 for Qty: 6.044051116462548
+---- Open Position ----
+Sell BTCUSDT @ price: 16740.08 for Qty: -2.4667505345874345
+Buy ETHUSDT @ price: 1182.08 for Qty: 34.93283360601115
+---- Close Position ----
+Buy BTCUSDT @ price: 15757.86 for Qty: 2.4667505345874345
+Sell ETHUSDT @ price: 1118.57 for Qty: -34.93283360601115
+---- Open Position ----
+Sell BTCUSDT @ price: 16846.0 for Qty: -1.1524008067211369
+Buy ETHUSDT @ price: 1215.89 for Qty: 15.966116026325157
+---- Close Position ----
+Buy BTCUSDT @ price: 16399.03 for Qty: 1.1524008067211369
+Sell ETHUSDT @ price: 1187.05 for Qty: -15.966116026325157
+---- Open Position ----
+Sell BTCUSDT @ price: 17333.74 for Qty: -0.14135816591320094
+Buy ETHUSDT @ price: 1271.34 for Qty: 1.9271727659573474
+---- Close Position ----
+Buy BTCUSDT @ price: 17312.13 for Qty: 0.14135816591320094
+Sell ETHUSDT @ price: 1271.18 for Qty: -1.9271727659573474
+---- Open Position ----
+Sell BTCUSDT @ price: 16863.46 for Qty: -1.412804539908639
+Buy ETHUSDT @ price: 1268.72 for Qty: 18.777918728519058
+---- Close Position ----
+Buy BTCUSDT @ price: 16935.74 for Qty: 1.412804539908639
+Sell ETHUSDT @ price: 1274.81 for Qty: -18.777918728519058
+---- Open Position ----
+Sell ETHUSDT @ price: 1235.23 for Qty: -3.4949267122816177
+Buy BTCUSDT @ price: 16552.13 for Qty: 0.26081678140993003
+---- Close Position ----
+Sell BTCUSDT @ price: 16579.77 for Qty: -0.26081678140993003
+Buy ETHUSDT @ price: 1241.51 for Qty: 3.4949267122816177
+---- Open Position ----
+Sell ETHUSDT @ price: 1264.01 for Qty: -10.431645901133644
+Buy BTCUSDT @ price: 16888.71 for Qty: 0.7806751478817472
+---- Close Position ----
+Sell BTCUSDT @ price: 16880.49 for Qty: -0.7806751478817472
+Buy ETHUSDT @ price: 1245.87 for Qty: 10.431645901133644
+---- Open Position ----
+Sell ETHUSDT @ price: 1201.54 for Qty: -6.336275979336388
+Buy BTCUSDT @ price: 16571.69 for Qty: 0.4594608368841279
+---- Close Position ----
+Sell BTCUSDT @ price: 16564.79 for Qty: -0.4594608368841279
+Buy ETHUSDT @ price: 1200.44 for Qty: 6.336275979336388
+---- Open Position ----
+Sell BTCUSDT @ price: 16616.96 for Qty: -0.03027830464656398
+Buy ETHUSDT @ price: 1209.86 for Qty: 0.4158712692524436
+---- Close Position ----
+Buy BTCUSDT @ price: 16632.51 for Qty: 0.03027830464656398
+Sell ETHUSDT @ price: 1208.05 for Qty: -0.4158712692524436
+---- Open Position ----
+Sell BTCUSDT @ price: 16655.65 for Qty: -0.5693792203803386
+Buy ETHUSDT @ price: 1209.58 for Qty: 7.840226369423923
+---- Close Position ----
+Buy BTCUSDT @ price: 16642.44 for Qty: 0.5693792203803386
+Sell ETHUSDT @ price: 1210.3499999999997 for Qty: -7.840226369423923
+---- Open Position ----
+Sell BTCUSDT @ price: 16710.5 for Qty: -0.08773709006565071
+Buy ETHUSDT @ price: 1220.66 for Qty: 1.2011604033585428
+---- Close Position ----
+Buy BTCUSDT @ price: 16759.36 for Qty: 0.08773709006565071
+Sell ETHUSDT @ price: 1225.66 for Qty: -1.2011604033585428
+---- Open Position ----
+Sell BTCUSDT @ price: 16587.8 for Qty: -1.3477171145048703
+Buy ETHUSDT @ price: 1185.47 for Qty: 18.858217022914214
+---- Close Position ----
+Buy BTCUSDT @ price: 16504.74 for Qty: 1.3477171145048703
+Sell ETHUSDT @ price: 1174.3 for Qty: -18.858217022914214
+---- Open Position ----
+Sell ETHUSDT @ price: 1082.8 for Qty: -18.424875564512778
+Buy BTCUSDT @ price: 15732.370000000003 for Qty: 1.2681150558532779
+---- Close Position ----
+Sell BTCUSDT @ price: 16201.099999999999 for Qty: -1.2681150558532779
+Buy ETHUSDT @ price: 1130.83 for Qty: 18.424875564512778
+---- Open Position ----
+Sell BTCUSDT @ price: 16586.55 for Qty: -1.1707185427295348
+Buy ETHUSDT @ price: 1175.06 for Qty: 16.525408829335404
+---- Close Position ----
+Buy BTCUSDT @ price: 16449.02 for Qty: 1.1707185427295348
+Sell ETHUSDT @ price: 1163.71 for Qty: -16.525408829335404
+---- Open Position ----
+Sell BTCUSDT @ price: 16423.71 for Qty: -0.7127401654593651
+Buy ETHUSDT @ price: 1165.68 for Qty: 10.043235807916972
+---- Close Position ----
+Buy BTCUSDT @ price: 16487.61 for Qty: 0.7127401654593651
+Sell ETHUSDT @ price: 1171.07 for Qty: -10.043235807916972
+---- Open Position ----
+Sell BTCUSDT @ price: 16525.82 for Qty: -0.0774316835674975
+Buy ETHUSDT @ price: 1178.92 for Qty: 1.0854281199866158
+---- Close Position ----
+Buy BTCUSDT @ price: 16613.6 for Qty: 0.0774316835674975
+Sell ETHUSDT @ price: 1188.29 for Qty: -1.0854281199866158
+---- Open Position ----
+Sell BTCUSDT @ price: 16496.99 for Qty: -2.8232811148238195
+Buy ETHUSDT @ price: 1200.24 for Qty: 38.805272544188995
+---- Close Position ----
+Buy BTCUSDT @ price: 16579.27 for Qty: 2.8232811148238195
+Sell ETHUSDT @ price: 1206.52 for Qty: -38.805272544188995
+---- Open Position ----
+Sell ETHUSDT @ price: 1217.11 for Qty: -30.376606693212494
+Buy BTCUSDT @ price: 16637.79 for Qty: 2.2222158506714345
+---- Close Position ----
+Sell BTCUSDT @ price: 16609.13 for Qty: -2.2222158506714345
+Buy ETHUSDT @ price: 1214.58 for Qty: 30.376606693212494
+---- Open Position ----
+Sell ETHUSDT @ price: 1198.12 for Qty: -62.827689271858304
+Buy BTCUSDT @ price: 16481.25 for Qty: 4.567356198546324
+---- Close Position ----
+Sell BTCUSDT @ price: 16202.639999999998 for Qty: -4.567356198546324
+Buy ETHUSDT @ price: 1173.01 for Qty: 62.827689271858304
+---- Open Position ----
+Sell BTCUSDT @ price: 16419.68 for Qty: -0.700652279631626
+Buy ETHUSDT @ price: 1215.38 for Qty: 9.46583034205371
+---- Close Position ----
+Buy BTCUSDT @ price: 16426.56 for Qty: 0.700652279631626
+Sell ETHUSDT @ price: 1215.75 for Qty: -9.46583034205371
+---- Open Position ----
+Sell ETHUSDT @ price: 1222.49 for Qty: -21.715747055633283
+Buy BTCUSDT @ price: 16495.74 for Qty: 1.609282754594416
+---- Close Position ----
+Sell BTCUSDT @ price: 16451.8 for Qty: -1.609282754594416
+Buy ETHUSDT @ price: 1218.35 for Qty: 21.715747055633283
+---- Open Position ----
+Sell ETHUSDT @ price: 1274.51 for Qty: -12.924406283602934
+Buy BTCUSDT @ price: 16951.26 for Qty: 0.9717516159021579
+---- Close Position ----
+Sell BTCUSDT @ price: 16902.03 for Qty: -0.9717516159021579
+Buy ETHUSDT @ price: 1271.6899999999998 for Qty: 12.924406283602934
+---- Open Position ----
+Sell BTCUSDT @ price: 16969.21 for Qty: -0.6793661236954001
+Buy ETHUSDT @ price: 1280.86 for Qty: 9.000442218410459
+---- Close Position ----
+Buy BTCUSDT @ price: 17018.13 for Qty: 0.6793661236954001
+Sell ETHUSDT @ price: 1291.97 for Qty: -9.000442218410459
+---- Open Position ----
+Sell ETHUSDT @ price: 1290.96 for Qty: -9.669207424049175
+Buy BTCUSDT @ price: 17025.89 for Qty: 0.7331460102277345
+---- Close Position ----
+Sell BTCUSDT @ price: 16938.33 for Qty: -0.7331460102277345
+Buy ETHUSDT @ price: 1281.36 for Qty: 9.669207424049175
+---- Open Position ----
+Sell BTCUSDT @ price: 17234.91 for Qty: -2.5484214854839493
+Buy ETHUSDT @ price: 1297.01 for Qty: 33.86415955619289
+---- Close Position ----
+Buy BTCUSDT @ price: 17309.41 for Qty: 2.5484214854839493
+Sell ETHUSDT @ price: 1296.87 for Qty: -33.86415955619289
+---- Open Position ----
+Sell ETHUSDT @ price: 1251.19 for Qty: -3.1242476634447507
+Buy BTCUSDT @ price: 16962.47 for Qty: 0.23045338777324714
+---- Close Position ----
+Sell BTCUSDT @ price: 17008.73 for Qty: -0.23045338777324714
+Buy ETHUSDT @ price: 1258.26 for Qty: 3.1242476634447507
+---- Open Position ----
+Sell ETHUSDT @ price: 1253.95 for Qty: -20.207995269706277
+Buy BTCUSDT @ price: 16984.94 for Qty: 1.491910936888849
+---- Close Position ----
+Sell BTCUSDT @ price: 16959.77 for Qty: -1.491910936888849
+Buy ETHUSDT @ price: 1251.7 for Qty: 20.207995269706277
+---- Open Position ----
+Sell ETHUSDT @ price: 1226.25 for Qty: -16.058782258805742
+Buy BTCUSDT @ price: 16829.48 for Qty: 1.1700944856799225
+---- Close Position ----
+Sell BTCUSDT @ price: 16814.31 for Qty: -1.1700944856799225
+Buy ETHUSDT @ price: 1226.61 for Qty: 16.058782258805742
+---- Open Position ----
+Sell BTCUSDT @ price: 16869.78 for Qty: -0.6859796022532296
+Buy ETHUSDT @ price: 1236.5 for Qty: 9.358936493731894
+---- Close Position ----
+Buy BTCUSDT @ price: 16831.14 for Qty: 0.6859796022532296
+Sell ETHUSDT @ price: 1230.49 for Qty: -9.358936493731894
+---- Open Position ----
+Sell BTCUSDT @ price: 16841.18 for Qty: -0.43313770109092714
+Buy ETHUSDT @ price: 1241.02 for Qty: 5.877913948202271
+---- Close Position ----
+Buy BTCUSDT @ price: 17176.38 for Qty: 0.43313770109092714
+Sell ETHUSDT @ price: 1270.52 for Qty: -5.877913948202271
+---- Open Position ----
+Sell ETHUSDT @ price: 1266.64 for Qty: -18.546675498156592
+Buy BTCUSDT @ price: 17146.37 for Qty: 1.3700836417845332
+---- Close Position ----
+Sell BTCUSDT @ price: 17136.68 for Qty: -1.3700836417845332
+Buy ETHUSDT @ price: 1263.44 for Qty: 18.546675498156592
+---- Open Position ----
+Sell BTCUSDT @ price: 17171.47 for Qty: -0.5783256276530685
+Buy ETHUSDT @ price: 1268.53 for Qty: 7.828283132966513
+---- Close Position ----
+Buy BTCUSDT @ price: 17150.86 for Qty: 0.5783256276530685
+Sell ETHUSDT @ price: 1270.68 for Qty: -7.828283132966513
+---- Open Position ----
+Sell ETHUSDT @ price: 1262.45 for Qty: -4.864754903656827
+Buy BTCUSDT @ price: 17121.66 for Qty: 0.35869827038508895
+---- Close Position ----
+Sell BTCUSDT @ price: 16927.48 for Qty: -0.35869827038508895
+Buy ETHUSDT @ price: 1244.62 for Qty: 4.864754903656827
+---- Open Position ----
+Sell BTCUSDT @ price: 17010.5 for Qty: -0.36657968561282545
+Buy ETHUSDT @ price: 1253.79 for Qty: 4.973323851049503
+---- Close Position ----
+Buy BTCUSDT @ price: 17043.22 for Qty: 0.36657968561282545
+Sell ETHUSDT @ price: 1254.57 for Qty: -4.973323851049503
+---- Open Position ----
+Sell BTCUSDT @ price: 17123.57 for Qty: -1.1812240545227053
+Buy ETHUSDT @ price: 1266.68 for Qty: 15.967982377682318
+---- Close Position ----
+Buy BTCUSDT @ price: 17156.57 for Qty: 1.1812240545227053
+Sell ETHUSDT @ price: 1270.51 for Qty: -15.967982377682318
+---- Open Position ----
+Sell ETHUSDT @ price: 1335.95 for Qty: -12.899639399090614
+Buy BTCUSDT @ price: 18082.43 for Qty: 0.9530396774778117
+---- Close Position ----
+Sell BTCUSDT @ price: 18114.18 for Qty: -0.9530396774778117
+Buy ETHUSDT @ price: 1336.51 for Qty: 12.899639399090614
+---- Open Position ----
+Sell ETHUSDT @ price: 1333.16 for Qty: -10.552802815431162
+Buy BTCUSDT @ price: 18222.21 for Qty: 0.7721777835969518
+---- Close Position ----
+Sell BTCUSDT @ price: 17792.9 for Qty: -0.7721777835969518
+Buy ETHUSDT @ price: 1307.54 for Qty: 10.552802815431162
+---- Open Position ----
+Sell BTCUSDT @ price: 17547.02 for Qty: -1.2043912965226482
+Buy ETHUSDT @ price: 1277.25 for Qty: 16.546545013354393
+---- Close Position ----
+Buy BTCUSDT @ price: 17409.14 for Qty: 1.2043912965226482
+Sell ETHUSDT @ price: 1270.74 for Qty: -16.546545013354393
+---- Open Position ----
+Sell ETHUSDT @ price: 1201.19 for Qty: -13.522067145846542
+Buy BTCUSDT @ price: 16932.23 for Qty: 0.9591986350151801
+---- Close Position ----
+Sell BTCUSDT @ price: 16712.63 for Qty: -0.9591986350151801
+Buy ETHUSDT @ price: 1179.79 for Qty: 13.522067145846542
+---- Open Position ----
+Sell ETHUSDT @ price: 1180.89 for Qty: -21.74496660394486
+Buy BTCUSDT @ price: 16711.07 for Qty: 1.5366109778088686
+---- Close Position ----
+Sell BTCUSDT @ price: 16768.14 for Qty: -1.5366109778088686
+Buy ETHUSDT @ price: 1186.38 for Qty: 21.74496660394486
+---- Open Position ----
+Sell BTCUSDT @ price: 16729.5 for Qty: -2.853172704728639
+Buy ETHUSDT @ price: 1185.92 for Qty: 40.248710095669864
+---- Close Position ----
+Buy BTCUSDT @ price: 16710.05 for Qty: 2.853172704728639
+Sell ETHUSDT @ price: 1182.65 for Qty: -40.248710095669864
+---- Open Position ----
+Sell ETHUSDT @ price: 1179.95 for Qty: -32.3855730401785
+Buy BTCUSDT @ price: 16687.63 for Qty: 2.289921151700908
+---- Close Position ----
+Sell BTCUSDT @ price: 16555.74 for Qty: -2.289921151700908
+Buy ETHUSDT @ price: 1170.79 for Qty: 32.3855730401785
+---- Open Position ----
+Sell ETHUSDT @ price: 1208.64 for Qty: -14.339551361916794
+Buy BTCUSDT @ price: 16809.47 for Qty: 1.031086361041614
+---- Close Position ----
+Sell BTCUSDT @ price: 16878.47 for Qty: -1.031086361041614
+Buy ETHUSDT @ price: 1216.62 for Qty: 14.339551361916794
+---- Open Position ----
+Sell BTCUSDT @ price: 16826.32 for Qty: -0.4745389137407016
+Buy ETHUSDT @ price: 1213.63 for Qty: 6.579063148803485
+---- Close Position ----
+Buy BTCUSDT @ price: 16657.46 for Qty: 0.4745389137407016
+Sell ETHUSDT @ price: 1187.03 for Qty: -6.579063148803485
+---- Open Position ----
+Sell ETHUSDT @ price: 1216.34 for Qty: -46.86392735896221
+Buy BTCUSDT @ price: 16818.15 for Qty: 3.3894536252517624
+---- Close Position ----
+Sell BTCUSDT @ price: 16797.86 for Qty: -3.3894536252517624
+Buy ETHUSDT @ price: 1215.93 for Qty: 46.86392735896221
+---- Open Position ----
+Sell ETHUSDT @ price: 1218.39 for Qty: -17.789237752623322
+Buy BTCUSDT @ price: 16836.77 for Qty: 1.2872747834576141
+---- Close Position ----
+Sell BTCUSDT @ price: 16790.48 for Qty: -1.2872747834576141
+Buy ETHUSDT @ price: 1215.29 for Qty: 17.789237752623322
+---- Open Position ----
+Sell ETHUSDT @ price: 1217.71 for Qty: -9.039227202829899
+Buy BTCUSDT @ price: 16823.17 for Qty: 0.6542855690787168
+---- Close Position ----
+Sell BTCUSDT @ price: 16811.82 for Qty: -0.6542855690787168
+Buy ETHUSDT @ price: 1218.09 for Qty: 9.039227202829899
+---- Open Position ----
+Sell BTCUSDT @ price: 16826.95 for Qty: -0.5997821711227526
+Buy ETHUSDT @ price: 1215.91 for Qty: 8.300371412665413
+---- Close Position ----
+Buy BTCUSDT @ price: 16843.63 for Qty: 0.5997821711227526
+Sell ETHUSDT @ price: 1217.53 for Qty: -8.300371412665413
+---- Open Position ----
+Sell ETHUSDT @ price: 1229.0 for Qty: -4.556496926362008
+Buy BTCUSDT @ price: 16957.88 for Qty: 0.33022879554921786
+---- Close Position ----
+Sell BTCUSDT @ price: 16883.08 for Qty: -0.33022879554921786
+Buy ETHUSDT @ price: 1223.81 for Qty: 4.556496926362008
+---- Open Position ----
+Sell BTCUSDT @ price: 16655.84 for Qty: -0.8616162618935804
+Buy ETHUSDT @ price: 1195.81 for Qty: 12.001022402804438
+---- Close Position ----
+Buy BTCUSDT @ price: 16739.66 for Qty: 0.8616162618935804
+Sell ETHUSDT @ price: 1204.58 for Qty: -12.001022402804438
+---- Open Position ----
+Sell BTCUSDT @ price: 16655.49 for Qty: -0.4583792585147588
+Buy ETHUSDT @ price: 1196.32 for Qty: 6.381679781663753
+---- Close Position ----
+Buy BTCUSDT @ price: 16598.24 for Qty: 0.4583792585147588
+Sell ETHUSDT @ price: 1193.74 for Qty: -6.381679781663753
+---- Open Position ----
+Sell ETHUSDT @ price: 1197.68 for Qty: -6.2500921840872845
+Buy BTCUSDT @ price: 16592.07 for Qty: 0.45116356155751947
+---- Close Position ----
+Sell BTCUSDT @ price: 16570.47 for Qty: -0.45116356155751947
+Buy ETHUSDT @ price: 1196.53 for Qty: 6.2500921840872845
+---- Open Position ----
+Sell ETHUSDT @ price: 1196.82 for Qty: -16.448863559669647
+Buy BTCUSDT @ price: 16546.14 for Qty: 1.189774551320957
+==================================================
+Open Threshold:2, Close Threshold:0.1, period: 32
+Starting Value - 100000.00
+Ending   Value - 103314.13
+==================================================
