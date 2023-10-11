@@ -31,11 +31,12 @@ def gridsearch(estimator, param_grid, scoring, datafeeds):
 
     for params in param_combinations:
         param_dict = {key: val for key, val in zip(param_grid.keys(), params)}
-        result = estimator(datafeeds, param_dict)
-        score = scoring(result)
-        if best_score is None or score > best_score:
-            best_score = score
-            best_params = param_dict
+        if param_dict['OPEN_THRE'] > param_dict['CLOS_THRE']:
+            result = estimator(datafeeds, param_dict)
+            score = scoring(result)
+            if best_score is None or score > best_score:
+                best_score = score
+                best_params = param_dict
 
     return best_score, best_params
 

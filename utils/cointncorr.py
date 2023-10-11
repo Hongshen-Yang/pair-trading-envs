@@ -54,7 +54,6 @@ class CointnCorr():
         dfs_res = {"_".join(pair):{key: {} for key in self.freqs} for pair in pairs}
 
         for i, (freq, f) in enumerate(self.freqs.items()):
-            print(f"calculating {freq}")
             batch_size = int(self.daily_minutes / f)
             df_pivot = self.dfs[i].pivot(index='time', columns='tic', values='close').dropna()
 
