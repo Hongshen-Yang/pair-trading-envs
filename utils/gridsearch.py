@@ -1,4 +1,6 @@
-import math, random
+import math
+import random
+from tqdm import tqdm
 from itertools import product
 
 param_grid = {
@@ -27,9 +29,9 @@ def gridsearch(estimator, param_grid, scoring, datafeeds):
     best_params = None
 
     # Generate all possible combinations of parameters
-    param_combinations = product(*param_grid.values())
+    param_combinations = list(product(*param_grid.values()))
 
-    for params in param_combinations:
+    for params in tqdm(param_combinations):
         param_dict = {key: val for key, val in zip(param_grid.keys(), params)}
         if param_dict['OPEN_THRE'] > param_dict['CLOS_THRE']:
             result = estimator(datafeeds, param_dict)

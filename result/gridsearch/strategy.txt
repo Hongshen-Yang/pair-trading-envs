@@ -893,208 +893,466 @@ Open Threshold:1.0, Close Threshold:0.6000000000000001, period: 60
 Starting Value - 100000.00
 Ending   Value - 101589.06
 ==================================================
+==== Gridsearch run started ====
+==== Experimental Run ====
+==== Gridsearch run started ====
 ==================================================
-Open Threshold:1.0, Close Threshold:0.8, period: 6
+Open Threshold:1.0, Close Threshold:0.1, period: 33
 Starting Value - 100000.00
-Ending   Value - 109593.69
+Ending   Value - 93745.87
 ==================================================
 ==================================================
-Open Threshold:1.0, Close Threshold:0.8, period: 12
+Open Threshold:1.0, Close Threshold:0.1, period: 39
 Starting Value - 100000.00
-Ending   Value - 104783.06
+Ending   Value - 91755.76
 ==================================================
 ==================================================
-Open Threshold:1.0, Close Threshold:0.8, period: 18
+Open Threshold:1.0, Close Threshold:0.1, period: 45
 Starting Value - 100000.00
-Ending   Value - 95593.30
+Ending   Value - 102397.59
 ==================================================
 ==================================================
-Open Threshold:1.0, Close Threshold:0.8, period: 24
+Open Threshold:1.0, Close Threshold:0.1, period: 51
 Starting Value - 100000.00
-Ending   Value - 97994.16
+Ending   Value - 101677.27
 ==================================================
 ==================================================
-Open Threshold:1.0, Close Threshold:0.8, period: 30
+Open Threshold:1.0, Close Threshold:0.1, period: 57
 Starting Value - 100000.00
-Ending   Value - 95336.85
+Ending   Value - 100458.00
 ==================================================
 ==================================================
-Open Threshold:1.0, Close Threshold:0.8, period: 36
+Open Threshold:1.0, Close Threshold:0.1, period: 63
 Starting Value - 100000.00
-Ending   Value - 99677.88
+Ending   Value - 106063.18
 ==================================================
 ==================================================
-Open Threshold:1.0, Close Threshold:0.8, period: 42
+Open Threshold:1.0, Close Threshold:0.6, period: 33
 Starting Value - 100000.00
-Ending   Value - 101941.38
+Ending   Value - 96499.38
 ==================================================
 ==================================================
-Open Threshold:1.0, Close Threshold:0.8, period: 48
+Open Threshold:1.0, Close Threshold:0.6, period: 39
 Starting Value - 100000.00
-Ending   Value - 100191.07
+Ending   Value - 101082.37
 ==================================================
 ==================================================
-Open Threshold:1.0, Close Threshold:0.8, period: 54
+Open Threshold:1.0, Close Threshold:0.6, period: 45
 Starting Value - 100000.00
-Ending   Value - 101599.72
+Ending   Value - 101039.89
 ==================================================
 ==================================================
-Open Threshold:1.0, Close Threshold:0.8, period: 60
+Open Threshold:1.0, Close Threshold:0.6, period: 51
 Starting Value - 100000.00
-Ending   Value - 101646.70
+Ending   Value - 101329.04
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.2, period: 6
+Open Threshold:1.0, Close Threshold:0.6, period: 57
 Starting Value - 100000.00
-Ending   Value - 93615.22
+Ending   Value - 99881.65
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.2, period: 12
+Open Threshold:1.0, Close Threshold:0.6, period: 63
 Starting Value - 100000.00
-Ending   Value - 120921.55
+Ending   Value - 101507.21
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.2, period: 18
+Open Threshold:1.5, Close Threshold:0.1, period: 33
 Starting Value - 100000.00
-Ending   Value - 98366.89
+Ending   Value - 95971.41
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.2, period: 24
+Open Threshold:1.5, Close Threshold:0.1, period: 39
 Starting Value - 100000.00
-Ending   Value - 98197.80
+Ending   Value - 94119.36
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.2, period: 30
+Open Threshold:1.5, Close Threshold:0.1, period: 45
 Starting Value - 100000.00
-Ending   Value - 95071.57
+Ending   Value - 100871.37
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.2, period: 36
+Open Threshold:1.5, Close Threshold:0.1, period: 51
 Starting Value - 100000.00
-Ending   Value - 96643.24
+Ending   Value - 97572.96
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.2, period: 42
+Open Threshold:1.5, Close Threshold:0.1, period: 57
 Starting Value - 100000.00
-Ending   Value - 99345.17
+Ending   Value - 98601.33
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.2, period: 48
+Open Threshold:1.5, Close Threshold:0.1, period: 63
 Starting Value - 100000.00
-Ending   Value - 101592.26
+Ending   Value - 103280.34
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.2, period: 54
+Open Threshold:1.5, Close Threshold:0.6, period: 33
 Starting Value - 100000.00
-Ending   Value - 102160.39
+Ending   Value - 98167.59
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.2, period: 60
+Open Threshold:1.5, Close Threshold:0.6, period: 39
 Starting Value - 100000.00
-Ending   Value - 102990.16
+Ending   Value - 100045.33
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.4, period: 6
+Open Threshold:1.5, Close Threshold:0.6, period: 45
 Starting Value - 100000.00
-Ending   Value - 93897.43
+Ending   Value - 102264.10
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.4, period: 12
+Open Threshold:1.5, Close Threshold:0.6, period: 51
 Starting Value - 100000.00
-Ending   Value - 103790.73
+Ending   Value - 102870.54
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.4, period: 18
+Open Threshold:1.5, Close Threshold:0.6, period: 57
 Starting Value - 100000.00
-Ending   Value - 102830.42
+Ending   Value - 102156.63
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.4, period: 24
+Open Threshold:1.5, Close Threshold:0.6, period: 63
 Starting Value - 100000.00
-Ending   Value - 93770.53
+Ending   Value - 101989.05
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.4, period: 30
+Open Threshold:1.5, Close Threshold:1.1, period: 33
 Starting Value - 100000.00
-Ending   Value - 94849.91
+Ending   Value - 99248.10
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.4, period: 36
+Open Threshold:1.5, Close Threshold:1.1, period: 39
 Starting Value - 100000.00
-Ending   Value - 97007.13
+Ending   Value - 100287.35
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.4, period: 42
+Open Threshold:1.5, Close Threshold:1.1, period: 45
 Starting Value - 100000.00
-Ending   Value - 101278.47
+Ending   Value - 101910.42
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.4, period: 48
+Open Threshold:1.5, Close Threshold:1.1, period: 51
 Starting Value - 100000.00
-Ending   Value - 100244.90
+Ending   Value - 101928.33
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.4, period: 54
+Open Threshold:1.5, Close Threshold:1.1, period: 57
 Starting Value - 100000.00
-Ending   Value - 99253.31
+Ending   Value - 102694.89
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.4, period: 60
+Open Threshold:1.5, Close Threshold:1.1, period: 63
 Starting Value - 100000.00
-Ending   Value - 100685.78
+Ending   Value - 102593.65
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.6000000000000001, period: 6
+Open Threshold:2.0, Close Threshold:0.1, period: 33
 Starting Value - 100000.00
-Ending   Value - 112500.47
+Ending   Value - 99256.70
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.6000000000000001, period: 12
+Open Threshold:2.0, Close Threshold:0.1, period: 39
 Starting Value - 100000.00
-Ending   Value - 116527.27
+Ending   Value - 103739.81
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.6000000000000001, period: 18
+Open Threshold:2.0, Close Threshold:0.1, period: 45
 Starting Value - 100000.00
-Ending   Value - 102610.43
+Ending   Value - 104478.61
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.6000000000000001, period: 24
+Open Threshold:2.0, Close Threshold:0.1, period: 51
 Starting Value - 100000.00
-Ending   Value - 95611.23
+Ending   Value - 101329.71
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.6000000000000001, period: 30
+Open Threshold:2.0, Close Threshold:0.1, period: 57
 Starting Value - 100000.00
-Ending   Value - 96548.45
+Ending   Value - 99300.24
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.6000000000000001, period: 36
+Open Threshold:2.0, Close Threshold:0.1, period: 63
 Starting Value - 100000.00
-Ending   Value - 96495.87
+Ending   Value - 104158.22
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.6000000000000001, period: 42
+Open Threshold:2.0, Close Threshold:0.6, period: 33
 Starting Value - 100000.00
-Ending   Value - 100917.80
+Ending   Value - 101002.96
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.6000000000000001, period: 48
+Open Threshold:2.0, Close Threshold:0.6, period: 39
 Starting Value - 100000.00
-Ending   Value - 101238.35
+Ending   Value - 102245.68
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.6000000000000001, period: 54
+Open Threshold:2.0, Close Threshold:0.6, period: 45
 Starting Value - 100000.00
-Ending   Value - 102716.41
+Ending   Value - 103676.83
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.6000000000000001, period: 60
+Open Threshold:2.0, Close Threshold:0.6, period: 51
 Starting Value - 100000.00
-Ending   Value - 101152.20
+Ending   Value - 104734.66
 ==================================================
 ==================================================
-Open Threshold:1.2, Close Threshold:0.8, period: 6
+Open Threshold:2.0, Close Threshold:0.6, period: 57
 Starting Value - 100000.00
-Ending   Value - 111753.92
+Ending   Value - 103335.75
+==================================================
+==================================================
+Open Threshold:2.0, Close Threshold:0.6, period: 63
+Starting Value - 100000.00
+Ending   Value - 103166.17
+==================================================
+==================================================
+Open Threshold:2.0, Close Threshold:1.1, period: 33
+Starting Value - 100000.00
+Ending   Value - 101649.56
+==================================================
+==================================================
+Open Threshold:2.0, Close Threshold:1.1, period: 39
+Starting Value - 100000.00
+Ending   Value - 102922.17
+==================================================
+==================================================
+Open Threshold:2.0, Close Threshold:1.1, period: 45
+Starting Value - 100000.00
+Ending   Value - 103357.33
+==================================================
+==================================================
+Open Threshold:2.0, Close Threshold:1.1, period: 51
+Starting Value - 100000.00
+Ending   Value - 104217.19
+==================================================
+==================================================
+Open Threshold:2.0, Close Threshold:1.1, period: 57
+Starting Value - 100000.00
+Ending   Value - 103898.11
+==================================================
+==================================================
+Open Threshold:2.0, Close Threshold:1.1, period: 63
+Starting Value - 100000.00
+Ending   Value - 103269.78
+==================================================
+==================================================
+Open Threshold:2.0, Close Threshold:1.6, period: 33
+Starting Value - 100000.00
+Ending   Value - 100867.62
+==================================================
+==================================================
+Open Threshold:2.0, Close Threshold:1.6, period: 39
+Starting Value - 100000.00
+Ending   Value - 100836.12
+==================================================
+==================================================
+Open Threshold:2.0, Close Threshold:1.6, period: 45
+Starting Value - 100000.00
+Ending   Value - 101378.57
+==================================================
+==================================================
+Open Threshold:2.0, Close Threshold:1.6, period: 51
+Starting Value - 100000.00
+Ending   Value - 102184.20
+==================================================
+==================================================
+Open Threshold:2.0, Close Threshold:1.6, period: 57
+Starting Value - 100000.00
+Ending   Value - 100775.30
+==================================================
+==================================================
+Open Threshold:2.0, Close Threshold:1.6, period: 63
+Starting Value - 100000.00
+Ending   Value - 102741.72
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:0.1, period: 33
+Starting Value - 100000.00
+Ending   Value - 100403.75
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:0.1, period: 39
+Starting Value - 100000.00
+Ending   Value - 102009.83
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:0.1, period: 45
+Starting Value - 100000.00
+Ending   Value - 101696.51
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:0.1, period: 51
+Starting Value - 100000.00
+Ending   Value - 102560.17
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:0.1, period: 57
+Starting Value - 100000.00
+Ending   Value - 101747.73
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:0.1, period: 63
+Starting Value - 100000.00
+Ending   Value - 102827.08
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:0.6, period: 33
+Starting Value - 100000.00
+Ending   Value - 100499.70
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:0.6, period: 39
+Starting Value - 100000.00
+Ending   Value - 101837.77
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:0.6, period: 45
+Starting Value - 100000.00
+Ending   Value - 104181.45
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:0.6, period: 51
+Starting Value - 100000.00
+Ending   Value - 104190.95
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:0.6, period: 57
+Starting Value - 100000.00
+Ending   Value - 103133.23
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:0.6, period: 63
+Starting Value - 100000.00
+Ending   Value - 103399.21
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:1.1, period: 33
+Starting Value - 100000.00
+Ending   Value - 101079.82
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:1.1, period: 39
+Starting Value - 100000.00
+Ending   Value - 101697.20
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:1.1, period: 45
+Starting Value - 100000.00
+Ending   Value - 102979.51
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:1.1, period: 51
+Starting Value - 100000.00
+Ending   Value - 103105.23
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:1.1, period: 57
+Starting Value - 100000.00
+Ending   Value - 102951.48
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:1.1, period: 63
+Starting Value - 100000.00
+Ending   Value - 102810.93
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:1.6, period: 33
+Starting Value - 100000.00
+Ending   Value - 100470.79
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:1.6, period: 39
+Starting Value - 100000.00
+Ending   Value - 100607.97
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:1.6, period: 45
+Starting Value - 100000.00
+Ending   Value - 100960.18
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:1.6, period: 51
+Starting Value - 100000.00
+Ending   Value - 101651.94
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:1.6, period: 57
+Starting Value - 100000.00
+Ending   Value - 100956.85
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:1.6, period: 63
+Starting Value - 100000.00
+Ending   Value - 100231.82
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:2.1, period: 33
+Starting Value - 100000.00
+Ending   Value - 99349.23
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:2.1, period: 39
+Starting Value - 100000.00
+Ending   Value - 100591.16
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:2.1, period: 45
+Starting Value - 100000.00
+Ending   Value - 100736.11
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:2.1, period: 51
+Starting Value - 100000.00
+Ending   Value - 101536.50
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:2.1, period: 57
+Starting Value - 100000.00
+Ending   Value - 100960.65
+==================================================
+==================================================
+Open Threshold:2.5, Close Threshold:2.1, period: 63
+Starting Value - 100000.00
+Ending   Value - 100192.87
+==================================================
+==================================================
+Open Threshold:3.0, Close Threshold:0.1, period: 33
+Starting Value - 100000.00
+Ending   Value - 101100.22
+==================================================
+==================================================
+Open Threshold:3.0, Close Threshold:0.1, period: 39
+Starting Value - 100000.00
+Ending   Value - 99911.09
+==================================================
+==================================================
+Open Threshold:3.0, Close Threshold:0.1, period: 45
+Starting Value - 100000.00
+Ending   Value - 100311.42
+==================================================
+==================================================
+Open Threshold:3.0, Close Threshold:0.1, period: 51
+Starting Value - 100000.00
+Ending   Value - 102148.02
+==================================================
+==================================================
+Open Threshold:3.0, Close Threshold:0.1, period: 57
+Starting Value - 100000.00
+Ending   Value - 101937.90
+==================================================
+==================================================
+Open Threshold:3.0, Close Threshold:0.1, period: 63
+Starting Value - 100000.00
+Ending   Value - 101693.35
+==================================================
+==================================================
+Open Threshold:3.0, Close Threshold:0.6, period: 33
+Starting Value - 100000.00
+Ending   Value - 100729.16
+==================================================
+==================================================
+Open Threshold:3.0, Close Threshold:0.6, period: 39
+Starting Value - 100000.00
+Ending   Value - 101563.65
 ==================================================
