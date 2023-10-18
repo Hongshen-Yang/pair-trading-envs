@@ -1,5 +1,6 @@
 Still under development...
-This is a project to build Reinforcement Learning application in the cryoptocurrency world with backtrader
+
+This is a project to build Reinforcement Learning application in the cryptocurrency world with backtrader
 
 ## STEP1: Clone the Programme
 
