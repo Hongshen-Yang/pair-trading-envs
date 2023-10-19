@@ -1,5 +1,5 @@
 ==================================================
-Open Threshold:2, Close Threshold:0.1, period: 600
+Open Threshold:2, Close Threshold:1.1, period: 1000
 Starting Value - 100000.00
-Ending   Value - 103415.92
+Ending   Value - 105864.33
 ==================================================
