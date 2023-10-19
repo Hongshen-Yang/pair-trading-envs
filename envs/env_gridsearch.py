@@ -111,7 +111,9 @@ class PairTrading(bt.Strategy):
         self.data1 = self.datas[1]
 
         # Calculate zscore of the ratio
-        transform = bt.indicators.OLS_TransformationN(self.data1, self.data0, period=self.p.period)
+        transform = bt.indicators.OLS_TransformationN(self.data0, self.data1, period=self.p.period)
+        # A positive spread means data0 is greater than data1
+        # https://github.com/mementum/backtrader/blob/b853d7c90b6721476eb5a5ea3135224e33db1f14/backtrader/indicators/ols.py#L70C24-L79C1
         self.spread = transform.spread
         self.zscore = transform.zscore
 
@@ -158,7 +160,7 @@ class PairTrading(bt.Strategy):
         current_time = self.data1.datetime.datetime()
 
         # Calculate the ratio between the 2 assets
-        ratio = self.data1.close[0] / self.data0.close[0]
+        ratio = self.data0.close[0] / self.data1.close[0]
         cash = self.broker.get_cash()
         position = self.broker.getposition(self.data0).size + self.broker.getposition(self.data1).size
         # Whether to activate kelly criterion or not
@@ -179,8 +181,8 @@ class PairTrading(bt.Strategy):
                 # purchase with Kelly Criterion
                 purchase_amount = self.broker.get_cash()/self.data0.close[0] * kc
 
-                self.sell(data=self.data1, size=purchase_amount/ratio)
                 self.buy(data=self.data0, size=purchase_amount)
+                self.sell(data=self.data1, size=purchase_amount*ratio)
 
             elif self.zscore[0] >= self.p.OPEN_THRE and position == 0 and kc!=0:
                 if self.p.verbose:
@@ -189,8 +191,8 @@ class PairTrading(bt.Strategy):
                 # purchase with Kelly Criterion
                 purchase_amount = self.broker.get_cash()/self.data1.close[0] * kc
 
-                self.sell(data=self.data0, size=purchase_amount*ratio)
-                self.buy(data=self.data1, size=purchase_amount)
+                self.sell(data=self.data0, size=purchase_amount)
+                self.buy(data=self.data1, size=purchase_amount*ratio)
 
         f.close()
 
