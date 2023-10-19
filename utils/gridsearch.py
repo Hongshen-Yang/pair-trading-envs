@@ -26,7 +26,6 @@ def scoring(result):
 # https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html
 def gridsearch(estimator, param_grid, scoring, datafeeds):
     best_score = None
-    best_params = None
 
     # Generate all possible combinations of parameters
     param_combinations = list(product(*param_grid.values()))

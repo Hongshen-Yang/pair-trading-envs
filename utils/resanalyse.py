@@ -1,0 +1,10 @@
+def res_analyse(res_tradeanalyzer):
+    print(f"Total orders count:{res_tradeanalyzer['total']['total']}")
+    print(f"Won orders count:{res_tradeanalyzer['won']['total']}")
+    print(f"Lost orders count:{res_tradeanalyzer['lost']['total']}")
+    print(f"Win/Loss order ratio: {res_tradeanalyzer['won']['total']/res_tradeanalyzer['lost']['total']}")
+    print(f"Avg order pnl:{res_tradeanalyzer['pnl']['net']['average']}")
+    print(f"Avg order pnl won:{res_tradeanalyzer['won']['pnl']['average']}")
+    print(f"Avg order pnl lost:{res_tradeanalyzer['lost']['pnl']['average']}")
+    print(f"Avg long order pnl:{res_tradeanalyzer['long']['pnl']['average']}")
+    print(f"Avg short order pnl:{res_tradeanalyzer['short']['pnl']['average']}")
