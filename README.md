@@ -1,5 +1,7 @@
 Still under development...
 
+>Seems that after modification of packages, my environment exports `requirements.txt` which pointing to local directories instead of a PyPI version. I currently don't know how to transfer my local changes to Github...
+
 This is a project to build Reinforcement Learning application in the cryptocurrency world with backtrader
 
 ## STEP1: Clone the Programme
