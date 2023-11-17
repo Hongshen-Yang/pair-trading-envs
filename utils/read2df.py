@@ -2,12 +2,12 @@ import os
 import zipfile
 import pandas as pd
 
-def read2df(symbols, freqs):
+def read2df(symbols, freqs, marketType="spot"):
     # List to store individual DataFrames
     dfs = []
 
     if symbols is None:
-        klines_path = os.path.abspath(f'./binance-public-data/python/data/spot/monthly/klines/')
+        klines_path = os.path.abspath(f'./binance-public-data/python/data/{marketType}/monthly/klines/')
         symbols = [folder for folder in os.listdir(klines_path)]
 
     # Loop through each freq
@@ -16,7 +16,7 @@ def read2df(symbols, freqs):
         rawdfs = []
         
         for symbol in symbols:
-            directory = os.path.abspath(f'./binance-public-data/python/data/spot/monthly/klines/{symbol}/{freq}/')
+            directory = os.path.abspath(f'./binance-public-data/python/data/{marketType}/monthly/klines/{symbol}/{freq}/')
             
             # Loop through each zip file in the directory
             for file_name in os.listdir(directory):

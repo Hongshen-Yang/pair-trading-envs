@@ -12,7 +12,7 @@ symbols = ['BTCUSDT', 'BTCUSD', 'BTCTUSD', 'BTCUSDC', 'BTCBUSD', 'BTCDAI']
 
 
 start_date = '2010-01-01'
-trade_date = (datetime.now() - timedelta(days=365)).date()
+trade_date = '2022-10-01'
 
 # freqs = {'1h':60, '2h':120, '4h':240, '6h':360, '8h':480, '12h':720, '1d':1440}
 freqs = {'3m':3, '5m':5, '15m':15, '30m':30}

@@ -87,10 +87,10 @@ class ZscoreIndicator(bt.indicators.PeriodN):
 
     def next(self):
         p0, p1 = (pd.Series(data.get(size=self.p.period)) for data in self.datas)
-        residuals = sm.OLS(p0, sm.add_constant(p1)).fit().resid
-        zscores = stats.zscore(residuals)
-        self.lines.spread[0] = 2
-        self.lines.zscore[0] = 1
+        distance = pd.Series(p0-p1)
+        zscores = stats.zscore(distance)
+        self.lines.spread[0] = distance[-1]
+        self.lines.zscore[0] = zscores[-1]
 
 class PairTradingCommInfo(bt.CommInfoBase):
     params = (
@@ -117,12 +117,16 @@ class PairTrading(bt.Strategy):
         self.data0 = self.datas[0]
         self.data1 = self.datas[1]
 
-        # Calculate zscore of the ratio
-        transform = bt.indicators.OLS_TransformationN(self.data0, self.data1, period=self.p.period)
-        # A positive spread means data0 is greater than data1
-        # https://github.com/mementum/backtrader/blob/b853d7c90b6721476eb5a5ea3135224e33db1f14/backtrader/indicators/ols.py#L70C24-L79C1
-        self.spread = transform.spread
-        self.zscore = transform.zscore
+        # # Calculate zscore of the ratio
+        # transform = bt.indicators.OLS_TransformationN(self.data0, self.data1, period=self.p.period)
+        # # A positive spread means data0 is greater than data1
+        # # https://github.com/mementum/backtrader/blob/b853d7c90b6721476eb5a5ea3135224e33db1f14/backtrader/indicators/ols.py#L70C24-L79C1
+        # self.spread = transform.spread
+        # self.zscore = transform.zscore
+
+        self.spread = self.data0 - self.data1
+        stddev = bt.indicators.StandardDeviation(self.spread, period=self.p.period)
+        self.zscore = (self.spread - bt.indicators.MovingAverageSimple(self.spread, period=self.p.period)) / stddev
 
         self.storagetxt =  f"result/gridsearch/{self.p.prefix}_{self.data0._name}_{self.data1._name}_O{int(self.p.OPEN_THRE*10)}C{int(self.p.CLOS_THRE*10)}P{self.p.period}.txt"
         os.remove(self.storagetxt) if os.path.exists(self.storagetxt) else None
