@@ -15,5 +15,6 @@ start_date = '2010-01-01'
 trade_date = '2022-10-01'
 
 # freqs = {'1h':60, '2h':120, '4h':240, '6h':360, '8h':480, '12h':720, '1d':1440}
-freqs = {'3m':3, '5m':5, '15m':15, '30m':30}
-
+# freqs = {'1m': 1, '3m':3, '5m':5, '15m':15, '30m':30}
+# Because we want as much data as possible, it makes sense to use only 1m
+freqs = {'1m': 1}

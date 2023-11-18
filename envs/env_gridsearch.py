@@ -16,7 +16,7 @@ Firstly define a sizer based on [Kelly Criterion](https://www.wikiwand.com/en/Ke
 # Therefore the Sizer is hard to implemented.
 '''
 
-def kellycriterion(prices):
+def kellycriterion(distances):
     '''
     We had discussion on the Kelly Criterion on 30-Oct-2023
     The Kelly Criterion should be based on the change of the difference between the long leg or the short leg
@@ -24,12 +24,11 @@ def kellycriterion(prices):
     Then BTCUSDT - BTCUSDC is [2, -1, 3, 0, 1, 2], which means we long BTCUSDT and short BTCUSDC
     Then the Kelly Criterion assumes that we are holding the difference between BTCUSDT and BTCUSDC
     '''
-    # returns = prices/prices.shift(1).dropna() * -1
 
-    kc_p = len(prices[prices > 0]) / len(prices)
+    kc_p = len(distances[distances > 0]) / len(distances)
     kc_q = 1 - kc_p
-    kc_a = -(prices[prices < 0].mean()) if len(prices[prices < 0]) > 0 else 1e-5
-    kc_b = (prices[prices > 0].mean()) if len(prices[prices > 0]) > 0 else 1e-5
+    kc_a = -(distances[distances < 0].mean()) if len(distances[distances < 0]) > 0 else 1e-5
+    kc_b = (distances[distances > 0].mean()) if len(distances[pricdistanceses > 0]) > 0 else 1e-5
     f = min(max((kc_p/kc_a - kc_q/kc_b), 0), 1)
 
     return f

@@ -1,0 +1,100 @@
+BTCBUSD_BTCDAI
+             1m
+coint  0.985843
+corr   0.987906
+
+BTCBUSD_BTCTUSD
+             1m
+coint  1.000000
+corr   0.994214
+
+BTCBUSD_BTCUSDC
+             1m
+coint  0.997426
+corr   0.999535
+
+BTCBUSD_BTCUSDT
+             1m
+coint  0.670528
+corr   0.999799
+
+BTCDAI_BTCTUSD
+             1m
+coint  0.988417
+corr   0.985395
+
+BTCDAI_BTCUSDC
+             1m
+coint  0.984556
+corr   0.987868
+
+BTCDAI_BTCUSDT
+             1m
+coint  0.983269
+corr   0.987605
+
+BTCTUSD_BTCUSDC
+             1m
+coint  1.000000
+corr   0.994157
+
+BTCTUSD_BTCUSDT
+             1m
+coint  0.989704
+corr   0.993920
+
+BTCUSDC_BTCUSDT
+             1m
+coint  0.894466
+corr   0.999341
+
+BTCBUSD_BTCDAI
+             1m
+coint  0.985843
+corr   0.987906
+
+BTCBUSD_BTCTUSD
+             1m
+coint  1.000000
+corr   0.994214
+
+BTCBUSD_BTCUSDC
+             1m
+coint  0.997426
+corr   0.999535
+
+BTCBUSD_BTCUSDT
+             1m
+coint  0.670528
+corr   0.999799
+
+BTCDAI_BTCTUSD
+             1m
+coint  0.988417
+corr   0.985395
+
+BTCDAI_BTCUSDC
+             1m
+coint  0.984556
+corr   0.987868
+
+BTCDAI_BTCUSDT
+             1m
+coint  0.983269
+corr   0.987605
+
+BTCTUSD_BTCUSDC
+             1m
+coint  1.000000
+corr   0.994157
+
+BTCTUSD_BTCUSDT
+             1m
+coint  0.989704
+corr   0.993920
+
+BTCUSDC_BTCUSDT
+             1m
+coint  0.894466
+corr   0.999341
+
