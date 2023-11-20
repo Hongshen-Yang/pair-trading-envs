@@ -28,7 +28,7 @@ def kellycriterion(distances):
     kc_p = len(distances[distances > 0]) / len(distances)
     kc_q = 1 - kc_p
     kc_a = -(distances[distances < 0].mean()) if len(distances[distances < 0]) > 0 else 1e-5
-    kc_b = (distances[distances > 0].mean()) if len(distances[pricdistanceses > 0]) > 0 else 1e-5
+    kc_b = (distances[distances > 0].mean()) if len(distances[distances > 0]) > 0 else 1e-5
     f = min(max((kc_p/kc_a - kc_q/kc_b), 0), 1)
 
     return f
