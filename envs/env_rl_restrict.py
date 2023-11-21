@@ -220,9 +220,10 @@ class PairTradingEnv(gym.Env):
         #     f"cash: {self.cash}, curr_price0: {self.curr_price0}, curr_price1: {self.curr_price1} "
         # )
             
-        with open(f"result/rl-restrict/networth_{self.model}.csv", mode='a', newline='') as csv_f:
+        with open(f"result/rl-restrict/networth_{self.model}.csv", mode='a+', newline='') as csv_f:
             writer = csv.writer(csv_f)
             writer.writerow(
                 [self.df0['datetime'].iloc[self.current_step], 
-                self.net_worth]
+                self.net_worth,
+                self.action]
             )

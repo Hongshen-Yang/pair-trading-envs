@@ -173,6 +173,10 @@ class PairTradingEnv(gym.Env):
         profit = self.net_worth - self.cash
         # print(f"networth {self.net_worth}, action {self.action}, kc {self.kc}, pos {self.position}, holding0 {self.holding0}, holding1 {self.holding1}")
 
-        with open(f"result/rl-freeop/networth_{self.model}.csv", mode='a', newline='') as csv_f:
+        with open(f"result/rl-freeop/networth_{self.model}.csv", mode='a+', newline='') as csv_f:
             writer = csv.writer(csv_f)
-            writer.writerow([self.df0['datetime'].iloc[self.current_step], self.net_worth])
+            writer.writerow(
+                [self.df0['datetime'].iloc[self.current_step], 
+                self.net_worth,
+                self.action]
+            )
