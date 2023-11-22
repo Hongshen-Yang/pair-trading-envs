@@ -14,7 +14,8 @@ Firstly clone the project with submodules onto your local drive.
 `pip install -r requirements.txt` or `pip3 install -r requirements.txt`
 
 ## STEP3: Start using jupyter notebook
-Start from params.py, to decide the range of trading
+Start from `params.py`, to decide the assets to trade
+Next is `preliminaries.ipynb` to download all the necessary data
 
 ## STEP4: Using notebooks to trade
 We have `trade_gridsearch.ipynb`, `trade_RL_restrict.ipynb` and `trade_RL_freeop.ipynb`
