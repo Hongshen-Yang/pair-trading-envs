@@ -6,7 +6,7 @@ import gymnasium as gym
 from gymnasium import spaces
 from envs.env_gridsearch import kellycriterion
 
-PERIOD = 150 # Only look at the current price
+PERIOD = 1000 # Only look at the current price
 CASH = 10000
 ISKELLY = True
 OPEN_THRE = 6.0
@@ -16,7 +16,7 @@ class PairTradingEnv(gym.Env):
     metadata = {'render.modes': ['console']}
 
     # for pair trading, we need to feed in two OHLCV dataframes
-    def __init__(self, df0, df1, tc=0.001, period=PERIOD, cash=CASH, isKelly=ISKELLY, model=""):
+    def __init__(self, df0, df1, tc=0.0002, period=PERIOD, cash=CASH, isKelly=ISKELLY, model=""):
         super().__init__()
 
         if not df0['time'].equals(df1['time']):
