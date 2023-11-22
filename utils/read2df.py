@@ -21,21 +21,24 @@ def read2df(symbols, freqs, marketType="spot"):
             # Loop through each zip file in the directory
             for file_name in os.listdir(directory):
                 if file_name.endswith('.zip'):
-                    with zipfile.ZipFile(os.path.join(directory, file_name), 'r') as zip_ref:
-                        # only one CSV file in each zip archive
-                        csv_file = zip_ref.namelist()[0]
-                        with zip_ref.open(csv_file) as csv_fp:
-                            # Read the CSV data into a DataFrame
-                            temp_df = pd.read_csv(csv_fp, header=None)
-                            temp_df.columns = [
-                                'open_time', 'open', 'high', 'low', 'close', 'volume', 
-                                'close_time', 'quote_asset_volume', 'number_of_trades', 
-                                'taker_buy_base_asset_volume', 'taker_buy_quote_asset_volume', 'ignore'
-                            ]
-                            temp_df = temp_df.rename(columns={"close_time": "time"})
-                            temp_df['tic'] = symbol
-                            temp_df['itvl'] = freq
-                            rawdfs.append(temp_df[['time', 'open', 'high', 'low', 'close', 'volume', 'tic', 'itvl']])
+                    zip_file_path = os.path.join(directory, file_name)
+
+                    if os.path.exists(zip_file_path):
+                        with zipfile.ZipFile(os.path.join(directory, file_name), 'r') as zip_ref:
+                            # only one CSV file in each zip archive
+                            csv_file = zip_ref.namelist()[0]
+                            with zip_ref.open(csv_file) as csv_fp:
+                                # Read the CSV data into a DataFrame
+                                temp_df = pd.read_csv(csv_fp, header=None)
+                                temp_df.columns = [
+                                    'open_time', 'open', 'high', 'low', 'close', 'volume', 
+                                    'close_time', 'quote_asset_volume', 'number_of_trades', 
+                                    'taker_buy_base_asset_volume', 'taker_buy_quote_asset_volume', 'ignore'
+                                ]
+                                temp_df = temp_df.rename(columns={"close_time": "time"})
+                                temp_df['tic'] = symbol
+                                temp_df['itvl'] = freq
+                                rawdfs.append(temp_df[['time', 'open', 'high', 'low', 'close', 'volume', 'tic', 'itvl']])
 
         # Concatenate all symbols into a single DataFrame
         rawdf = pd.concat(rawdfs, ignore_index=True)
@@ -47,10 +50,16 @@ def read2df(symbols, freqs, marketType="spot"):
         df = rawdf[rawdf['time'].isin(tic_counts[tic_counts == len(rawdf['tic'].unique())].index)]
         # Only wanted columns
         df = df[['time', 'open', 'high', 'low', 'close', 'volume', 'tic', 'itvl']]
+        df = df[df['time']!='close_time']
+
         df['datetime'] = pd.to_datetime(df['time'], unit='ms')
 
-        df = df.sort_values(['time', 'tic', 'itvl'],ignore_index=True)
+        numeric_columns = df.columns.difference(['datetime', 'tic', 'itvl'])
+        df[numeric_columns] = df[numeric_columns].apply(pd.to_numeric, errors='coerce')
 
+        df = df.sort_values(['time', 'tic', 'itvl'],ignore_index=True)
+        df = df.drop_duplicates()
+        
         dfs.append(df)
     
     return dfs

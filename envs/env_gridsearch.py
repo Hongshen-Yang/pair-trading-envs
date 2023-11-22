@@ -1,4 +1,5 @@
 import os
+import csv
 import datetime
 import backtrader as bt
 import numpy as np
@@ -127,7 +128,7 @@ class PairTrading(bt.Strategy):
         stddev = bt.indicators.StandardDeviation(self.spread, period=self.p.period)
         self.zscore = (self.spread - bt.indicators.MovingAverageSimple(self.spread, period=self.p.period)) / stddev
 
-        self.storagetxt =  f"result/gridsearch/{self.p.prefix}_{self.data0._name}_{self.data1._name}_O{int(self.p.OPEN_THRE*10)}C{int(self.p.CLOS_THRE*10)}P{self.p.period}.txt"
+        self.storagetxt =  f"result/gridsearch/{self.p.prefix}_{self.data0._name}_{self.data1._name}_O{int(self.p.OPEN_THRE*10)}C{int(self.p.CLOS_THRE*10)}P{self.p.period}.csv"
         os.remove(self.storagetxt) if os.path.exists(self.storagetxt) else None
         '''
         2023 Oct 18
@@ -143,26 +144,27 @@ class PairTrading(bt.Strategy):
         # We should have separate kelly criteria calculation for different direction
         self.kc_f = KellyCriterionIndicator(self.spread, period=self.p.period)
 
-    # Actually it is better to use `notify_trade`, but I can't really find much doc on it
-    def notify_order(self, order):
-        if self.p.verbose:
-            with open(self.storagetxt, "a") as f:
-                if order.status in [order.Submitted, order.Accepted]:
-                    return
-                elif order.status == order.Completed:
-                    if order.isbuy():
-                        f.write(f"Buy {order.data._name} @ price: {order.executed.price} for Qty: {order.executed.size}" + "\n")
-                    else:
-                        f.write(f"Sell {order.data._name} @ price: {order.executed.price} for Qty: {order.executed.size}" + "\n")
-                elif order.status in [order.Expired, order.Canceled, order.Margin]:
-                    # f.write(f"{order.Status[order.status]}" + "\n")
-                    return
-            f.close()
+        # Actually it is better to use `notify_trade`, but I can't really find much doc on it
+        # def notify_order(self, order):
+        #     if self.p.verbose:
+        #         with open(self.storagetxt, "a") as f:
+        #             if order.status in [order.Submitted, order.Accepted]:
+        #                 return
+        #             elif order.status == order.Completed:
+        #                 if order.isbuy():
+        #                     f.write(f"Buy {order.data._name} @ price: {order.executed.price} for Qty: {order.executed.size}" + "\n")
+        #                 else:
+        #                     f.write(f"Sell {order.data._name} @ price: {order.executed.price} for Qty: {order.executed.size}" + "\n")
+        #             elif order.status in [order.Expired, order.Canceled, order.Margin]:
+        #                 # f.write(f"{order.Status[order.status]}" + "\n")
+        #                 return
+
+        #         f.close()
     
-    # no documentation on notify_trade!!!! so hard to crawl through source code for APIs !!!!
-    # def notify_trade(self, trade):
-    #     if trade.status == 2:
-    #         print(trade.pnlcomm, trade.data._name)
+        # no documentation on notify_trade!!!! so hard to crawl through source code for APIs !!!!
+        # def notify_trade(self, trade):
+        #     if trade.status == 2:
+        #         print(trade.pnlcomm, trade.data._name)
 
     def next(self):
         # Time management in backtrader
@@ -176,47 +178,44 @@ class PairTrading(bt.Strategy):
         # Whether to activate kelly criterion or not
         kc = self.kc_f[0] if self.p.kellycriterion else 1
 
-        with open(self.storagetxt, "a") as f:
-            if abs(self.zscore[0]) <= self.p.CLOS_THRE and position != 0:
-                if self.p.verbose:
-                    f.write(f"---- Close Position @ {current_time} ----" + "\n")
+        # actions: {0: short p0 long p1, 1: close, 2: long p0 short p1, 3: do nothing}
+        if abs(self.zscore[0]) <= self.p.CLOS_THRE and position != 0:
+            self.close(data=self.data0)
+            self.close(data=self.data1)
+            action = 1
+    
+        elif self.zscore[0] <= -self.p.OPEN_THRE and position == 0 and kc!=0:
+            # purchase with Kelly Criterion
+            purchase_amount = self.broker.get_cash()/self.data0.close[0] * kc
+ 
+            self.buy(data=self.data0, size=purchase_amount)
+            self.sell(data=self.data1, size=purchase_amount*ratio)
+            action = 2
 
-                self.close(data=self.data0)
-                self.close(data=self.data1)
+        elif self.zscore[0] >= self.p.OPEN_THRE and position == 0 and kc!=0:
+            # purchase with Kelly Criterion
+            purchase_amount = self.broker.get_cash()/self.data1.close[0] * kc
+
+            self.sell(data=self.data0, size=purchase_amount)
+            self.buy(data=self.data1, size=purchase_amount*ratio)
+            action = 0
         
-            elif self.zscore[0] <= -self.p.OPEN_THRE and position == 0 and kc!=0:
-                if self.p.verbose:
-                    f.write(f"---- Open Position @ {current_time} ----" + "\n")
+        else:
+            action = 3
 
-                # purchase with Kelly Criterion
-                purchase_amount = self.broker.get_cash()/self.data0.close[0] * kc
+        with open(self.storagetxt, mode='a+', newline='') as csv_f:
+            writer = csv.writer(csv_f)
+            writer.writerow([
+                current_time, 
+                self.broker.get_value(),
+                action
+            ])
 
-                self.buy(data=self.data0, size=purchase_amount)
-                self.sell(data=self.data1, size=purchase_amount*ratio)
-
-            elif self.zscore[0] >= self.p.OPEN_THRE and position == 0 and kc!=0:
-                if self.p.verbose:
-                    f.write(f"---- Open Position @ {current_time} ----\n")
-                
-                # purchase with Kelly Criterion
-                purchase_amount = self.broker.get_cash()/self.data1.close[0] * kc
-
-                self.sell(data=self.data0, size=purchase_amount)
-                self.buy(data=self.data1, size=purchase_amount*ratio)
-
-        f.close()
+        csv_f.close()
 
     def stop(self):
         self.close(data=self.data0)
         self.close(data=self.data1)
-        
-        with open(self.storagetxt, "a") as f:
-            f.write(f"==================================================\n")
-            f.write(f'Open Threshold:{self.params.OPEN_THRE}, Close Threshold:{self.params.CLOS_THRE}, period: {self.params.period}\n')
-            f.write('Starting Value - %.2f\n' % self.broker.startingcash)
-            f.write('Ending   Value - %.2f\n' % self.broker.getvalue())
-            f.write(f"==================================================\n")
-        f.close()
 
         if self.p.verbose == 2:
             print(f"==================================================\n")

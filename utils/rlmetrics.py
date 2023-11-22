@@ -1,3 +1,15 @@
+import pandas as pd
+
+def get_return(networthcsv):
+    returns = pd.read_csv(networthcsv, names=['datetime', 'values', 'action'])
+    returns['datetime'] = pd.to_datetime(returns['datetime'], format='mixed')
+    returns.set_index('datetime', inplace=True)
+
+    returns['returns'] = returns['values'].pct_change()
+    returns = returns.dropna()
+
+    return returns
+
 def get_metrics(best_return):
     # Calculate total orders count
     total_orders_count = best_return.shape[0]

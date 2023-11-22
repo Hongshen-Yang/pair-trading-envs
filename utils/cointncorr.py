@@ -65,8 +65,9 @@ class CointnCorr():
                     first_ele = batch_df[pair[0]]
                     second_ele = batch_df[pair[1]]
 
-                    _, pvalue, _ = coint(first_ele, second_ele)
-                    corr = np.corrcoef(first_ele, second_ele)[0][1]
+                    _, pvalue, _ = coint(first_ele, second_ele) 
+
+                    corr = np.corrcoef(first_ele.astype(float), second_ele.astype(float))[0][1]
 
                     pair_ = "_".join(pair)
                     dfs_res_det[pair_][freq]['coint'].append(pvalue < 0.1)
