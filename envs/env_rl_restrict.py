@@ -7,16 +7,17 @@ from gymnasium import spaces
 from envs.env_gridsearch import kellycriterion
 
 PERIOD = 1000 # Only look at the current price
-CASH = 10000
+CASH = 100000
 ISKELLY = True
 OPEN_THRE = 6.0
 CLOS_THRE = 0.6
+FIX_AMT = 1000
 
 class PairTradingEnv(gym.Env):
     metadata = {'render.modes': ['console']}
 
     # for pair trading, we need to feed in two OHLCV dataframes
-    def __init__(self, df0, df1, tc=0.0002, period=PERIOD, cash=CASH, isKelly=ISKELLY, model=""):
+    def __init__(self, df0, df1, tc=0.0002, period=PERIOD, cash=CASH, isKelly=ISKELLY, fixed_amt=FIX_AMT, verbose=0, model=""):
         super().__init__()
 
         if not df0['time'].equals(df1['time']):
@@ -25,6 +26,8 @@ class PairTradingEnv(gym.Env):
         self.cash = cash
         self.period = period
         self.model = model
+        self.fixed_amt = fixed_amt
+        self.verbose=verbose
 
         # transaction cost
         self.tc = tc
@@ -99,8 +102,8 @@ class PairTradingEnv(gym.Env):
     def _open_position(self):
 
         # evaluate purchasing power 
-        max_amount0 = self.cash/self.curr_price0
-        max_amount1 = self.cash/self.curr_price1
+        max_amount0 = (self.fixed_amt if self.fixed_amt else self.cash)/self.curr_price0
+        max_amount1 = (self.fixed_amt if self.fixed_amt else self.cash)/self.curr_price1
 
         direction = self.action-1
         kc = self._kellycriterion(direct=direction) if self.isKelly else 1
@@ -122,8 +125,8 @@ class PairTradingEnv(gym.Env):
         self.order_amount1 = order_amount1
 
     def _reverse_position(self):
-        max_amount0 = self.cash/self.curr_price0
-        max_amount1 = self.cash/self.curr_price1
+        max_amount0 = (self.fixed_amt if self.fixed_amt else self.cash)/self.curr_price0
+        max_amount1 = (self.fixed_amt if self.fixed_amt else self.cash)/self.curr_price1
 
         direction = self.action-1
         kc = self._kellycriterion(direct=direction) if self.isKelly else 1
@@ -210,15 +213,16 @@ class PairTradingEnv(gym.Env):
     
     def render(self):
         profit = self.net_worth - self.cash
-        
-        # print(
-        #     # f"direction: {self.action-1} "
-        #     f"networth: {self.net_worth}, " 
-        #     f"action: {self.action}, position: {self.position}, kc: {self.kc} "
-        #     f"order_amount0: {self.order_amount0}, order_amount1: {self.order_amount1} "
-        #     f"holding0: {self.holding0}, holding1: {self.holding1} "
-        #     f"cash: {self.cash}, curr_price0: {self.curr_price0}, curr_price1: {self.curr_price1} "
-        # )
+
+        if self.verbose == 1:        
+            print(
+                # f"direction: {self.action-1} "
+                f"networth: {self.net_worth}, " 
+                f"action: {self.action}, position: {self.position}, kc: {self.kc} "
+                f"order_amount0: {self.order_amount0}, order_amount1: {self.order_amount1} "
+                f"holding0: {self.holding0}, holding1: {self.holding1} "
+                f"cash: {self.cash}, curr_price0: {self.curr_price0}, curr_price1: {self.curr_price1} "
+            )
             
         with open(f"result/rl-restrict/networth_{self.model}.csv", mode='a+', newline='') as csv_f:
             writer = csv.writer(csv_f)

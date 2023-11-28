@@ -7,9 +7,13 @@ We will train data from `start_date` until `trade_date`, and start trade after `
 '''
 # symbols = ['BTCUSDT', 'ETHUSDT', 'LTCUSDT', 'XMRUSDT', 'BNBUSDT', 'ADAUSDT', 'DOGEUSDT', 'SOLUSDT', 'TRXUSDT']
 # symbols = ['USDCUSDT', 'DAIUSDT', 'TUSDUSDT', 'BUSDUSDT', 'USDCTUSD', 'USDCBUSD', 'DAIBUSD', 'TUSDBUSD', 'BUSDDAI']
-
 # symbols = ['BTCUSDT', 'BTCUSD', 'BTCTUSD', 'BTCUSDC', 'BTCBUSD', 'BTCDAI']
-symbols = ['BTCUSDT', 'BTCBUSD']
+# symbols = ['BTCUSDT', 'BTCBUSD']
+
+# Based on the discussion on 23 Nov 2023, we will use fiat instead of stable coins.
+# https://www.binance.com/en/support/faq/how-to-buy-crypto-with-fiat-currencies-360036926252
+symbols = ['BTCUSD', 'BTCEUR', 'BTCGBP', 'BTCRUB', 'BTCTRY', 'BTCNGN', 'BTCUAH']
+
 
 start_date = '2010-01-01'
 trade_date = '2022-10-01'

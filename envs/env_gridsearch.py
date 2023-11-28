@@ -111,6 +111,7 @@ class PairTrading(bt.Strategy):
         verbose = 0, # 0 for only recording final result, 1 for writing the process in file, 2 for writing the process in file + printing final result
         kellycriterion = True,
         prefix = None,
+        fixed_amount = 0,
     )
 
     def __init__(self):
@@ -128,8 +129,10 @@ class PairTrading(bt.Strategy):
         stddev = bt.indicators.StandardDeviation(self.spread, period=self.p.period)
         self.zscore = (self.spread - bt.indicators.MovingAverageSimple(self.spread, period=self.p.period)) / stddev
 
-        self.storagetxt =  f"result/gridsearch/{self.p.prefix}_{self.data0._name}_{self.data1._name}_O{int(self.p.OPEN_THRE*10)}C{int(self.p.CLOS_THRE*10)}P{self.p.period}.csv"
-        os.remove(self.storagetxt) if os.path.exists(self.storagetxt) else None
+        self.storagetxt = (
+            f"result/gridsearch/{self.p.prefix}_{self.data0._name}_{self.data1._name}_"
+            f"O{int(self.p.OPEN_THRE*10)}C{int(self.p.CLOS_THRE*10)}P{self.p.period}.csv"
+        )
         '''
         2023 Oct 18
         Although the ideal case is to write separate pandas dataframes for each execution
@@ -175,8 +178,11 @@ class PairTrading(bt.Strategy):
         ratio = self.data0.close[0] / self.data1.close[0]
         cash = self.broker.get_cash()
         position = self.broker.getposition(self.data0).size + self.broker.getposition(self.data1).size
+
         # Whether to activate kelly criterion or not
         kc = self.kc_f[0] if self.p.kellycriterion else 1
+        order_amount0 = (self.p.fixed_amount if self.p.fixed_amount else cash) / self.data0.close[0] * kc
+        order_amount1 = (self.p.fixed_amount if self.p.fixed_amount else cash) / self.data1.close[0] * kc
 
         # actions: {0: short p0 long p1, 1: close, 2: long p0 short p1, 3: do nothing}
         if abs(self.zscore[0]) <= self.p.CLOS_THRE and position != 0:
@@ -186,18 +192,17 @@ class PairTrading(bt.Strategy):
     
         elif self.zscore[0] <= -self.p.OPEN_THRE and position == 0 and kc!=0:
             # purchase with Kelly Criterion
-            purchase_amount = self.broker.get_cash()/self.data0.close[0] * kc
  
-            self.buy(data=self.data0, size=purchase_amount)
-            self.sell(data=self.data1, size=purchase_amount*ratio)
+            self.buy(data=self.data0, size=order_amount0)
+            self.sell(data=self.data1, size=order_amount1)
             action = 2
 
         elif self.zscore[0] >= self.p.OPEN_THRE and position == 0 and kc!=0:
             # purchase with Kelly Criterion
             purchase_amount = self.broker.get_cash()/self.data1.close[0] * kc
 
-            self.sell(data=self.data0, size=purchase_amount)
-            self.buy(data=self.data1, size=purchase_amount*ratio)
+            self.sell(data=self.data0, size=order_amount0)
+            self.buy(data=self.data1, size=order_amount1)
             action = 0
         
         else:

@@ -8,16 +8,17 @@ from envs.env_gridsearch import kellycriterion
 
 # The lookback period for the observation space
 PERIOD = 1000 # Only look at the current price
-CASH = 10000
+CASH = 100000
 ISKELLY = True
 OPEN_THRE = 2.0
 CLOS_THRE = 0.1
+FIX_AMT = 1000
 
 class PairTradingEnv(gym.Env):
     metadata = {'render.modes': ['console']}
 
     # for pair trading, we need to feed in two OHLCV dataframes
-    def __init__(self, df0, df1, tc=0.0002, period=PERIOD, cash=CASH, isKelly=ISKELLY, model=""):
+    def __init__(self, df0, df1, tc=0.0002, period=PERIOD, cash=CASH, isKelly=ISKELLY, fixed_amt=FIX_AMT, verbose=0, model=""):
         super().__init__()
 
         if not df0['time'].equals(df1['time']):
@@ -26,6 +27,8 @@ class PairTradingEnv(gym.Env):
         self.cash = cash
         self.period = period
         self.model = model
+        self.fixed_amt = fixed_amt
+        self.verbose = verbose
 
         # transaction cost
         self.tc = tc
@@ -90,8 +93,8 @@ class PairTradingEnv(gym.Env):
         curr_price0 = self.df0['close'].iloc[self.current_step]
         curr_price1 = self.df1['close'].iloc[self.current_step]
 
-        max_amount0 = self.cash/curr_price0
-        max_amount1 = self.cash/curr_price1
+        max_amount0 = (self.fixed_amt if self.fixed_amt else self.cash)/curr_price0
+        max_amount1 = (self.fixed_amt if self.fixed_amt else self.cash)/curr_price1
 
         direction = self.action-1
         kc = self._kellycriterion(direct=direction) if self.isKelly else 1
@@ -171,7 +174,9 @@ class PairTradingEnv(gym.Env):
     
     def render(self):
         profit = self.net_worth - self.cash
-        # print(f"networth {self.net_worth}, action {self.action}, kc {self.kc}, pos {self.position}, holding0 {self.holding0}, holding1 {self.holding1}")
+
+        if self.verbose == 1:
+            print(f"networth {self.net_worth}, action {self.action}, kc {self.kc}, pos {self.position}, holding0 {self.holding0}, holding1 {self.holding1}")
 
         with open(f"result/rl-freeop/networth_{self.model}.csv", mode='a+', newline='') as csv_f:
             writer = csv.writer(csv_f)
