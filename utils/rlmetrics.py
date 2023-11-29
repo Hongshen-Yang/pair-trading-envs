@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 def get_return(networthcsv):
     returns = pd.read_csv(networthcsv, names=['datetime', 'values', 'action'])

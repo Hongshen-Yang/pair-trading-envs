@@ -6,9 +6,9 @@ import gymnasium as gym
 from gymnasium import spaces
 from envs.env_gridsearch import kellycriterion
 
-PERIOD = 1000 # Only look at the current price
-CASH = 100000
-ISKELLY = True
+PERIOD = 100 # Only look at the current price
+CASH = 10000
+ISKELLY = False
 OPEN_THRE = 6.0
 CLOS_THRE = 0.6
 FIX_AMT = 1000
@@ -17,7 +17,7 @@ class PairTradingEnv(gym.Env):
     metadata = {'render.modes': ['console']}
 
     # for pair trading, we need to feed in two OHLCV dataframes
-    def __init__(self, df0, df1, tc=0.0002, period=PERIOD, cash=CASH, isKelly=ISKELLY, fixed_amt=FIX_AMT, verbose=0, model=""):
+    def __init__(self, df0, df1, tc=0.001, period=PERIOD, cash=CASH, isKelly=ISKELLY, fixed_amt=FIX_AMT, verbose=0, noThres=False, model=""):
         super().__init__()
 
         if not df0['time'].equals(df1['time']):
@@ -28,6 +28,7 @@ class PairTradingEnv(gym.Env):
         self.model = model
         self.fixed_amt = fixed_amt
         self.verbose=verbose
+        self.noThres = noThres
 
         # transaction cost
         self.tc = tc
@@ -42,12 +43,18 @@ class PairTradingEnv(gym.Env):
         # Baseline 3 does not support Dict/Tuple action spaces....only Box Discrete MultiDiscrete MultiBinary
         self.action_space = spaces.Discrete(4) # actions: {0: short p0 long p1, 1: close, 2: long p0 short p1, 3: do nothing}
 
-        self.observation_space = spaces.Dict({
-            "compare_open_thre": spaces.Discrete(3), # {0: above positive thres, 1: in between, 2: below negative thres}
-            "compare_clos_thre": spaces.Discrete(3), # {0: above positive thres, 1: in between, 2: below negative thres}
-            "zscore":     spaces.Box(low=-np.inf, high=np.inf, dtype=np.float64),
-            "position":   spaces.Discrete(3), # {0: short leg0 long leg1, 1: none, 2: long leg0 short leg1}
-        })
+        if self.noThres:
+            self.observation_space = spaces.Dict({
+                "zscore":     spaces.Box(low=-np.inf, high=np.inf, dtype=np.float64),
+                "position":   spaces.Discrete(3), # {0: short leg0 long leg1, 1: none, 2: long leg0 short leg1}
+            })
+        else:
+            self.observation_space = spaces.Dict({
+                "compare_open_thre": spaces.Discrete(3), # {0: above positive thres, 1: in between, 2: below negative thres}
+                "compare_clos_thre": spaces.Discrete(3), # {0: above positive thres, 1: in between, 2: below negative thres}
+                "zscore":     spaces.Box(low=-np.inf, high=np.inf, dtype=np.float64),
+                "position":   spaces.Discrete(3), # {0: short leg0 long leg1, 1: none, 2: long leg0 short leg1}
+            })
 
         # if the length is 35, then the index shall be 0~34
         self.max_steps = len(df0)-1
@@ -68,18 +75,24 @@ class PairTradingEnv(gym.Env):
         self.distance = [x - y for x, y in zip(prices0, prices1)]
         zscore = (self.distance[-1] - np.mean(self.distance)) / np.std(self.distance)
 
-        '''The OPEN_THRE and CLOS_THRE comes from trade_gridsearch'''
-        open_thre = OPEN_THRE
-        clos_thre = CLOS_THRE
-        compare_open_thre = 0 if zscore > open_thre else 2 if zscore < -open_thre else 1
-        compare_clos_thre = 0 if zscore > clos_thre else 2 if zscore < -open_thre else 1
-        
-        obs = {
-            "compare_open_thre": compare_open_thre,
-            "compare_clos_thre": compare_clos_thre,
-            "zscore": np.array([zscore]),
-            "position": self.position,
-        }
+        if self.noThres:
+            obs = {
+                "zscore": np.array([zscore]),
+                "position": self.position,
+            }
+        else:
+            '''The OPEN_THRE and CLOS_THRE comes from trade_gridsearch'''
+            open_thre = OPEN_THRE
+            clos_thre = CLOS_THRE
+            compare_open_thre = 0 if zscore > open_thre else 2 if zscore < -open_thre else 1
+            compare_clos_thre = 0 if zscore > clos_thre else 2 if zscore < -open_thre else 1
+            
+            obs = {
+                "compare_open_thre": compare_open_thre,
+                "compare_clos_thre": compare_clos_thre,
+                "zscore": np.array([zscore]),
+                "position": self.position,
+            }
         
         return obs
 
@@ -224,7 +237,7 @@ class PairTradingEnv(gym.Env):
                 f"cash: {self.cash}, curr_price0: {self.curr_price0}, curr_price1: {self.curr_price1} "
             )
             
-        with open(f"result/rl-restrict/networth_{self.model}.csv", mode='a+', newline='') as csv_f:
+        with open(f"{self.model}", mode='a+', newline='') as csv_f:
             writer = csv.writer(csv_f)
             writer.writerow(
                 [self.df0['datetime'].iloc[self.current_step], 

@@ -100,15 +100,12 @@ class PairTradingCommInfo(bt.CommInfoBase):
         ('percabs', True),
     )
 
-strategytxt = f"result/gridsearch/strategy.txt"
-os.remove(strategytxt) if os.path.exists(strategytxt) else None
-
 class PairTrading(bt.Strategy):
     params = dict(
         OPEN_THRE=2,
         CLOS_THRE=0.1,
         period=30,
-        verbose = 0, # 0 for only recording final result, 1 for writing the process in file, 2 for writing the process in file + printing final result
+        verbose = 0, # 0 for writing the process in file, 1 for writing the process in file + printing final result
         kellycriterion = True,
         prefix = None,
         fixed_amount = 0,
@@ -148,34 +145,14 @@ class PairTrading(bt.Strategy):
         self.kc_f = KellyCriterionIndicator(self.spread, period=self.p.period)
 
         # Actually it is better to use `notify_trade`, but I can't really find much doc on it
-        # def notify_order(self, order):
-        #     if self.p.verbose:
-        #         with open(self.storagetxt, "a") as f:
-        #             if order.status in [order.Submitted, order.Accepted]:
-        #                 return
-        #             elif order.status == order.Completed:
-        #                 if order.isbuy():
-        #                     f.write(f"Buy {order.data._name} @ price: {order.executed.price} for Qty: {order.executed.size}" + "\n")
-        #                 else:
-        #                     f.write(f"Sell {order.data._name} @ price: {order.executed.price} for Qty: {order.executed.size}" + "\n")
-        #             elif order.status in [order.Expired, order.Canceled, order.Margin]:
-        #                 # f.write(f"{order.Status[order.status]}" + "\n")
-        #                 return
-
-        #         f.close()
+        # def notify_order(self, trade):
+        #    pass
     
-        # no documentation on notify_trade!!!! so hard to crawl through source code for APIs !!!!
-        # def notify_trade(self, trade):
-        #     if trade.status == 2:
-        #         print(trade.pnlcomm, trade.data._name)
-
     def next(self):
         # Time management in backtrader
         # https://www.backtrader.com/docu/timemgmt/
         current_time = self.data1.datetime.datetime()
 
-        # Calculate the ratio between the 2 assets
-        ratio = self.data0.close[0] / self.data1.close[0]
         cash = self.broker.get_cash()
         position = self.broker.getposition(self.data0).size + self.broker.getposition(self.data1).size
 
@@ -191,16 +168,11 @@ class PairTrading(bt.Strategy):
             action = 1
     
         elif self.zscore[0] <= -self.p.OPEN_THRE and position == 0 and kc!=0:
-            # purchase with Kelly Criterion
- 
             self.buy(data=self.data0, size=order_amount0)
             self.sell(data=self.data1, size=order_amount1)
             action = 2
 
         elif self.zscore[0] >= self.p.OPEN_THRE and position == 0 and kc!=0:
-            # purchase with Kelly Criterion
-            purchase_amount = self.broker.get_cash()/self.data1.close[0] * kc
-
             self.sell(data=self.data0, size=order_amount0)
             self.buy(data=self.data1, size=order_amount1)
             action = 0
@@ -222,7 +194,7 @@ class PairTrading(bt.Strategy):
         self.close(data=self.data0)
         self.close(data=self.data1)
 
-        if self.p.verbose == 2:
+        if self.p.verbose:
             print(f"==================================================\n")
             print(f'Open Threshold:{self.params.OPEN_THRE}, Close Threshold:{self.params.CLOS_THRE}, period: {self.params.period}\n')
             print('Starting Value - %.2f\n' % self.broker.startingcash)
