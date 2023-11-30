@@ -180,7 +180,8 @@ class PairTradingEnv(gym.Env):
         self.holding1 = 0
         self.render_step = 0
 
-        self.current_step = np.random.randint(self.period, self.max_steps)
+        # self.current_step = np.random.randint(self.period, self.max_steps)
+        self.current_step = self.period + 1
 
         return self._next_observation(), {}
     
