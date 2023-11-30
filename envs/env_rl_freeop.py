@@ -7,18 +7,18 @@ from gymnasium import spaces
 from envs.env_gridsearch import kellycriterion
 
 # The lookback period for the observation space
-PERIOD = 100 # Only look at the current price
+PERIOD = 1300 # Only look at the current price
 CASH = 10000
 ISKELLY = False
-OPEN_THRE = 2.0
-CLOS_THRE = 0.1
+OPEN_THRE = 2.2
+CLOS_THRE = 0.3
 FIX_AMT = 1000
 
 class PairTradingEnv(gym.Env):
     metadata = {'render.modes': ['console']}
 
     # for pair trading, we need to feed in two OHLCV dataframes
-    def __init__(self, df0, df1, tc=0.001, period=PERIOD, cash=CASH, isKelly=ISKELLY, fixed_amt=FIX_AMT, verbose=0, noThres=False, model=""):
+    def __init__(self, df0, df1, tc=0.0002, period=PERIOD, cash=CASH, isKelly=ISKELLY, fixed_amt=FIX_AMT, verbose=0, noThres=False, model=""):
         super().__init__()
 
         if not df0['time'].equals(df1['time']):

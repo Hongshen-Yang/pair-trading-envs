@@ -33,6 +33,7 @@ def gridsearch(estimator, param_grid, scoring, datafeeds):
     for params in tqdm(param_combinations):
         param_dict = {key: val for key, val in zip(param_grid.keys(), params)}
         if param_dict['OPEN_THRE'] > param_dict['CLOS_THRE']:
+            print(param_dict)
             result = estimator(datafeeds, param_dict)
             score = scoring(result)
             if best_score is None or score > best_score:

@@ -100,6 +100,11 @@ class PairTradingCommInfo(bt.CommInfoBase):
         ('percabs', True),
     )
 
+'''
+About broker.getvalue()
+From backtrader's perspective, it's just a series of data such as {5,6,7,8,9} and {2,3,4,5,6}
+Backtrader takes it all as the price against cash while it not necessarily a truth
+'''
 class PairTrading(bt.Strategy):
     params = dict(
         OPEN_THRE=2,

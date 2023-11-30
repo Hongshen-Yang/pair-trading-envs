@@ -1,5 +1,5 @@
-BTCEUR_BTCGBP
-             1m
-coint  0.343689
-corr   0.951657
+EURUSDT_GBPUSDT
+             5m
+coint  0.352744
+corr   0.499741
 
