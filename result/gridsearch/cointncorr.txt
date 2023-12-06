@@ -1,5 +1,75 @@
-EURUSDT_GBPUSDT
-             5m
-coint  0.352744
-corr   0.499741
+BTCEUR_BTCGBP
+             1m
+coint  0.431818
+corr   0.957257
+
+BTCEUR_BTCRUB
+             1m
+coint  0.416667
+corr   0.877075
+
+BTCEUR_ETHEUR
+             1m
+coint  0.258658
+corr   0.812252
+
+BTCEUR_ETHGBP
+             1m
+coint  0.286797
+corr   0.785874
+
+BTCEUR_ETHUSDT
+             1m
+coint  0.224026
+corr   0.804635
+
+BTCGBP_BTCRUB
+             1m
+coint  0.404762
+corr   0.860955
+
+BTCGBP_ETHEUR
+             1m
+coint  0.268398
+corr   0.782078
+
+BTCGBP_ETHGBP
+             1m
+coint  0.308442
+corr   0.798595
+
+BTCGBP_ETHUSDT
+             1m
+coint  0.254329
+corr   0.782922
+
+BTCRUB_ETHEUR
+             1m
+coint  0.273810
+corr   0.710558
+
+BTCRUB_ETHGBP
+             1m
+coint  0.292208
+corr   0.701779
+
+BTCRUB_ETHUSDT
+             1m
+coint  0.278139
+corr   0.720830
+
+ETHEUR_ETHGBP
+             1m
+coint  0.494589
+corr   0.968461
+
+ETHEUR_ETHUSDT
+             1m
+coint  0.345238
+corr   0.985232
+
+ETHGBP_ETHUSDT
+             1m
+coint  0.436147
+corr   0.965812
 

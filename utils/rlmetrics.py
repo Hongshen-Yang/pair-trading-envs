@@ -2,7 +2,9 @@ import pandas as pd
 import numpy as np
 
 def get_return(networthcsv):
-    returns = pd.read_csv(networthcsv, names=['datetime', 'values', 'action'])
+    returns = pd.read_csv(networthcsv, names=['datetime', 'values', 'action', 'zscore'])
+    # Remove non actions
+    returns = returns[returns['action'] != 3]
     returns['datetime'] = pd.to_datetime(returns['datetime'], format='mixed')
     returns.set_index('datetime', inplace=True)
 
@@ -14,9 +16,9 @@ def get_return(networthcsv):
 def get_metrics(best_return):
     
     # Yearly return
-    total_return = (best_return['values'][-1]-best_return['values'][0])/best_return['values'][0]
-    total_date = (best_return.index[-1]-best_return.index[0]).days/365.25
-    return_yearly = total_return / total_date
+    total_return = (best_return['values'][-1])/best_return['values'][0]
+    total_year = (best_return.index[-1]-best_return.index[0]).days/365.25
+    cagr = total_return**(1/total_year)-1
 
     # Calculate total orders count
     total_orders_count = best_return.shape[0]
@@ -49,7 +51,7 @@ def get_metrics(best_return):
     avg_short_order_pnl = best_return[best_return['action'] == 0]['returns'].mean()
 
     # Print the calculated indices
-    print("Yearly return:", format(return_yearly, ".00%"))
+    print("Compound annual growth rate:", format(cagr, ".00%"))
     print("Total orders count:", total_orders_count)
     print("Total long action:", won_orders_count)
     print("Total short action:", lost_orders_count)

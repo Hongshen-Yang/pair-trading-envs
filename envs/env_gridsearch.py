@@ -190,7 +190,8 @@ class PairTrading(bt.Strategy):
             writer.writerow([
                 current_time, 
                 self.broker.get_value(),
-                action
+                action,
+                self.zscore[0],
             ])
 
         csv_f.close()

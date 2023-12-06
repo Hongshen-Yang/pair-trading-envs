@@ -6,12 +6,12 @@ import gymnasium as gym
 from gymnasium import spaces
 from envs.env_gridsearch import kellycriterion
 
-PERIOD = 1300 # Only look at the current price
-CASH = 10000
+PERIOD = 1000 # Only look at the current price
+CASH = 1
 ISKELLY = False
-OPEN_THRE = 2.2
-CLOS_THRE = 0.3
-FIX_AMT = 1000
+OPEN_THRE = 1.8
+CLOS_THRE = 0.4
+FIX_AMT = 0.1
 
 class PairTradingEnv(gym.Env):
     metadata = {'render.modes': ['console']}
@@ -50,8 +50,9 @@ class PairTradingEnv(gym.Env):
             })
         else:
             self.observation_space = spaces.Dict({
-                "compare_open_thre": spaces.Discrete(3), # {0: above positive thres, 1: in between, 2: below negative thres}
-                "compare_clos_thre": spaces.Discrete(3), # {0: above positive thres, 1: in between, 2: below negative thres}
+                "threshold": spaces.Discrete(5), 
+                # {0: above positive open thres, 1: between positive open thres and close thres, 
+                # 2: between two close thres, 3 between negative open thres and close thres, 4: below negative open thres}
                 "zscore":     spaces.Box(low=-np.inf, high=np.inf, dtype=np.float64),
                 "position":   spaces.Discrete(3), # {0: short leg0 long leg1, 1: none, 2: long leg0 short leg1}
             })
@@ -73,24 +74,33 @@ class PairTradingEnv(gym.Env):
         prices1 = self.df1['close'].iloc[self.current_step-self.period: self.current_step]
 
         self.distance = [x - y for x, y in zip(prices0, prices1)]
-        zscore = (self.distance[-1] - np.mean(self.distance)) / np.std(self.distance)
-
+        self.zscore = (self.distance[-1] - np.mean(self.distance)) / np.std(self.distance)
+        
         if self.noThres:
             obs = {
-                "zscore": np.array([zscore]),
+                "zscore": np.array([self.zscore]),
                 "position": self.position,
             }
+
         else:
             '''The OPEN_THRE and CLOS_THRE comes from trade_gridsearch'''
             open_thre = OPEN_THRE
             clos_thre = CLOS_THRE
-            compare_open_thre = 0 if zscore > open_thre else 2 if zscore < -open_thre else 1
-            compare_clos_thre = 0 if zscore > clos_thre else 2 if zscore < -open_thre else 1
+
+            if self.zscore > open_thre:
+                threshold = 0
+            elif self.zscore > clos_thre:
+                threshold = 1
+            elif self.zscore < -open_thre:
+                threshold = 4
+            elif self.zscore < -clos_thre:
+                threshold = 3
+            else:
+                threshold = 2
             
             obs = {
-                "compare_open_thre": compare_open_thre,
-                "compare_clos_thre": compare_clos_thre,
-                "zscore": np.array([zscore]),
+                "threshold": int(threshold),
+                "zscore": np.array([self.zscore]),
                 "position": self.position,
             }
         
@@ -243,5 +253,6 @@ class PairTradingEnv(gym.Env):
             writer.writerow(
                 [self.df0['datetime'].iloc[self.current_step], 
                 self.net_worth,
-                self.action]
+                self.action,
+                self.zscore]
             )
