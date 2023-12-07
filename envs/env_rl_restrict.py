@@ -57,6 +57,8 @@ class PairTradingEnv(gym.Env):
                 "position":   spaces.Discrete(3), # {0: short leg0 long leg1, 1: none, 2: long leg0 short leg1}
             })
 
+        self.position_action_mapping = [[1, 2, 3], [0, 2, 3], [0, 1, 3]]
+    
         # if the length is 35, then the index shall be 0~34
         self.max_steps = len(df0)-1
     
@@ -205,9 +207,13 @@ class PairTradingEnv(gym.Env):
         self.current_step += 1
 
         self.observation = self._next_observation()
-        reward = self.net_worth - self.prev_net_worth
 
-        reward = reward * 2 if reward < 0 else reward
+        if action in self.position_action_mapping[int(self.position)]:
+            reward = self.net_worth - self.prev_net_worth
+            reward = reward * 2 if reward < 0 else reward
+        else:
+            # Invalid action, penalize the agent
+            reward = -1.0
         
         terminated = bool(self.current_step >= self.max_steps)
         truncated = bool(self.net_worth <= 0)
@@ -242,7 +248,7 @@ class PairTradingEnv(gym.Env):
             print(
                 # f"direction: {self.action-1} "
                 f"networth: {self.net_worth}, " 
-                f"action: {self.action}, position: {self.position}, kc: {self.kc} "
+                f"action: {self.action}, position: {self.position}, zscore: {self.zscore} "
                 f"order_amount0: {self.order_amount0}, order_amount1: {self.order_amount1} "
                 f"holding0: {self.holding0}, holding1: {self.holding1} "
                 f"cash: {self.cash}, curr_price0: {self.curr_price0}, curr_price1: {self.curr_price1} "
@@ -254,5 +260,6 @@ class PairTradingEnv(gym.Env):
                 [self.df0['datetime'].iloc[self.current_step], 
                 self.net_worth,
                 self.action,
-                self.zscore]
+                self.zscore,
+                self.position]
             )

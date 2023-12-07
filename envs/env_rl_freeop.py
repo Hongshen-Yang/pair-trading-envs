@@ -199,7 +199,7 @@ class PairTradingEnv(gym.Env):
         profit = self.net_worth - self.cash
 
         if self.verbose == 1:
-            print(f"networth {self.net_worth}, action {self.action}, kc {self.kc}, pos {self.position}, holding0 {self.holding0}, holding1 {self.holding1}")
+            print(f"networth {self.net_worth}, action {self.action}, zscore {self.zscore}, pos {self.position}, holding0 {self.holding0}, holding1 {self.holding1}")
 
         with open(f"{self.model}", mode='a+', newline='') as csv_f:
             writer = csv.writer(csv_f)
@@ -207,5 +207,6 @@ class PairTradingEnv(gym.Env):
                 [self.df0['datetime'].iloc[self.current_step], 
                 self.net_worth,
                 self.action,
-                self.zscore]
+                self.zscore,
+                self.position]
             )

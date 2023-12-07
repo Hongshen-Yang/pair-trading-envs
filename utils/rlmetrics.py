@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 def get_return(networthcsv):
-    returns = pd.read_csv(networthcsv, names=['datetime', 'values', 'action', 'zscore'])
+    returns = pd.read_csv(networthcsv, names=['datetime', 'values', 'action', 'zscore', 'position'])
     # Remove non actions
     returns = returns[returns['action'] != 3]
     returns['datetime'] = pd.to_datetime(returns['datetime'], format='mixed')
