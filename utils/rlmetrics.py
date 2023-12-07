@@ -8,7 +8,7 @@ def get_return(networthcsv):
     returns['datetime'] = pd.to_datetime(returns['datetime'], format='mixed')
     returns.set_index('datetime', inplace=True)
 
-    best_return['pnl'] = best_return['values'] - best_return['values'].shift(-1)
+    returns['pnl'] = returns['values'] - returns['values'].shift(-1)
     returns['returns'] = returns['values'].pct_change()
     returns = returns.dropna()
 
