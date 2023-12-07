@@ -8,6 +8,7 @@ def get_return(networthcsv):
     returns['datetime'] = pd.to_datetime(returns['datetime'], format='mixed')
     returns.set_index('datetime', inplace=True)
 
+    best_return['pnl'] = best_return['values'] - best_return['values'].shift(-1)
     returns['returns'] = returns['values'].pct_change()
     returns = returns.dropna()
 
@@ -27,28 +28,28 @@ def get_metrics(best_return):
     short_action_count = best_return[best_return['action'] == 0].shape[0]
 
     # Calculate won orders count
-    won_orders_count = best_return[best_return['returns'] > 0].shape[0]
+    won_orders_count = best_return[best_return['pnl'] > 0].shape[0]
 
     # Calculate lost orders count
-    lost_orders_count = best_return[best_return['returns'] < 0].shape[0]
+    lost_orders_count = best_return[best_return['pnl'] < 0].shape[0]
 
     # Calculate Win/Loss order ratio
     win_loss_order_ratio = won_orders_count / lost_orders_count if lost_orders_count != 0 else np.inf
 
     # Calculate Avg order pnl
-    avg_order_pnl = best_return['returns'].mean()
+    avg_order_pnl = best_return['pnl'].mean()
 
     # Calculate Avg order pnl won
-    avg_order_pnl_won = best_return[best_return['returns'] > 0]['returns'].mean()
+    avg_order_pnl_won = best_return[best_return['returns'] > 0]['pnl'].mean()
 
     # Calculate Avg order pnl lost
-    avg_order_pnl_lost = best_return[best_return['returns'] < 0]['returns'].mean()
+    avg_order_pnl_lost = best_return[best_return['returns'] < 0]['pnl'].mean()
 
     # Calculate Avg long order pnl
-    avg_long_order_pnl = best_return[best_return['action'] == 2]['returns'].mean()
+    avg_long_order_pnl = best_return[best_return['action'] == 2]['pnl'].mean()
 
     # Calculate Avg short order pnl
-    avg_short_order_pnl = best_return[best_return['action'] == 0]['returns'].mean()
+    avg_short_order_pnl = best_return[best_return['action'] == 0]['pnl'].mean()
 
     # Print the calculated indices
     print("Compound annual growth rate:", format(cagr, ".00%"))
