@@ -33,6 +33,10 @@ def get_metrics(best_return):
     # Calculate lost orders count
     lost_orders_count = best_return[best_return['pnl'] < 0].shape[0]
 
+    max_win = best_return[best_return['pnl'] > 0].max()
+
+    max_loss = best_return[best_return['pnl'] < 0].min()
+
     # Calculate Win/Loss order ratio
     win_loss_order_ratio = won_orders_count / lost_orders_count if lost_orders_count != 0 else np.inf
 

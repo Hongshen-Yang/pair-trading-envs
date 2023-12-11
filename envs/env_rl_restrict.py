@@ -46,15 +46,15 @@ class PairTradingEnv(gym.Env):
         if self.noThres:
             self.observation_space = spaces.Dict({
                 "zscore":     spaces.Box(low=-np.inf, high=np.inf, dtype=np.float64),
-                "position":   spaces.Discrete(3), # {0: short leg0 long leg1, 1: none, 2: long leg0 short leg1}
+                "position":   spaces.MultiBinary(3), # {0: short leg0 long leg1, 1: none, 2: long leg0 short leg1}
             })
         else:
             self.observation_space = spaces.Dict({
-                "threshold": spaces.Discrete(5), 
+                "threshold": spaces.MultiBinary(5), 
                 # {0: above positive open thres, 1: between positive open thres and close thres, 
                 # 2: between two close thres, 3 between negative open thres and close thres, 4: below negative open thres}
                 "zscore":     spaces.Box(low=-np.inf, high=np.inf, dtype=np.float64),
-                "position":   spaces.Discrete(3), # {0: short leg0 long leg1, 1: none, 2: long leg0 short leg1}
+                "position":   spaces.MultiBinary(3), # {0: short leg0 long leg1, 1: none, 2: long leg0 short leg1}
             })
 
         self.position_action_mapping = [[1, 2, 3], [0, 2, 3], [0, 1, 3]]
