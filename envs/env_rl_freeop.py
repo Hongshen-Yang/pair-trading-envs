@@ -7,10 +7,10 @@ from gymnasium import spaces
 from envs.env_gridsearch import kellycriterion
 
 # The lookback period for the observation space
-PERIOD = 1000 # Only look at the current price
+PERIOD = 900 # Only look at the current price
 CASH = 1
 ISKELLY = False
-OPEN_THRE = 1.8
+OPEN_THRE = 1.6
 CLOS_THRE = 0.4
 FIX_AMT = 0.1
 
@@ -51,7 +51,7 @@ class PairTradingEnv(gym.Env):
             })
         else:
             self.observation_space = spaces.Dict({
-                "threshold": spaces.Discrete(5), 
+                "threshold": spaces.MultiBinary(5), 
                 # {0: above positive open thres, 1: between positive open thres and close thres, 
                 # 2: between two close thres, 3 between negative open thres and close thres, 4: below negative open thres}
                 "zscore":     spaces.Box(low=-np.inf, high=np.inf, dtype=np.float64),
@@ -87,22 +87,22 @@ class PairTradingEnv(gym.Env):
             open_thre = OPEN_THRE
             clos_thre = CLOS_THRE
 
-            if self.zscore > open_thre:
-                threshold = 0
-            elif self.zscore > clos_thre:
-                threshold = 1
-            elif self.zscore < -open_thre:
-                threshold = 4
-            elif self.zscore < -clos_thre:
-                threshold = 3
-            else:
-                threshold = 2
+        if self.zscore > open_thre:
+            threshold = np.array([1, 0, 0 ,0, 0]).astype(np.int8)
+        elif self.zscore > clos_thre:
+            threshold = np.array([0, 1, 0, 0, 0]).astype(np.int8)
+        elif self.zscore < -open_thre:
+            threshold = np.array([0, 0, 1, 0, 0]).astype(np.int8)
+        elif self.zscore < -clos_thre:
+            threshold = np.array([0, 0, 0, 1, 0]).astype(np.int8)
+        else:
+            threshold = np.array([0, 0, 0, 0, 1]).astype(np.int8)
             
-            obs = {
-                "threshold": int(threshold),
-                "zscore": np.array([self.zscore]),
-                "position": np.array([self.position]),
-            }
+        obs = {
+            "threshold": threshold,
+            "zscore": np.array([self.zscore]),
+            "position": np.array([self.position]),
+        }
         
         return obs
 

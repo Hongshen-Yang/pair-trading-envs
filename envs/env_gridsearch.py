@@ -192,6 +192,7 @@ class PairTrading(bt.Strategy):
                 self.broker.get_value(),
                 action,
                 self.zscore[0],
+                position
             ])
 
         csv_f.close()

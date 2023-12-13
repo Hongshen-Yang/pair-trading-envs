@@ -63,6 +63,8 @@ def get_metrics(best_return):
     print("Won orders count:", won_orders_count)
     print("Lost orders count:", lost_orders_count)
     print("Win/Loss order ratio:", win_loss_order_ratio)
+    print("Max win:", max_win)
+    print("Max Loss:", max_loss)
     print("Avg order pnl:", avg_order_pnl)
     print("Avg order pnl won:", avg_order_pnl_won)
     print("Avg order pnl lost:", avg_order_pnl_lost)
