@@ -226,7 +226,7 @@ class PairTradingEnv(gym.Env):
         self.observation = self._next_observation()
 
         basic_reward = self.net_worth - self.prev_net_worth
-        extra_reward = 1
+        extra_reward = 10e5
 
         if action not in self.position_action_mapping[int(self.position)]:
             # Invalid action, penalize the agent
@@ -244,7 +244,7 @@ class PairTradingEnv(gym.Env):
         elif np.array_equal(self.observation["threshold"], np.array([0, 0, 0 ,0 ,1], dtype=np.int8)) and action==2:
             reward = extra_reward
         else:
-            reward = -0.01
+            reward = -0.01 * extra_reward
 
         terminated = bool(self.current_step >= self.max_steps)
         truncated = bool(self.net_worth <= 0)
