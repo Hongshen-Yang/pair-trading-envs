@@ -225,26 +225,26 @@ class PairTradingEnv(gym.Env):
 
         self.observation = self._next_observation()
 
-        basic_reward = 0 # self.net_worth - self.prev_net_worth
+        basic_reward = self.net_worth - self.prev_net_worth
         extra_reward = 1
 
         if action not in self.position_action_mapping[int(self.position)]:
             # Invalid action, penalize the agent
             reward = -extra_reward
         elif self.noThres:
-            reward = basic_reward + basic_reward
+            reward = basic_reward
         elif np.array_equal(self.observation["threshold"], np.array([1, 0, 0 ,0 ,0], dtype=np.int8)) and action==0:
-            reward = basic_reward + extra_reward
+            reward = extra_reward
         elif np.array_equal(self.observation["threshold"], np.array([0, 1, 0 ,0 ,0], dtype=np.int8)) and action==3:
-            reward = basic_reward
+            reward = 0
         elif np.array_equal(self.observation["threshold"], np.array([0, 0, 1 ,0 ,0], dtype=np.int8)) and action==1:
-            reward = basic_reward + extra_reward
+            reward = extra_reward
         elif np.array_equal(self.observation["threshold"], np.array([0, 0, 0 ,1 ,0], dtype=np.int8)) and action==3:
-            reward = basic_reward
+            reward = 0
         elif np.array_equal(self.observation["threshold"], np.array([0, 0, 0 ,0 ,1], dtype=np.int8)) and action==2:
-            reward = basic_reward + extra_reward
+            reward = extra_reward
         else:
-            reward = basic_reward
+            reward = -0.01
 
         terminated = bool(self.current_step >= self.max_steps)
         truncated = bool(self.net_worth <= 0)
