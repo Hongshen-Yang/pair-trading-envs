@@ -65,7 +65,7 @@ class PairTradingEnv(gym.Env):
     
         self.net_worth = self.cash
         self.prev_net_worth = self.cash
-        self.position = 0
+        self.position = 1
         self.render_step = 0
         
         self.holding0 = 0
@@ -225,7 +225,7 @@ class PairTradingEnv(gym.Env):
 
         self.observation = self._next_observation()
 
-        basic_reward = self.net_worth - self.prev_net_worth
+        basic_reward = 0 # self.net_worth - self.prev_net_worth
         extra_reward = 1
 
         if action not in self.position_action_mapping[int(self.position)]:
@@ -236,11 +236,11 @@ class PairTradingEnv(gym.Env):
         elif np.array_equal(self.observation["threshold"], np.array([1, 0, 0 ,0 ,0], dtype=np.int8)) and action==0:
             reward = basic_reward + extra_reward
         elif np.array_equal(self.observation["threshold"], np.array([0, 1, 0 ,0 ,0], dtype=np.int8)) and action==3:
-            reward = basic_reward + extra_reward
+            reward = basic_reward
         elif np.array_equal(self.observation["threshold"], np.array([0, 0, 1 ,0 ,0], dtype=np.int8)) and action==1:
             reward = basic_reward + extra_reward
         elif np.array_equal(self.observation["threshold"], np.array([0, 0, 0 ,1 ,0], dtype=np.int8)) and action==3:
-            reward = basic_reward + extra_reward
+            reward = basic_reward
         elif np.array_equal(self.observation["threshold"], np.array([0, 0, 0 ,0 ,1], dtype=np.int8)) and action==2:
             reward = basic_reward + extra_reward
         else:
@@ -276,5 +276,7 @@ class PairTradingEnv(gym.Env):
                 self.net_worth,
                 self.action,
                 self.zscore,
-                self.position]
+                self.position,
+                self.curr_price0,
+                self.curr_price1]
             )

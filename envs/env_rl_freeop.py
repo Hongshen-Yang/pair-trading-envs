@@ -87,22 +87,22 @@ class PairTradingEnv(gym.Env):
             open_thre = OPEN_THRE
             clos_thre = CLOS_THRE
 
-        if self.zscore > open_thre:
-            threshold = np.array([1, 0, 0 ,0, 0]).astype(np.int8)
-        elif self.zscore > clos_thre:
-            threshold = np.array([0, 1, 0, 0, 0]).astype(np.int8)
-        elif self.zscore < -open_thre:
-            threshold = np.array([0, 0, 1, 0, 0]).astype(np.int8)
-        elif self.zscore < -clos_thre:
-            threshold = np.array([0, 0, 0, 1, 0]).astype(np.int8)
-        else:
-            threshold = np.array([0, 0, 0, 0, 1]).astype(np.int8)
-            
-        obs = {
-            "threshold": threshold,
-            "zscore": np.array([self.zscore]),
-            "position": np.array([self.position]),
-        }
+            if self.zscore > open_thre:
+                threshold = np.array([1, 0, 0 ,0, 0]).astype(np.int8)
+            elif self.zscore > clos_thre:
+                threshold = np.array([0, 1, 0, 0, 0]).astype(np.int8)
+            elif self.zscore < -open_thre:
+                threshold = np.array([0, 0, 1, 0, 0]).astype(np.int8)
+            elif self.zscore < -clos_thre:
+                threshold = np.array([0, 0, 0, 1, 0]).astype(np.int8)
+            else:
+                threshold = np.array([0, 0, 0, 0, 1]).astype(np.int8)
+                
+            obs = {
+                "threshold": threshold,
+                "zscore": np.array([self.zscore]),
+                "position": np.array([self.position]),
+            }
         
         return obs
 
@@ -114,6 +114,9 @@ class PairTradingEnv(gym.Env):
 
         curr_price0 = self.df0['close'].iloc[self.current_step]
         curr_price1 = self.df1['close'].iloc[self.current_step]
+
+        self.curr_price0 = curr_price0
+        self.curr_price1 = curr_price1
 
         max_amount0 = (self.fixed_amt if self.fixed_amt else self.cash)/curr_price0
         max_amount1 = (self.fixed_amt if self.fixed_amt else self.cash)/curr_price1
@@ -185,7 +188,7 @@ class PairTradingEnv(gym.Env):
         self.cash = self.cash
         self.net_worth = self.cash
         self.prev_net_worth = self.cash
-        self.position = 0
+        self.position = 1
         self.holding0 = 0
         self.holding1 = 0
         self.render_step = 0
@@ -208,5 +211,7 @@ class PairTradingEnv(gym.Env):
                 self.net_worth,
                 self.action,
                 self.zscore,
-                self.position]
+                self.position,
+                self.curr_price0,
+                self.curr_price1]
             )
