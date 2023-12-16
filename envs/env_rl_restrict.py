@@ -41,8 +41,8 @@ class PairTradingEnv(gym.Env):
         self.reward_range = (-np.inf, np.inf)
 
         # Baseline 3 does not support Dict/Tuple action spaces....only Box Discrete MultiDiscrete MultiBinary
-        self.action_space = spaces.Discrete(4)
-        self.actions = {"short": 0, "close": 1, "long": 2, "pass": 3}
+        self.action_space = spaces.Discrete(3)
+        self.actions = {"short": 0, "close": 1, "long": 2}
         self.positions = {"short": 0, "close": 1, "long": 2}
 
         if self.noThres:
