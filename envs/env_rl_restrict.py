@@ -41,21 +41,22 @@ class PairTradingEnv(gym.Env):
         self.reward_range = (-np.inf, np.inf)
 
         # Baseline 3 does not support Dict/Tuple action spaces....only Box Discrete MultiDiscrete MultiBinary
-        self.action_space = spaces.Discrete(4) # actions: {0: short p0 long p1, 1: close, 2: long p0 short p1, 3: do nothing}
+        self.action_space = spaces.Discrete(4)
+        self.actions = {"short": 0, "close": 1, "long": 2, "pass": 3}
+        self.positions = {"short": 0, "close": 1, "long": 2}
 
         if self.noThres:
             self.observation_space = spaces.Dict({
                 "zscore":     spaces.Box(low=-np.inf, high=np.inf, dtype=np.float64),
                 "position":   spaces.Discrete(3),
             })
+
         else:
             self.observation_space = spaces.Dict({
                 "threshold": spaces.MultiBinary(5), 
                 "zscore":     spaces.Box(low=-np.inf, high=np.inf, dtype=np.float64),
                 "position":   spaces.Discrete(3),
             })
-
-        self.position_action_mapping = [[1, 2, 3], [0, 2, 3], [0, 1, 3]]
     
         # if the length is 35, then the index shall be 0~34
         self.max_steps = len(df0)-1
@@ -99,16 +100,36 @@ class PairTradingEnv(gym.Env):
         open_thre = OPEN_THRE
         clos_thre = CLOS_THRE
 
+        '''
+            Zone 0 [1, 0, 0, 0, 0]
+        ========== + OPEN_THRES ==========
+            Zone 1 [0, 1, 0, 0, 0]
+        ========== + CLOS_THRES ==========
+            Zone 2 [0, 0, 1, 0, 0]
+        ========== - CLOS_THRES ==========
+            Zone 3 [0, 0, 0, 1, 0]
+        ========== - CLOS_THRES ==========
+            Zone 4 [0, 0, 0, 0, 1]
+        '''
+
+        self.thresholds = {
+            "zone0": np.array([1, 0, 0 ,0, 0]).astype(np.int8),
+            "zone1": np.array([0, 1, 0 ,0, 0]).astype(np.int8),
+            "zone2": np.array([0, 0, 1, 0, 0]).astype(np.int8),
+            "zone3": np.array([0, 0, 0, 1, 0]).astype(np.int8),
+            "zone4": np.array([0, 0, 0, 0, 1]).astype(np.int8),
+        }
+
         if self.zscore > open_thre:
-            threshold = np.array([1, 0, 0 ,0, 0]).astype(np.int8)
+            threshold = self.thresholds["zone0"]
         elif self.zscore > clos_thre:
-            threshold = np.array([0, 1, 0, 0, 0]).astype(np.int8)
+            threshold = self.thresholds["zone1"]
         elif self.zscore < -open_thre:
-            threshold = np.array([0, 0, 0, 0, 1]).astype(np.int8)
+            threshold = self.thresholds["zone2"]
         elif self.zscore < -clos_thre:
-            threshold = np.array([0, 0, 0, 1, 0]).astype(np.int8)
+            threshold = self.thresholds["zone3"]
         else:
-            threshold = np.array([0, 0, 1, 0, 0]).astype(np.int8)
+            threshold = self.thresholds["zone4"]
         
         if self.noThres:
             obs = {
@@ -148,9 +169,9 @@ class PairTradingEnv(gym.Env):
         max_amount1 = (self.fixed_amt if self.fixed_amt else self.cash)/self.curr_price1
 
         direction = self.action-1
-        kc = self._kellycriterion(direct=direction) if self.isKelly else 1
-        order_amount0 = direction * max_amount0 * kc
-        order_amount1 = -direction * max_amount1 * kc
+        self.kc = self._kellycriterion(direct=direction) if self.isKelly else 1
+        order_amount0 = direction * max_amount0 * self.kc
+        order_amount1 = -direction * max_amount1 * self.kc
 
         order_value0 = order_amount0 * self.curr_price0
         order_value1 = order_amount1 * self.curr_price1
@@ -160,9 +181,8 @@ class PairTradingEnv(gym.Env):
         self.cash -= order_value0 + order_value1 + tc_cost
         self.holding0 = order_amount0
         self.holding1 = order_amount1
-        self.position = 1 if kc==0 else self.action
+        self.position = 1 if self.kc==0 else self.action
 
-        self.kc = kc
         self.order_amount0 = order_amount0
         self.order_amount1 = order_amount1
 
@@ -192,6 +212,7 @@ class PairTradingEnv(gym.Env):
     def _take_action(self, action):
 
         # Record current net_worth to prev_net_worth
+        self.prev_position = self.position
         self.prev_net_worth = self.net_worth
 
         self.curr_price0 = self.df0['close'].iloc[self.current_step]
@@ -226,25 +247,22 @@ class PairTradingEnv(gym.Env):
         self.observation = self._next_observation()
 
         basic_reward = self.net_worth - self.prev_net_worth
-        extra_reward = 10e5
+        extra_reward = 1
 
-        if action not in self.position_action_mapping[int(self.position)]:
-            # Invalid action, penalize the agent
-            reward = -extra_reward
-        elif self.noThres:
+        if self.noThres: # If we don't include threshold inside trade
             reward = basic_reward
-        elif np.array_equal(self.observation["threshold"], np.array([1, 0, 0 ,0 ,0], dtype=np.int8)) and action==0:
+        elif np.array_equal(self.observation["threshold"], self.thresholds["zone0"]) and action==self.actions["short"]:
             reward = extra_reward
-        elif np.array_equal(self.observation["threshold"], np.array([0, 1, 0 ,0 ,0], dtype=np.int8)) and action==3:
-            reward = 0
-        elif np.array_equal(self.observation["threshold"], np.array([0, 0, 1 ,0 ,0], dtype=np.int8)) and action==1:
+        # elif np.array_equal(self.observation["threshold"], self.thresholds["zone1"]) and action==self.actions["pass"]:
+        #     reward = 0
+        elif np.array_equal(self.observation["threshold"], self.thresholds["zone2"]) and action==self.actions["close"]:
             reward = extra_reward
-        elif np.array_equal(self.observation["threshold"], np.array([0, 0, 0 ,1 ,0], dtype=np.int8)) and action==3:
-            reward = 0
-        elif np.array_equal(self.observation["threshold"], np.array([0, 0, 0 ,0 ,1], dtype=np.int8)) and action==2:
+        # elif np.array_equal(self.observation["threshold"], self.thresholds["zone3"]) and action==self.actions["pass"]:
+        #     reward = 0
+        elif np.array_equal(self.observation["threshold"], self.thresholds["zone4"]) and action==self.actions["long"]:
             reward = extra_reward
         else:
-            reward = -0.01 * extra_reward
+            reward = 0
 
         terminated = bool(self.current_step >= self.max_steps)
         truncated = bool(self.net_worth <= 0)
@@ -265,7 +283,7 @@ class PairTradingEnv(gym.Env):
                     f"reward:{round(self.reward, 2)}, "
                     f"action: {self.action}, "
                     f"zscore: {round(self.observation['zscore'][0], 2)}, "
-                    f"position: {self.observation['position']}, "
+                    f"position: {self.position}, "
                     f"threshold: {self.observation['threshold']}, "
                 )
             
