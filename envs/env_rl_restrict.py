@@ -47,14 +47,14 @@ class PairTradingEnv(gym.Env):
 
         if self.noThres:
             self.observation_space = spaces.Dict({
-                "zscore":     spaces.Box(low=-np.inf, high=np.inf, dtype=np.float64),
+                #"zscore":     spaces.Box(low=-np.inf, high=np.inf, dtype=np.float64),
                 "position":   spaces.Discrete(3),
             })
 
         else:
             self.observation_space = spaces.Dict({
                 "threshold": spaces.MultiBinary(5), 
-                "zscore":     spaces.Box(low=-np.inf, high=np.inf, dtype=np.float64),
+                #"zscore":     spaces.Box(low=-np.inf, high=np.inf, dtype=np.float64),
                 "position":   spaces.Discrete(3),
             })
     
@@ -77,8 +77,9 @@ class PairTradingEnv(gym.Env):
 
         # self.current_step = np.random.randint(self.period, self.max_steps)
         self.current_step = self.period + 1
-        
-        return self._next_observation(), {}
+        self.observation = self._next_observation()
+
+        return self.observation, {}
     
     def _kellycriterion(self, direct):
         # direct is +1 or -1
@@ -133,14 +134,14 @@ class PairTradingEnv(gym.Env):
         
         if self.noThres:
             obs = {
-                "zscore": np.array([self.zscore]),
+                #"zscore": np.array([self.zscore]),
                 "position": self.position,
             }
 
         else:         
             obs = {
                 "threshold": threshold,
-                "zscore": np.array([self.zscore]),
+                #"zscore": np.array([self.zscore]),
                 "position": self.position,
             }
         
@@ -211,7 +212,7 @@ class PairTradingEnv(gym.Env):
 
     def _take_action(self, action):
 
-        # Record current net_worth to prev_net_worth
+        # Record current net_worth to prev_net_worth, same for position
         self.prev_position = self.position
         self.prev_net_worth = self.net_worth
 
@@ -244,6 +245,7 @@ class PairTradingEnv(gym.Env):
         self._take_action(action)
         self.current_step += 1
 
+        self.prev_threshold = self.observation["threshold"]
         self.observation = self._next_observation()
 
         basic_reward = self.net_worth - self.prev_net_worth
@@ -251,15 +253,12 @@ class PairTradingEnv(gym.Env):
 
         if self.noThres: # If we don't include threshold inside trade
             reward = basic_reward
-        elif np.array_equal(self.observation["threshold"], self.thresholds["zone0"]) and action==self.actions["short"]:
+        # Because we take action before observe. Therefore we should reward previous
+        elif np.array_equal(self.prev_threshold, self.thresholds["zone0"]) and action==self.actions["short"]:
             reward = extra_reward
-        # elif np.array_equal(self.observation["threshold"], self.thresholds["zone1"]) and action==self.actions["pass"]:
-        #     reward = 0
-        elif np.array_equal(self.observation["threshold"], self.thresholds["zone2"]) and action==self.actions["close"]:
+        elif np.array_equal(self.prev_threshold, self.thresholds["zone2"]) and action==self.actions["close"]:
             reward = extra_reward
-        # elif np.array_equal(self.observation["threshold"], self.thresholds["zone3"]) and action==self.actions["pass"]:
-        #     reward = 0
-        elif np.array_equal(self.observation["threshold"], self.thresholds["zone4"]) and action==self.actions["long"]:
+        elif np.array_equal(self.prev_threshold, self.thresholds["zone4"]) and action==self.actions["long"]:
             reward = extra_reward
         else:
             reward = 0
@@ -282,7 +281,7 @@ class PairTradingEnv(gym.Env):
                     f"networth: {round(self.net_worth, 2)},"
                     f"reward:{round(self.reward, 2)}, "
                     f"action: {self.action}, "
-                    f"zscore: {round(self.observation['zscore'][0], 2)}, "
+                    #f"zscore: {round(self.observation['zscore'][0], 2)}, "
                     f"position: {self.position}, "
                     f"threshold: {self.observation['threshold']}, "
                 )
@@ -293,7 +292,7 @@ class PairTradingEnv(gym.Env):
                 [self.df0['datetime'].iloc[self.current_step], 
                 self.net_worth,
                 self.action,
-                self.zscore,
+                0, #self.zscore,
                 self.position,
                 self.curr_price0,
                 self.curr_price1]
