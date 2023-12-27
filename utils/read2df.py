@@ -64,5 +64,32 @@ def read2df(symbols, freqs, marketType="spot"):
     
     return dfs
 
+def unify_dfs(dfs, symbols, period):
+    dfs[0]['close'] = dfs[0]['close'].apply(lambda x: 1/x)
+    
+    df0 = dfs[0][dfs[0]['tic']==symbols[0]].reset_index(drop=True)
+    df1 = dfs[0][dfs[0]['tic']==symbols[1]].reset_index(drop=True)
+
+    df0 = df0[['time', 'close', 'tic', 'itvl', 'datetime']]
+    df1 = df1[['time', 'close', 'tic', 'itvl', 'datetime']]
+
+    tic0, tic1 = df0['tic'][0], df1['tic'][0]
+    df = pd.merge(df0, df1, on=['time', 'itvl', 'datetime'], suffixes=(f"_{tic0}", f"_{tic1}"))
+    df = df.drop([f"tic_{tic0}", f"tic_{tic1}"], axis=1)
+    df['spread'] = df[f'close_{tic0}'] - df[f'close_{tic1}']
+
+    zscore = []
+
+    for index, row in df.iterrows():
+        if index <= period:
+            zscore.append(0)
+        else:
+            df_tmp = df.iloc[index-period:index]
+            zscore.append((row['spread']-df_tmp['spread'].mean())/df_tmp['spread'].std())
+
+    df['zscore'] = zscore
+
+    return df
+
 if __name__ == '__main__':
     print(len(read2df(None, {'1d': 1440})))
