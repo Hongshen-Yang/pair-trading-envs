@@ -74,9 +74,9 @@ def unify_dfs(dfs, symbols, period):
     df1 = df1[['time', 'close', 'tic', 'itvl', 'datetime']]
 
     tic0, tic1 = df0['tic'][0], df1['tic'][0]
-    df = pd.merge(df0, df1, on=['time', 'itvl', 'datetime'], suffixes=(f"_{tic0}", f"_{tic1}"))
-    df = df.drop([f"tic_{tic0}", f"tic_{tic1}"], axis=1)
-    df['spread'] = df[f'close_{tic0}'] - df[f'close_{tic1}']
+    df = pd.merge(df0, df1, on=['time', 'itvl', 'datetime'], suffixes=(f"0", f"1"))
+    df = df.drop([f"tic0", f"tic1"], axis=1)
+    df['spread'] = df[f'close0'] - df[f'close1']
 
     zscore = []
 
@@ -89,7 +89,7 @@ def unify_dfs(dfs, symbols, period):
 
     df['zscore'] = zscore
 
-    return df
+    return [tic0, tic1], df
 
 if __name__ == '__main__':
     print(len(read2df(None, {'1d': 1440})))
