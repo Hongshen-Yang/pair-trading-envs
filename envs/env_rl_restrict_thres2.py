@@ -1,3 +1,4 @@
+import pickle
 import gymnasium as gym
 import numpy as np
 
@@ -6,8 +7,12 @@ from stable_baselines3.common.env_checker import check_env
 
 class RL_Restrict_TradeEnv(gym.Env):
     def __init__(self, df, tc=0.0002):
+        with open('result/gridsearch/best_res.pickle', 'rb') as pk:
+            _, best_params = pickle.load(pk)
+
         self.observation_space = gym.spaces.Discrete(2) # {0, 1}
         self.action_space = gym.spaces.Discrete(2) # {0, 1}
+        self.period = best_params['period']
 
     def _get_obs(self):
         return np.random.randint(2) # {0, 1}
