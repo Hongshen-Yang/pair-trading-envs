@@ -17,17 +17,17 @@ class RL_Restrict_TradeEnv(gym.Env):
                     #   Position 2: longing leg_0 <- shorting leg_1
             'zone':  gym.spaces.Discrete(5), # {0, 1, 2, 3, 4}
                     # The zscore comes from price0-price1, zone0 stands for price0 way higher than price1
-                    #     Zone 0
+                    #   Zone 0 (Should be position 0)
                     # ---------- + OPEN_THRES ----------
-                    #     Zone 1
+                    #   Zone 1 (Should be position 0, 1)
                     # ---------- + CLOS_THRES ----------
-                    #     Zone 2
+                    #   Zone 2 (Should be position 1)
                     # ----------   ZSCORE = 0 ----------
-                    #     Zone 2
+                    #   Zone 2 (Should be position 1)
                     # ---------- - CLOS_THRES ----------
-                    #     Zone 3
+                    #   Zone 3 (Should be position 1, 2)
                     # ---------- - OPEN_THRES ----------
-                    #     Zone 4
+                    #   Zone 4 (Should be position 2)
             'zscore': gym.spaces.Box(low=-np.inf, high=np.inf, shape=(1,), dtype=np.float64)
         })
         self.action_space = gym.spaces.Discrete(3) # {0: "short leg0 long leg1", 1: "close positions", 2: "long leg0 short leg1"}
@@ -94,25 +94,34 @@ class RL_Restrict_TradeEnv(gym.Env):
 
     def _take_action(self):
         if self.position==0 and self.action==0:
-            next_position=0
+            # Do nothing
+            pass
         elif self.position==0 and self.action==1:
-            next_position=0
+            # Close position
+            pass
         elif self.position==0 and self.action==2:
-            next_position=1
+            # Long leg0 short leg1
+            pass
         elif self.position==1 and self.action==0:
-            next_position=0
+            # Short leg0 long leg1
+            pass
         elif self.position==1 and self.action==1:
-            next_position=1
+            # Do nothing
+            pass
         elif self.position==1 and self.action==2:
-            next_position=2
+            # Long leg0 short leg1
+            pass
         elif self.position==2 and self.action==0:
-            next_position=1
+            # Short leg0 long leg1
+            pass
         elif self.position==2 and self.action==1:
-            next_position=2
+            # Close position
+            pass
         elif self.position==2 and self.action==2:
-            next_position=2
+            # Do nothing
+            pass
 
-        self.position = next_position
+        self.position = self.action
 
     def reset(self, seed=None):
         self.position = 1

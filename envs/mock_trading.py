@@ -1,14 +1,30 @@
 import pandas as pd
 
-class tradingSystem():
-    def __init__(self, df, positions, tc=0.0002, cash=1.0):
+class TradingSystem():
+    def __init__(self, df, holdings, trade_step, tc=0.002, cash=10.0):
         self.cash = cash
-        self.df = df
-        self.tc = tc
-        self.positions = positions
+        self.df = df # columns: time, close0, itvl, datetime, close1, spread, zscore
+        self.tc = tc # transaction cost
+        self.holdings = holdings #[400, -300] That means we have 400 unit of leg0 and -300 unit of leg1
+        self.trade_step = trade_step
+
+    def close_position(self):
+        self.cash += (self.holdings[0]*self.df.iloc[self.trade_step]['close0'] + self.holdings[1]*self.df.iloc[self.trade_step]['close1']) * (1-self.tc)
+        self.holdings = [0, 0]
 
     def order(self, action):
-        pass
+        self.close_position()
 
-    def check_positions(self):
-        return self.positions
+        max_units_leg0 = self.cash/self.df.iloc[self.trade_step]['close0']
+        max_units_leg1 = self.cash/self.df.iloc[self.trade_step]['close1']
+
+        if action == 0:
+            self.holdings = [-max_units_leg0*(1-tc), max_units_leg1*(1-self.tc)]
+        elif action == 2:
+            self.holdings = [max_units_leg0*(1-tc), -max_units_leg1*(1-self.tc)]
+
+    def get_holdings(self):
+        return self.holdings
+
+    def get_networth(self):
+        return self.cash + self.holdings[0]*self.df.iloc[self.trade_step]['close0'] + self.holdings[1]*self.df.iloc[self.trade_step]['close1']
