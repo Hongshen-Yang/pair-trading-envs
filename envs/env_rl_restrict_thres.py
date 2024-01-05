@@ -3,6 +3,8 @@ import gymnasium as gym
 import numpy as np
 import pandas as pd
 
+from envs.mock_trading import TradingSystem
+
 def read_best_params():
     with open('result/gridsearch/best_res.pickle', 'rb') as pk:
         _, best_params = pickle.load(pk)
@@ -35,6 +37,7 @@ class RL_Restrict_TradeEnv(gym.Env):
         self.cash = cash
         self.df = df
         self.best_params = read_best_params()
+        self.holdings = [0, 0] #[400, -300] That means we have 400 unit of leg0 and -300 unit of leg1
 
     def _get_obs(self):
         zscore = self.df.iloc[self.trade_step]['zscore']
@@ -93,34 +96,37 @@ class RL_Restrict_TradeEnv(gym.Env):
         return reward
 
     def _take_action(self):
+        sys=TradingSystem(self.df, self.holdings, self.trade_step, cash=self.cash)
+
         if self.position==0 and self.action==0:
             # Do nothing
             pass
         elif self.position==0 and self.action==1:
             # Close position
-            pass
+            self.cash, self.holdings = sys.close_position()
         elif self.position==0 and self.action==2:
             # Long leg0 short leg1
-            pass
+            self.cash, self.holdings = sys.open_position(self.action)
         elif self.position==1 and self.action==0:
             # Short leg0 long leg1
-            pass
+            self.cash, self.holdings = sys.open_position(0)
         elif self.position==1 and self.action==1:
             # Do nothing
             pass
         elif self.position==1 and self.action==2:
             # Long leg0 short leg1
-            pass
+            self.cash, self.holdings = sys.open_position(self.action)
         elif self.position==2 and self.action==0:
             # Short leg0 long leg1
-            pass
+            self.cash, self.holdings = sys.open_position(self.action)
         elif self.position==2 and self.action==1:
             # Close position
-            pass
+            self.cash, self.holdings = sys.close_position()
         elif self.position==2 and self.action==2:
             # Do nothing
             pass
-
+        
+        self.networth = sys.get_networth()
         self.position = self.action
 
     def reset(self, seed=None):
@@ -142,4 +148,4 @@ class RL_Restrict_TradeEnv(gym.Env):
         return self.observation, self.reward, terminated, truncated, {}
 
     def render(self):
-        print(f"signal: {self.signal}, action: {self.action}, reward:{self.reward}")
+        print(f"signal: {self.signal}, action: {self.action}, reward:{self.reward}, networth: {self.networth}")
