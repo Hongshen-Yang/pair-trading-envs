@@ -66,7 +66,7 @@ class RL_Restrict_TradeEnv(gym.Env):
         return obs
     
     def _get_reward(self, prev_networth):
-        action_reward = 1
+        action_reward = 0.01
         
         if self.signal['zone']==0 and self.signal['position']==0:
             reward = action_reward if self.action==0 else 0
@@ -100,7 +100,8 @@ class RL_Restrict_TradeEnv(gym.Env):
             reward = action_reward if self.action==2 else 0
 
         reward += self.networth - prev_networth
-        
+        reward = reward * 10
+
         return reward
 
     def _take_action(self):
@@ -154,12 +155,14 @@ class RL_Restrict_TradeEnv(gym.Env):
         truncated = False
         self.reward = self._get_reward(prev_networth)
 
-        logger(model, datetime, networth, action, zscore, position, price0, price1) if self.verbose==1 else None
+        if self.verbose==1:
+            curr_df = self.df.iloc[self.trade_step]
+            logger(self.model, curr_df['datetime'], self.networth, self.action, curr_df['zscore'], self.position, curr_df['close0'], curr_df['close1'])
 
         return self.observation, self.reward, terminated, truncated, {}
 
     def render(self):
-        print(f"signal: {self.signal}, action: {self.action}, reward:{self.reward}, networth: {round(self.networth, 4)}")
+        print(f"signal: {self.signal}, action: {self.action}, reward:{round(self.reward, 3)}, networth: {round(self.networth, 4)}")
 
     def close(self):
         print("Finished")
