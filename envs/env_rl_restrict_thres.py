@@ -12,7 +12,7 @@ def read_best_params():
     return best_params
 
 class RL_Restrict_TradeEnv(gym.Env):
-    def __init__(self, df, tc=0.0002, cash=1.0, verbose=0):
+    def __init__(self, df, model='', tc=0.0002, cash=1.0, fixed_amt=0.1, verbose=0):
         self.observation_space = gym.spaces.Dict({
             'position': gym.spaces.Discrete(3), # {0, 1, 2}
                     #   Position 0: shorting leg_0 -> longing leg_1
@@ -36,8 +36,10 @@ class RL_Restrict_TradeEnv(gym.Env):
         self.action_space = gym.spaces.Discrete(3) # {0: "short leg0 long leg1", 1: "close positions", 2: "long leg0 short leg1"}
 
         self.verbose = verbose
-        self.cash = cash
+        self.cash, self.networth = cash, cash
+        self.fixed_amt = fixed_amt
         self.df = df
+        self.model = model
         self.best_params = read_best_params()
         self.holdings = [0, 0] #[400, -300] That means we have 400 unit of leg0 and -300 unit of leg1
 
@@ -63,42 +65,46 @@ class RL_Restrict_TradeEnv(gym.Env):
 
         return obs
     
-    def _get_reward(self):
+    def _get_reward(self, prev_networth):
+        action_reward = 1
+        
         if self.signal['zone']==0 and self.signal['position']==0:
-            reward = 1 if self.action==0 else 0
+            reward = action_reward if self.action==0 else 0
         elif self.signal['zone']==0 and self.signal['position']==1:
-            reward = 1 if self.action==0 else 0
+            reward = action_reward if self.action==0 else 0
         elif self.signal['zone']==0 and self.signal['position']==2:
-            reward = 1 if self.action==0 else 0
+            reward = action_reward if self.action==0 else 0
         elif self.signal['zone']==1 and self.signal['position']==0:
-            reward = 1 if self.action==0 else 0
+            reward = action_reward if self.action==0 else 0
         elif self.signal['zone']==1 and self.signal['position']==1:
-            reward = 1 if self.action==1 else 0
+            reward = action_reward if self.action==1 else 0
         elif self.signal['zone']==1 and self.signal['position']==2:
-            reward = 1 if self.action==1 else 0
+            reward = action_reward if self.action==1 else 0
         elif self.signal['zone']==2 and self.signal['position']==0:
-            reward = 1 if self.action==1 else 0
+            reward = action_reward if self.action==1 else 0
         elif self.signal['zone']==2 and self.signal['position']==1:
-            reward = 1 if self.action==1 else 0
+            reward = action_reward if self.action==1 else 0
         elif self.signal['zone']==2 and self.signal['position']==2:
-            reward = 1 if self.action==1 else 0
+            reward = action_reward if self.action==1 else 0
         elif self.signal['zone']==3 and self.signal['position']==0:
-            reward = 1 if self.action==1 else 0
+            reward = action_reward if self.action==1 else 0
         elif self.signal['zone']==3 and self.signal['position']==1:
-            reward = 1 if self.action==1 else 0
+            reward = action_reward if self.action==1 else 0
         elif self.signal['zone']==3 and self.signal['position']==2:
-            reward = 1 if self.action==2 else 0
+            reward = action_reward if self.action==2 else 0
         elif self.signal['zone']==4 and self.signal['position']==0:
-            reward = 1 if self.action==2 else 0
+            reward = action_reward if self.action==2 else 0
         elif self.signal['zone']==4 and self.signal['position']==1:
-            reward = 1 if self.action==2 else 0
+            reward = action_reward if self.action==2 else 0
         elif self.signal['zone']==4 and self.signal['position']==2:
-            reward = 1 if self.action==2 else 0
+            reward = action_reward if self.action==2 else 0
 
+        reward += self.networth - prev_networth
+        
         return reward
 
     def _take_action(self):
-        sys=TradingSystem(self.df, self.holdings, self.trade_step, cash=self.cash, fixed_amt=0.1)
+        sys=TradingSystem(self.df, self.holdings, self.trade_step, cash=self.cash, fixed_amt=self.fixed_amt)
 
         if self.position==0 and self.action==0:
             # Do nothing
@@ -140,14 +146,15 @@ class RL_Restrict_TradeEnv(gym.Env):
     def step(self, action):
         self.action = action
         self.signal = self.observation
+        prev_networth = self.networth
         self._take_action()
         self.trade_step += 1
         self.observation = self._get_obs()
         terminated = self.trade_step >= len(self.df)
         truncated = False
-        self.reward = self._get_reward()
+        self.reward = self._get_reward(prev_networth)
 
-        logger() if self.verbose==1 else None
+        logger(model, datetime, networth, action, zscore, position, price0, price1) if self.verbose==1 else None
 
         return self.observation, self.reward, terminated, truncated, {}
 
