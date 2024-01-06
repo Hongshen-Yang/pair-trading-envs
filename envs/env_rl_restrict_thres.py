@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 
 from envs.mock_trading import TradingSystem
+from utils.logger import logger
 
 def read_best_params():
     with open('result/gridsearch/best_res.pickle', 'rb') as pk:
@@ -11,9 +12,9 @@ def read_best_params():
     return best_params
 
 class RL_Restrict_TradeEnv(gym.Env):
-    def __init__(self, df, tc=0.0002, cash=1.0):
+    def __init__(self, df, tc=0.0002, cash=1.0, verbose=0):
         self.observation_space = gym.spaces.Dict({
-            'position': gym.spaces.Discrete(3),
+            'position': gym.spaces.Discrete(3), # {0, 1, 2}
                     #   Position 0: shorting leg_0 -> longing leg_1
                     #   Position 1:         empty holding
                     #   Position 2: longing leg_0 <- shorting leg_1
@@ -30,10 +31,11 @@ class RL_Restrict_TradeEnv(gym.Env):
                     #   Zone 3 (Should be position 1, 2)
                     # ---------- - OPEN_THRES ----------
                     #   Zone 4 (Should be position 2)
-            'zscore': gym.spaces.Box(low=-np.inf, high=np.inf, shape=(1,), dtype=np.float64)
+            'zscore': gym.spaces.Box(low=-np.inf, high=np.inf, dtype=np.float64)
         })
         self.action_space = gym.spaces.Discrete(3) # {0: "short leg0 long leg1", 1: "close positions", 2: "long leg0 short leg1"}
-        
+
+        self.verbose = verbose
         self.cash = cash
         self.df = df
         self.best_params = read_best_params()
@@ -47,11 +49,11 @@ class RL_Restrict_TradeEnv(gym.Env):
         elif zscore > self.best_params['CLOS_THRE']:
             zone = 1
         elif zscore < -self.best_params['OPEN_THRE']:
-            zone = 2
+            zone = 4
         elif zscore < -self.best_params['CLOS_THRE']:
             zone = 3
         else:
-            zone = 4
+            zone = 2
 
         obs = {
             'position': self.position,
@@ -96,7 +98,7 @@ class RL_Restrict_TradeEnv(gym.Env):
         return reward
 
     def _take_action(self):
-        sys=TradingSystem(self.df, self.holdings, self.trade_step, cash=self.cash)
+        sys=TradingSystem(self.df, self.holdings, self.trade_step, cash=self.cash, fixed_amt=0.1)
 
         if self.position==0 and self.action==0:
             # Do nothing
@@ -145,7 +147,13 @@ class RL_Restrict_TradeEnv(gym.Env):
         truncated = False
         self.reward = self._get_reward()
 
+        logger() if self.verbose==1 else None
+
         return self.observation, self.reward, terminated, truncated, {}
 
     def render(self):
-        print(f"signal: {self.signal}, action: {self.action}, reward:{self.reward}, networth: {self.networth}")
+        print(f"signal: {self.signal}, action: {self.action}, reward:{self.reward}, networth: {round(self.networth, 4)}")
+
+    def close(self):
+        print("Finished")
+        print(f"networth: {self.networth}")
