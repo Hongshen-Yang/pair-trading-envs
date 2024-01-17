@@ -1,12 +1,12 @@
 import pandas as pd
 
 class TradingSystem():
-    def __init__(self, df, holdings, trade_step, cash, fixed_amt=0, tc=0.002):
+    def __init__(self, df, holdings, trade_step, cash, amt=0, tc=0.002):
         self.cash = cash
         self.df = df.iloc[trade_step] # columns: time, close0, itvl, datetime, close1, spread, zscore
         self.tc = tc # transaction cost
         self.holdings = holdings #[400, -300] That means we have 400 unit of leg0 and -300 unit of leg1
-        self.fixed_amt = fixed_amt
+        self.amt = amt
         self.trade_step = trade_step
 
     def close_position(self):
@@ -18,8 +18,8 @@ class TradingSystem():
     def open_position(self, action):
         self.close_position()
 
-        units_leg0 = self.fixed_amt/self.df['close0'] if self.fixed_amt else self.cash/self.df['close0']
-        units_leg1 = self.fixed_amt/self.df['close1'] if self.fixed_amt else self.cash/self.df['close1']
+        units_leg0 = self.amt/self.df['close0'] if self.amt else self.cash/self.df['close0']
+        units_leg1 = self.amt/self.df['close1'] if self.amt else self.cash/self.df['close1']
 
         if action == 0:
             self.holdings = [-units_leg0*(1-self.tc), units_leg1*(1-self.tc)]

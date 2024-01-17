@@ -66,7 +66,9 @@ class RL_Restrict_TradeEnv(gym.Env):
         return obs
     
     def _get_reward(self, prev_networth):
-        action_reward = 0.01
+        act_rwd = 1
+        act_pun = 0.1
+        action_reward = act_rwd - act_pun
         
         if self.signal['zone']==0 and self.signal['position']==0:
             reward = action_reward if self.action==0 else 0
@@ -99,13 +101,13 @@ class RL_Restrict_TradeEnv(gym.Env):
         elif self.signal['zone']==4 and self.signal['position']==2:
             reward = action_reward if self.action==2 else 0
 
-        reward += self.networth - prev_networth
+        # reward += self.networth - prev_networth
         reward = reward * 10
 
         return reward
 
     def _take_action(self):
-        sys=TradingSystem(self.df, self.holdings, self.trade_step, cash=self.cash, fixed_amt=self.fixed_amt)
+        sys=TradingSystem(self.df, self.holdings, self.trade_step, cash=self.cash, amt=self.fixed_amt)
 
         if self.position==0 and self.action==0:
             # Do nothing

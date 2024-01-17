@@ -130,6 +130,7 @@ class PairTrading(bt.Strategy):
         self.spread = self.data0 - self.data1
         stddev = bt.indicators.StandardDeviation(self.spread, period=self.p.period)
         self.zscore = (self.spread - bt.indicators.MovingAverageSimple(self.spread, period=self.p.period)) / stddev
+        self.pos=1 # initialize as no holding
 
         self.storagetxt = (
             f"result/gridsearch/{self.p.prefix}_{self.data0._name}_{self.data1._name}_"
@@ -159,31 +160,47 @@ class PairTrading(bt.Strategy):
         current_time = self.data1.datetime.datetime()
 
         cash = self.broker.get_cash()
-        position = self.broker.getposition(self.data0).size + self.broker.getposition(self.data1).size
+
+        pos0 = self.broker.getposition(self.data0).size
+        pos1 = self.broker.getposition(self.data1).size
+
+        position = pos0 + pos1
 
         # Whether to activate kelly criterion or not
         kc = self.kc_f[0] if self.p.kellycriterion else 1
         order_amount0 = (self.p.fixed_amount if self.p.fixed_amount else cash) / self.data0.close[0] * kc
         order_amount1 = (self.p.fixed_amount if self.p.fixed_amount else cash) / self.data1.close[0] * kc
 
-        # actions: {0: short p0 long p1, 1: close, 2: long p0 short p1, 3: do nothing}
-        if abs(self.zscore[0]) <= self.p.CLOS_THRE and position != 0:
-            self.close(data=self.data0)
-            self.close(data=self.data1)
-            action = 1
+        # actions: {0: short p0 long p1, 1: close, 2: long p0 short p1}
+        if abs(self.zscore[0]) <= self.p.CLOS_THRE:
+            if self.pos!=1:
+                self.close(data=self.data0)
+                self.close(data=self.data1)
+            action=1
+            self.pos=1
     
-        elif self.zscore[0] <= -self.p.OPEN_THRE and position == 0 and kc!=0:
-            self.buy(data=self.data0, size=order_amount0)
-            self.sell(data=self.data1, size=order_amount1)
-            action = 2
+        elif self.zscore[0] <= -self.p.OPEN_THRE and kc!=0:
+            if self.pos==0:
+                self.close(data=self.data0)
+                self.close(data=self.data1)
+            if self.pos!=2:
+                self.buy(data=self.data0, size=order_amount0)
+                self.sell(data=self.data1, size=order_amount1)
+            action=2
+            self.pos=2
 
-        elif self.zscore[0] >= self.p.OPEN_THRE and position == 0 and kc!=0:
-            self.sell(data=self.data0, size=order_amount0)
-            self.buy(data=self.data1, size=order_amount1)
-            action = 0
+        elif self.zscore[0] >= self.p.OPEN_THRE and kc!=0:
+            if self.pos==2:
+                self.close(data=self.data0)
+                self.close(data=self.data1)
+            if self.pos!=0:
+                self.sell(data=self.data0, size=order_amount0)
+                self.buy(data=self.data1, size=order_amount1)
+            action=0
+            self.pos = 0
         
         else:
-            action = 3
+            action = self.pos
 
         with open(self.storagetxt, mode='a+', newline='') as csv_f:
             writer = csv.writer(csv_f)
@@ -192,7 +209,7 @@ class PairTrading(bt.Strategy):
                 self.broker.get_value(),
                 action,
                 self.zscore[0],
-                position,
+                self.pos,
                 self.data0.close[0],
                 self.data1.close[0]
             ])
