@@ -17,7 +17,7 @@ def read_best_params():
     return best_params
 
 class RL_Restrict_TradeEnv(gym.Env):
-    def __init__(self, df, model='', tc=0.0002, cash=1.0, verbose=0): # act_pun is action punishment
+    def __init__(self, df, model='', tc=0.000, cash=1.0, verbose=0): # act_pun is action punishment
         self.observation_space = gym.spaces.Dict({
             'position': gym.spaces.Discrete(3), # {0, 1, 2}
                     #   Position 0: shorting leg_0 -> longing leg_1
@@ -72,7 +72,7 @@ class RL_Restrict_TradeEnv(gym.Env):
     
     def _get_reward(self, prev_networth):
         act_rwd = 1
-        act_pun = 0.1
+        act_pun = 0
         action_reward = act_rwd - act_pun
         
         if self.signal['zone']==0 and self.signal['position']==0:
@@ -106,10 +106,9 @@ class RL_Restrict_TradeEnv(gym.Env):
         elif self.signal['zone']==4 and self.signal['position']==2:
             reward = action_reward if self.action>0 else 0
 
-        # reward += self.networth - prev_networth
-        reward = reward * 10
+        reward += self.networth - prev_networth
 
-        return reward
+        return reward*100
 
     def _take_action(self):
 

@@ -107,9 +107,9 @@ Backtrader takes it all as the price against cash while it not necessarily a tru
 '''
 class PairTrading(bt.Strategy):
     params = dict(
-        OPEN_THRE=2,
-        CLOS_THRE=0.1,
-        period=30,
+        OPEN_THRE=1.6,
+        CLOS_THRE=0.4,
+        period=900,
         verbose = 0, # 0 for writing the process in file, 1 for writing the process in file + printing final result
         kellycriterion = True,
         prefix = None,
