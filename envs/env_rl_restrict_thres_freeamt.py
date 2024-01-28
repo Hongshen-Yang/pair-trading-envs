@@ -169,9 +169,16 @@ class RL_Restrict_TradeEnv(gym.Env):
         truncated = False
         self.reward = self._get_reward(prev_networth)
 
+        if self.action<0:
+            act=0
+        elif self.action>0:
+            act=2
+        else:
+            act=1
+
         if self.verbose==1:
             curr_df = self.df.iloc[self.trade_step]
-            logger(self.model, curr_df['datetime'], self.networth, self.action, curr_df['zscore'], self.position, curr_df['close0'], curr_df['close1'])
+            logger(self.model, curr_df['datetime'], self.networth, act, curr_df['zscore'], self.position, curr_df['close0'], curr_df['close1'])
 
         return self.observation, self.reward, terminated, truncated, {}
 
