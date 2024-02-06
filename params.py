@@ -14,7 +14,7 @@ We will train data from `start_date` until `trade_date`, and start trade after `
 symbols = ['BTCUSD', 'BTCGBP', 'BTCEUR', 'BTCRUB', 'ETHUSDT', 'ETHGBP', 'ETHEUR']
 
 date_format = '%Y-%m-%d'
-start_date = '2023-10-01'
+start_date = '2023-5-01'
 trade_date = '2023-11-01'
 end_date = '2023-12-01'
 
