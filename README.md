@@ -1,19 +1,22 @@
 Still under development...
 
-This is a project to build Reinforcement Learning application in the cryptocurrency world with backtrader
+# Objective
+This is a project to construct a trading bot with with `[backtrader](https://www.backtrader.com/)` framework with multi-leg Pair Trading.
+It follows Gatev's work on Pair Trading [1] by constructed a customized Backtrader env (/envs/env_gridsearch.py)
 
-## STEP1: Clone the Programme
+Then a series of follow-ups on Reinforcement Learning is experimented, similar rules but on customised [gymnasium](https://gymnasium.farama.org/index.html) environment (\envs\env_rl_*)
 
-Firstly clone the project with submodules onto your local drive.
-`git clone --recursive git@github.com:Hongshen-Yang/backtrader-crypto-rl.git`
 
-## STEP2: Download necessary packages
+## Python environments
+Are stored in `environment.yml`
 
-`pip install -r requirements.txt` or `pip3 install -r requirements.txt`
+## Trading entries
+Start from `params.py` for configurations.
 
-## STEP3: Start using jupyter notebook
-Start from `params.py`, to decide the assets to trade
-Next is `preliminaries.ipynb` to download all the necessary data
+Then `trade_gridsearch.ipynb` for grid search the most suitable hyperparams.
 
-## STEP4: Using notebooks to trade
-We have `trade_gridsearch.ipynb`, `trade_RL_restrict.ipynb` and `trade_RL_freeop.ipynb`
+Lastly, `trade_RL_*` for reinforcement learning notebooks
+
+## References
+
+[1] Gatev, E., Goetzmann, W. N., & Rouwenhorst, K. G. (2006). Pairs trading: Performance of a relative-value arbitrage rule. The Review of Financial Studies, 19(3), 797-827.
