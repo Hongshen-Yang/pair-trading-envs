@@ -119,7 +119,7 @@ class RL_Restrict_TradeEnv(gym.Env):
             self.cash, self.holdings = sys.open_position(self.action)
         elif self.position==1 and self.action==0:
             # Short leg0 long leg1
-            self.cash, self.holdings = sys.open_position(0)
+            self.cash, self.holdings = sys.open_position(self.action)
         elif self.position==1 and self.action==1:
             # Do nothing
             pass
@@ -178,17 +178,17 @@ class RL_RestrictFreeAmt_TradeEnv(gym.Env):
                     #   Position<0: shorting
             'zone':  gym.spaces.Discrete(5), # {0, 1, 2, 3, 4}
                     # The zscore comes from price0-price1, zone0 stands for price0 way higher than price1
-                    #   Zone 0 (Should be position 0)
+                    #   Zone 0
                     # ---------- + OPEN_THRES ----------
-                    #   Zone 1 (Should be position 0, 1)
+                    #   Zone 1
                     # ---------- + CLOS_THRES ----------
-                    #   Zone 2 (Should be position 1)
+                    #   Zone 2
                     # ----------   ZSCORE = 0 ----------
-                    #   Zone 2 (Should be position 1)
+                    #   Zone 2
                     # ---------- - CLOS_THRES ----------
-                    #   Zone 3 (Should be position 1, 2)
+                    #   Zone 3
                     # ---------- - OPEN_THRES ----------
-                    #   Zone 4 (Should be position 2)
+                    #   Zone 4
             'zscore': gym.spaces.Box(low=-np.inf, high=np.inf, dtype=np.float64)
         })
 
@@ -217,7 +217,7 @@ class RL_RestrictFreeAmt_TradeEnv(gym.Env):
             zone = 2
 
         obs = {
-            'position': self.holdings,
+            'holdings': self.holdings,
             'zone': zone,
             'zscore': np.array([zscore])
         }
@@ -229,47 +229,84 @@ class RL_RestrictFreeAmt_TradeEnv(gym.Env):
         act_rwd = 0.01
         act_pun = 0
         action_reward = act_rwd - act_pun
+
+        rwd_lvl1 = 1 # Close a position in the right time
+        rwd_lvl2 = 0.7 # Open a position in the right time
+        rwd_lvl3 = 0.5 # Do nothing in the right time
         
         if   self.signal['zone']==0 and self.signal['holdings'][0]<0:
-            reward = action_reward if self.action<0 else 0
+            reward = action_reward*rwd_lvl3 if self.action<0 else 0
         elif self.signal['zone']==0 and self.signal['holdings'][0]==0:
-            reward = action_reward if self.action<0 else 0
+            reward = action_reward*rwd_lvl2 if self.action<0 else 0
         elif self.signal['zone']==0 and self.signal['holdings'][0]>0:
-            reward = action_reward if self.action<0 else 0
+            reward = action_reward*rwd_lvl1 if self.action<0 else 0
         elif self.signal['zone']==1 and self.signal['holdings'][0]<0:
-            reward = action_reward if self.action<0 else 0
+            reward = action_reward*rwd_lvl3 if self.action<0 else 0
         elif self.signal['zone']==1 and self.signal['holdings'][0]==0:
-            reward = action_reward if self.action==0 else 0
+            reward = action_reward*rwd_lvl1 if self.action==0 else 0
         elif self.signal['zone']==1 and self.signal['holdings'][0]>0:
-            reward = action_reward if self.action==0 else 0
+            reward = action_reward*rwd_lvl1 if self.action==0 else 0
         elif self.signal['zone']==2 and self.signal['holdings'][0]<0:
-            reward = action_reward if self.action==0 else 0
+            reward = action_reward*rwd_lvl1 if self.action==0 else 0
         elif self.signal['zone']==2 and self.signal['holdings'][0]==0:
-            reward = action_reward if self.action==0 else 0
+            reward = action_reward*rwd_lvl1 if self.action==0 else 0
         elif self.signal['zone']==2 and self.signal['holdings'][0]>0:
-            reward = action_reward if self.action==0 else 0
+            reward = action_reward*rwd_lvl1 if self.action==0 else 0
         elif self.signal['zone']==3 and self.signal['holdings'][0]<0:
-            reward = action_reward if self.action==0 else 0
+            reward = action_reward*rwd_lvl1 if self.action==0 else 0
         elif self.signal['zone']==3 and self.signal['holdings'][0]==0:
-            reward = action_reward if self.action==0 else 0
+            reward = action_reward*rwd_lvl1 if self.action==0 else 0
         elif self.signal['zone']==3 and self.signal['holdings'][0]>0:
-            reward = action_reward if self.action>0 else 0
+            reward = action_reward*rwd_lvl3 if self.action>0 else 0
         elif self.signal['zone']==4 and self.signal['holdings'][0]<0:
-            reward = action_reward if self.action>0 else 0
+            reward = action_reward*rwd_lvl1 if self.action>0 else 0
         elif self.signal['zone']==4 and self.signal['holdings'][0]==0:
-            reward = action_reward if self.action>0 else 0
+            reward = action_reward*rwd_lvl2 if self.action>0 else 0
         elif self.signal['zone']==4 and self.signal['holdings'][0]>0:
-            reward = action_reward if self.action>0 else 0
+            reward = action_reward*rwd_lvl3 if self.action>0 else 0
 
         reward += self.networth - prev_networth
         
         return reward*100
 
     def _take_action(self):
-        sys=TradingSystemFreeAmt(self.df, self.holdings, self.trade_step, cash=self.cash, amt=self.action*self.cash)
-        sys.close_position()
-        self.cash, self.holdings = sys.open_position(self.action)
+        sys=TradingSystemFreeAmt(self.df, self.holdings, self.trade_step, cash=self.cash)
 
+        if   self.holdings[0]<0 and self.action<0:
+            # Do nothing
+            pass
+        elif self.holdings[0]<0 and self.action==0:
+            # Close position
+            self.cash, self.holdings = sys.close_position()
+            self.networth = sys.get_networth()
+        elif self.holdings[0]<0 and self.action>0:
+            # Close and open position
+            self.cash, self.holdings = sys.close_position()
+            self.networth = sys.get_networth()
+            self.cash, self.holdings = sys.open_position(self.action)
+        elif self.holdings[0]==0 and self.action<0:
+            # Open position
+            self.cash, self.holdings = sys.open_position(self.action)
+        elif self.holdings[0]==0 and self.action==0:
+            # Do nothing
+            pass
+        elif self.holdings[0]==0 and self.action>0:
+            # Open position
+            self.cash, self.holdings = sys.open_position(self.action)
+        elif self.holdings[0]>0 and self.action<0:
+            # Close and open position
+            self.cash, self.holdings = sys.close_position()
+            self.networth = sys.get_networth()
+            self.cash, self.holdings = sys.open_position(self.action)
+        elif self.holdings[0]>0 and self.action==0:
+            # Close position
+            self.cash, self.holdings = sys.close_position()
+            self.networth = sys.get_networth()
+        elif self.holdings[0]>0 and self.action>0:
+            # Do nothing
+            pass
+
+        
     def reset(self, seed=None):
         self.holdings = np.array([0, 0])
         self.trade_step = self.best_params['period']
@@ -279,7 +316,6 @@ class RL_RestrictFreeAmt_TradeEnv(gym.Env):
     def step(self, action):
         self.action = action[0]
         self.signal = self.observation
-        print(self.signal)
         prev_networth = self.networth
         self._take_action()
         self.trade_step += 1
