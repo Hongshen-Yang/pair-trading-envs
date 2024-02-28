@@ -38,7 +38,7 @@ class TradingSystem():
         return self.cash + self.holdings[0]*self.df['close0'] + self.holdings[1]*self.df['close1']
 
 class TradingSystemFreeAmt():
-    def __init__(self, df, units, trade_step, cash, tc=0.002):
+    def __init__(self, df, units, trade_step, cash, tc=0.0015):
         self.cash = cash
         self.df = df.iloc[trade_step] # columns: time, close0, itvl, datetime, close1, spread, zscore
         self.tc = tc # transaction cost
