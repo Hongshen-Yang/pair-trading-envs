@@ -19,7 +19,7 @@ def est(datafeeds, param_dict):
     return val1 + val2 + val3
 
 def scoring(result):
-    score = result**2
+    score = result
     return score
 
 # Try to follow the practice of sklearn
@@ -36,6 +36,7 @@ def gridsearch(estimator, param_grid, scoring, datafeeds):
             print(param_dict)
             result = estimator(datafeeds, param_dict)
             score = scoring(result)
+            print(score)
             if best_score is None or score > best_score:
                 best_score = score
                 best_params = param_dict

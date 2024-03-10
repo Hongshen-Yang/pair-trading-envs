@@ -47,7 +47,7 @@ class TradingSystemFreeAmt():
         self.networth = cash + units[0]*self.df['close0'] + units[1]*self.df['close1']
 
     def close_position(self):
-        self.cash += (self.units[0]*self.df['close0'] + self.units[1]*self.df['close1']) * (1-self.tc)
+        self.cash += (self.units[0]*self.df['close0'] + self.units[1]*self.df['close1'])*(1-self.tc)
         self.units = np.array([0, 0])
 
         return self.cash, self.units
@@ -56,7 +56,8 @@ class TradingSystemFreeAmt():
         self.cash, self.units = self.close_position()
         unit0 = action*self.cash/self.df['close0']
         unit1 = action*self.cash/self.df['close1']
-        self.units = np.array([unit0*(1-self.tc), -unit1*(1-self.tc)])
+        self.cash -= abs(unit0*self.df['close0'] + unit1*self.df['close1'])*self.tc
+        self.units = np.array([unit0, -unit1])
 
         return self.cash, self.units
 

@@ -12,7 +12,7 @@ We will train data from `start_date` until `trade_date`, and start trade after `
 # symbols = ['BTCUSDT', 'ETHUSDT', 'LTCUSDT', 'XMRUSDT', 'BNBUSDT', 'ADAUSDT', 'DOGEUSDT', 'SOLUSDT', 'TRXUSDT']
 # symbols = ['USDCUSDT', 'DAIUSDT', 'TUSDUSDT', 'BUSDUSDT', 'USDCTUSD', 'USDCBUSD', 'DAIBUSD', 'TUSDBUSD', 'BUSDDAI']
 # symbols = ['BTCUSDT', 'BTCUSD', 'BTCTUSD', 'BTCUSDC', 'BTCBUSD', 'BTCDAI']
-symbols = ['BTCUSD', 'BTCGBP', 'BTCEUR', 'BTCRUB', 'ETHUSDT']
+symbols = ['BTCUSDT', 'BTCGBP', 'BTCEUR']
 
 date_format = '%Y-%m-%d'
 start_date = '2023-10-01'

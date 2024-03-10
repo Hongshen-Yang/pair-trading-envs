@@ -42,7 +42,6 @@ def read2df(symbols, freqs, marketType="spot"):
 
         # Concatenate all symbols into a single DataFrame
         rawdf = pd.concat(rawdfs, ignore_index=True)
-
         # Count the number of unique 'tic' values per date
         tic_counts = rawdf.groupby('time')['tic'].nunique()
 
@@ -64,14 +63,18 @@ def read2df(symbols, freqs, marketType="spot"):
     
     return dfs
 
-def unify_dfs(dfs, symbols, period):
+def unify_dfs(dfs, symbols, period, TI=False):
     dfs[0]['close'] = dfs[0]['close'].apply(lambda x: 1/x)
     
     df0 = dfs[0][dfs[0]['tic']==symbols[0]].reset_index(drop=True)
     df1 = dfs[0][dfs[0]['tic']==symbols[1]].reset_index(drop=True)
 
-    df0 = df0[['time', 'close', 'tic', 'itvl', 'datetime']]
-    df1 = df1[['time', 'close', 'tic', 'itvl', 'datetime']]
+    if TI:    
+        df0 = df0[['time', 'high', 'low', 'volume', 'close', 'tic', 'itvl', 'datetime']]
+        df1 = df1[['time', 'high', 'low', 'volume', 'close', 'tic', 'itvl', 'datetime']]
+    else:
+        df0 = df0[['time', 'close', 'tic', 'itvl', 'datetime']]
+        df1 = df1[['time', 'close', 'tic', 'itvl', 'datetime']]
 
     tic0, tic1 = df0['tic'][0], df1['tic'][0]
     df = pd.merge(df0, df1, on=['time', 'itvl', 'datetime'], suffixes=(f"0", f"1"))
