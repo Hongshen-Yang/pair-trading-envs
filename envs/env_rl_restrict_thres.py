@@ -456,7 +456,25 @@ class RL_RestrictFreeAmtTalib_TradeEnv(gym.Env):
         obs = {
             'holdings': self.holdings,
             'zone': zone,
-            'zscore': np.array([zscore], dtype=np.float32)
+            'zscore': np.array([zscore], dtype=np.float32),
+            'close0': self.df.iloc[self.trade_step]['close0'],
+            'close1': self.df.iloc[self.trade_step]['close1'],
+            'volume0': self.df.iloc[self.trade_step]['volume0'],
+            'volume1': self.df.iloc[self.trade_step]['volume1'],
+            'high0': self.df.iloc[self.trade_step]['high0'],
+            'high1': self.df.iloc[self.trade_step]['high1'],
+            'low0': self.df.iloc[self.trade_step]['low0'],
+            'low1': self.df.iloc[self.trade_step]['low1'],
+            'upperband0': self.df.iloc[self.trade_step]['upperband0'],
+            'upperband1': self.df.iloc[self.trade_step]['upperband1'],
+            'adx0': self.df.iloc[self.trade_step]['adx0'],
+            'adx1': self.df.iloc[self.trade_step]['adx1'],
+            'ad0': self.df.iloc[self.trade_step]['ad0'],
+            'ad1': self.df.iloc[self.trade_step]['ad1'],
+            'atr0': self.df.iloc[self.trade_step]['atr0'],
+            'atr1': self.df.iloc[self.trade_step]['atr1'],
+            'ht_dcperiod0': self.df.iloc[self.trade_step]['ht_dcperiod0'],
+            'ht_dcperiod1': self.df.iloc[self.trade_step]['ht_dcperiod1']
         }
 
         return obs
