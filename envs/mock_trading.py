@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 class TradingSystem():
-    def __init__(self, df, holdings, trade_step, cash, amt=0, tc=0.002):
+    def __init__(self, df, holdings, trade_step, cash, amt=0, tc=0.0002):
         self.cash = cash
         self.df = df.iloc[trade_step] # columns: time, close0, itvl, datetime, close1, spread, zscore
         self.tc = tc # transaction cost
@@ -47,7 +47,8 @@ class TradingSystemFreeAmt():
         self.networth = cash + units[0]*self.df['close0'] + units[1]*self.df['close1']
 
     def close_position(self):
-        self.cash += (self.units[0]*self.df['close0'] + self.units[1]*self.df['close1'])*(1-self.tc)
+        value0, value1 = self.units[0]*self.df['close0'], self.units[1]*self.df['close1']
+        self.cash += (value0 + value1)*(1-self.tc)
         self.units = np.array([0, 0])
 
         return self.cash, self.units
@@ -56,8 +57,7 @@ class TradingSystemFreeAmt():
         self.cash, self.units = self.close_position()
         unit0 = action*self.cash/self.df['close0']
         unit1 = action*self.cash/self.df['close1']
-        self.cash -= abs(unit0*self.df['close0'] + unit1*self.df['close1'])*self.tc
-        self.units = np.array([unit0, -unit1])
+        self.units = np.array([unit0*(1-self.tc), -unit1*(1-self.tc)])
 
         return self.cash, self.units
 
@@ -69,9 +69,9 @@ class TradingSystemFreeAmt():
         ttl_leg0 = abs(self.units[0]-unit0)*self.df['close0']
         ttl_leg1 = abs(self.units[1]-unit1)*self.df['close1']
         tc = (ttl_leg0 + ttl_leg1)*self.tc
-        self.cash -= tc
+        # self.cash -= tc
         # Update to the newest units
-        self.units = np.array([unit0, unit1], dtype=np.float32)
+        self.units = np.array([unit0*(1-self.tc), unit1*(1-self.tc)], dtype=np.float32)
 
         return self.cash, self.units
 

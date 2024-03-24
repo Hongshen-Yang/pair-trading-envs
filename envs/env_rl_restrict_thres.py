@@ -236,37 +236,6 @@ class RL_RestrictFreeAmt_TradeEnv(gym.Env):
         act_rwd_lvl1 = 1 # Close a position in the right time
         act_rwd_lvl2 = 0.7 # Open a position in the right time
         act_rwd_lvl3 = 0.5 # Do nothing in the right time
-        
-        # if   self.signal['zone']==0 and self.signal['holdings'][0]<0:
-        #     reward = act_rwd_lvl3 if self.action<0 else 0
-        # elif self.signal['zone']==0 and self.signal['holdings'][0]==0:
-        #     reward = act_rwd_lvl2 if self.action<0 else 0
-        # elif self.signal['zone']==0 and self.signal['holdings'][0]>0:
-        #     reward = act_rwd_lvl1 if self.action<0 else 0
-        # elif self.signal['zone']==1 and self.signal['holdings'][0]<0:
-        #     reward = act_rwd_lvl3 if self.action<0 else 0
-        # elif self.signal['zone']==1 and self.signal['holdings'][0]==0:
-        #     reward = act_rwd_lvl1 if self.action==0 else 0
-        # elif self.signal['zone']==1 and self.signal['holdings'][0]>0:
-        #     reward = act_rwd_lvl1 if self.action==0 else 0
-        # elif self.signal['zone']==2 and self.signal['holdings'][0]<0:
-        #     reward = act_rwd_lvl1 if self.action==0 else 0
-        # elif self.signal['zone']==2 and self.signal['holdings'][0]==0:
-        #     reward = act_rwd_lvl1 if self.action==0 else 0
-        # elif self.signal['zone']==2 and self.signal['holdings'][0]>0:
-        #     reward = act_rwd_lvl1 if self.action==0 else 0
-        # elif self.signal['zone']==3 and self.signal['holdings'][0]<0:
-        #     reward = act_rwd_lvl1 if self.action==0 else 0
-        # elif self.signal['zone']==3 and self.signal['holdings'][0]==0:
-        #     reward = act_rwd_lvl1 if self.action==0 else 0
-        # elif self.signal['zone']==3 and self.signal['holdings'][0]>0:
-        #     reward = act_rwd_lvl3 if self.action>0 else 0
-        # elif self.signal['zone']==4 and self.signal['holdings'][0]<0:
-        #     reward = act_rwd_lvl1 if self.action>0 else 0
-        # elif self.signal['zone']==4 and self.signal['holdings'][0]==0:
-        #     reward = act_rwd_lvl2 if self.action>0 else 0
-        # elif self.signal['zone']==4 and self.signal['holdings'][0]>0:
-        #     reward = act_rwd_lvl3 if self.action>0 else 0
 
         if   self.signal['zone']==0 and self.signal['holdings'][0]<0:
             reward = act_rwd if self.action<0 else 0

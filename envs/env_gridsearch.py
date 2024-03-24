@@ -131,6 +131,7 @@ class PairTrading(bt.Strategy):
         stddev = bt.indicators.StandardDeviation(self.spread, period=self.p.period)
         self.zscore = (self.spread - bt.indicators.MovingAverageSimple(self.spread, period=self.p.period)) / stddev
         self.pos=1 # initialize as no holding
+        self.networth = self.broker.get_value()
 
         self.storagetxt = (
             f"result/gridsearch/{self.p.prefix}_{self.data0._name}_{self.data1._name}_"
@@ -178,11 +179,13 @@ class PairTrading(bt.Strategy):
                 self.close(data=self.data1)
             action=1
             self.pos=1
+            self.networth = self.broker.get_value()
     
         elif self.zscore[0] <= -self.p.OPEN_THRE and kc!=0:
             if self.pos==0:
                 self.close(data=self.data0)
                 self.close(data=self.data1)
+                self.networth = self.broker.get_value()
             if self.pos!=2:
                 self.buy(data=self.data0, size=order_amount0)
                 self.sell(data=self.data1, size=order_amount1)
@@ -193,6 +196,7 @@ class PairTrading(bt.Strategy):
             if self.pos==2:
                 self.close(data=self.data0)
                 self.close(data=self.data1)
+                self.networth = self.broker.get_value()
             if self.pos!=0:
                 self.sell(data=self.data0, size=order_amount0)
                 self.buy(data=self.data1, size=order_amount1)
@@ -206,7 +210,7 @@ class PairTrading(bt.Strategy):
             writer = csv.writer(csv_f)
             writer.writerow([
                 current_time, 
-                self.broker.get_value(),
+                self.networth,
                 action,
                 self.zscore[0],
                 self.pos,
