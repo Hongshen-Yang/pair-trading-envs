@@ -10,4 +10,4 @@ Reinforcement Learning based environment with [gymnasium](https://gymnasium.fara
 * Fixed Amount: The bet for each trading is fixed at a certain number.
 * Free Amount: The bet is dynamically measured by the each trading opportunity.
 
-[^1]: Yang, H., & Malik, A. (2024). Reinforcement learning pair trading: A dynamic scaling approach (arXiv:2407.16103). arXiv. https://doi.org/10.48550/arXiv.2407.16103
+[^1]: Yang, H., & Malik, A. (2024). Reinforcement learning pair trading: A dynamic scaling approach. Journal of Risk and Financial Management, 17(12), 555. https://doi.org/10.3390/jrfm17120555
